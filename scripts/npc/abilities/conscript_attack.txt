@@ -1,0 +1,76 @@
+"conscript_attack"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"              		"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attack_count"				"5"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"attack_time"				"0.1"
+		}
+	}
+
+	// Modifiers
+    //-------------------------------------------------------------------------------------------------------------
+    "Modifiers"
+    {
+        "modifier_burst_attack"
+        {
+        	"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+            "Passive"			"1"
+            "IsHidden"         	"1"
+            "OnCreated"
+            {
+            	"RunScript"
+		        {
+		           "Target"			"CASTER"
+		           "ScriptFile"		"units/conscript/conscript_attack.lua"
+		           "Function"		"ApplyAttackSpeedBoost"
+		        }
+            }
+            "OnAttackStart"
+            {
+                "RunScript"
+		        {
+		           "Target"			"CASTER"
+		           "ScriptFile"		"units/conscript/conscript_attack.lua"
+		           "Function"		"BurstAttack"
+		        }
+            }
+        }
+
+        "modifier_attack_speed_boost"
+        {
+            "IsHidden" "1"
+            "Passive" "0"
+			"Properties"
+		    {
+		        "MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT"	"%attack_time"
+		    }
+        }
+    }
+}
