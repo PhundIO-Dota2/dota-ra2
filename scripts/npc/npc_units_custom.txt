@@ -299,7 +299,7 @@
 		"AttackDamageMax"           "0"       // Damage range max.
 		"AttackRate"                "1.67"
 		"AttackAnimationPoint"      "0"
-		"AttackAcquisitionRange"    "384"    // Range within a target can be acquired.
+		"AttackAcquisitionRange"    "96"    // Range within a target can be acquired.
 		"AttackRange"               "96"     // Range within a target can be attacked.
 	
 	
@@ -644,16 +644,16 @@
 	{
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_high_priest.vmdl"	// Model.
+		"Model"						"models/heroes/techies/techies.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
-		"SoundSet"					"n_creep_trollCommon"
-		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"SoundSet"					"Hero_Techies"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
 		"Level"						"1"
-		"ModelScale" 				"0.5"
+		"ModelScale" 				"0.3"
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"crazy_ivan_attack" // Ability 1
+		"Ability1"					"terrorist_attack" // Ability 1
 		"Ability2"					""			 // Ability 2
 		"Ability3"					""			 // Ability 3
 		"Ability4"					""			 // Ability 4
@@ -669,8 +669,8 @@
 		"AttackDamageMax"           "0"       // Damage range max.
 		"AttackAnimationPoint"      "0.2"
 		"AttackRate"                "1"
-		"AttackAcquisitionRange"    "300"    // Range within a target can be acquired.
-		"AttackRange"               "150"     // Range within a target can be attacked.
+		"AttackAcquisitionRange"    "96"    // Range within a target can be acquired.
+		"AttackRange"               "96"     // Range within a target can be attacked.
 	
 	
 		// Bounds
@@ -688,19 +688,19 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"400"		// Speed.			
+		"MovementSpeed"				"384"		// Speed.			
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1000"		// Base health.
-		"StatusHealthRegen"			"1000"			// Health regeneration rate.
+		"StatusHealth"				"50"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"600"		// Range of vision during day light.
-		"VisionNighttimeRange"		"600"		// Range of vision at night time.
+		"VisionDaytimeRange"		"576"		// Range of vision during day light.
+		"VisionNighttimeRange"		"576"		// Range of vision at night time.
 	
 		// Team
 		//----------------------------------------------------------------
@@ -721,6 +721,16 @@
 			"MoveSpeedGain"				"0"
 			"BountyGain"				"0"
 			"XPGain"					"0"
+	        "AttachWearables" // Default npc_dota_hero_techies
+	        {
+	            "1" { "ItemDef" "491" } // Techies Squee Costume
+	            "2" { "ItemDef" "490" } // Techies Cart
+	            "3" { "ItemDef" "492" } // Techies Spleen Costume
+	            "4" { "ItemDef" "394" } // Techies Bomb Arsenal
+	            "5" { "ItemDef" "499" } // Techies Sign
+	            "6" { "ItemDef" "487" } // Techies Spoon Costume
+	            "7" { "ItemDef" "489" } // Techies Slingshot
+	        }
 		}
 	
 	}

@@ -38,7 +38,7 @@
         	"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
             "Passive"			"1"
             "IsHidden"         	"0"
-                "OnAttack"
+            "OnAttack"
             {
             	"RunScript"
             	{
@@ -88,7 +88,7 @@
                 	"Damage"							"100"
                 	"CurrentHealthPercentBasedDamage"	"1"
                 }
-                }
+            }
         }
     }
 }
