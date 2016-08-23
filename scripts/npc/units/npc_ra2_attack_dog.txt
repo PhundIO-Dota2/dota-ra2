@@ -29,7 +29,7 @@
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"           "0"       // Damage range min.
 	"AttackDamageMax"           "0"       // Damage range max.
-	"AttackRate"                "1.2"
+	"AttackRate"                "1"
 	"AttackAnimationPoint"      "0"
 	"AttackAcquisitionRange"    "576"    // Range within a target can be acquired.
 	"AttackRange"               "96"     // Range within a target can be attacked.
