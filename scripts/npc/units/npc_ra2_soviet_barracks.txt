@@ -83,4 +83,9 @@
 		"XPGain"					"0"
 	}
 
+	// BuildingHelper Essentials
+	//----------------------------------------------------------------
+	"ConstructionSize"	"2"
+	"BlockPathingSize"	"2"
+
 }

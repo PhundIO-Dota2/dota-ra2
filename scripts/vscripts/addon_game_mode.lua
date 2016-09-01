@@ -1,3 +1,5 @@
+require("libraries/buildinghelper")
+
 -- Generated from template
 
 if CAddonTemplateGameMode == nil then
@@ -12,6 +14,7 @@ function Precache( context )
 			PrecacheResource( "particle", "*.vpcf", context )
 			PrecacheResource( "particle_folder", "particles/folder", context )
 	]]
+	PrecacheResource("particle_folder", "particles/buildinghelper", context)
 end
 
 -- Create the game mode when we activate
