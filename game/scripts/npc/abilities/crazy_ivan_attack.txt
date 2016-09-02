@@ -1,0 +1,160 @@
+"crazy_ivan_attack"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"              		"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"AbilityDamage"					"%damage"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+	"AbilityDuration"				"%duration"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+
+    // Special
+    //-------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 	"FIELD_INTEGER"
+            "duration" 	"2"
+        }
+        "02"
+        {
+        	"var_type" 	"FIELD_INTEGER"
+            "damage" 	"400"
+        }
+        "03"
+        {
+        	"var_type" 	"FIELD_INTEGER"
+            "radius" 	"256"
+        }
+        "04"
+        {
+        	"var_type"	"FIELD_FLOAT"
+        	"timer_01"	"1"
+        }
+    }
+
+    "precache"
+    {
+	    "soundfile"	"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
+    	"particle"	"particles/units/heroes/hero_visage/visage_soul_overhead.vpcf"
+    	"particle"	"particles/units/heroes/hero_visage/visage_soul_overhead.vpcf"
+    }
+
+	// Modifiers
+    //-------------------------------------------------------------------------------------------------------------
+    "Modifiers"
+    {
+        "modifier_bomb_attack"
+        {
+        	"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+            "Passive"			"1"
+            "IsHidden"         	"0"
+            "OnAttack"
+            {
+		        "ApplyModifier"
+		        {
+				    "Target" 		"TARGET"
+				    "ModifierName"  "modifier_bomb"
+		        }
+            }
+                "OnAttackAllied"
+            {
+		        "ApplyModifier"
+		        {
+				    "Target" 		"TARGET"
+				    "ModifierName"  "modifier_bomb"
+		        }
+            }
+        }
+
+        "modifier_bomb"
+        {
+	        "Attributes"		"MODIFIER_ATTRIBUTE_NONE"
+        	"IsDebuff"			"1"
+        	"Passive"			"0"
+            "IsHidden"         	"0"
+            "Duration"			"%duration"
+            "OnCreated"
+            {
+            	//"RunScript"
+            	//{
+				//	"Target"		"TARGET"
+				//	"ScriptFile"	"units/crazy_ivan/bomb_timer.lua"
+				//	"Function"		"BombTimer"
+            	//}
+            	"AttachEffect"
+            	{
+	            	"Target" 			"TARGET"
+				    "EffectName" 		"particles/units/heroes/hero_visage/visage_soul_overhead.vpcf"
+				    "EffectAttachType" 	"follow_overhead"
+				    "ControlPoints"
+				    {
+				        "00" "follow_overhead"
+				        "01" "1"
+				        "02" "1"
+				        "03" "1"
+				        "04" "1"
+				        "05" "1"
+				        "06" "1"
+				        "07" "0"
+				        "08" "0"
+				        "09" "0"
+				        "10" "0"
+				        "12" "0"
+				    }
+            	}
+            }
+
+            "OnDestroy"
+            {
+	            "FireSound"
+            	{
+            		"EffectName"	"Hero_Techies.LandMine.Detonate"
+            		"Target"		"TARGET"
+            	}
+            	"FireEffect"
+				{
+					"EffectName"		"particles/econ/courier/courier_cluckles/courier_cluckles_ambient_rocket_explosion.vpcf"
+					"EffectAttachType"	"start_at_customorigin"
+					"ControlPointEntities"
+					{
+						"TARGET"	""
+						"TARGET"	""
+						"TARGET"	""
+						"TARGET"	"follow_hitloc"
+					}
+				}
+            	"Damage"
+                {
+                	"Target"
+					{
+						"Center"    "TARGET"
+						"Radius"    "%radius"
+
+						//AbilityUnitTargetTeam values
+						"Teams"  "DOTA_UNIT_TARGET_TEAM_BOTH"
+
+						//AbilityUnitTargetTypes
+						"Types"  "DOTA_UNIT_TARGET_ALL"
+						//"ExcludeTypes" "DOTA_UNIT_TARGET_HERO"
+					}
+                	"Type"		"DAMAGE_TYPE_PHYSICAL"
+                	"Damage"	"%damage"
+                }
+            }
+        }
+    }
+}

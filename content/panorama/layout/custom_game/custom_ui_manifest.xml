@@ -1,0 +1,9 @@
+<root>
+	<Panel>
+		<CustomUIElement type="Hud"  layoutfile="file://{resources}/layout/custom_game/building_helper.xml" />
+		<CustomUIElement type="Hud"  layoutfile="file://{resources}/layout/custom_game/selection.xml" />
+		<CustomUIElement type="Hud"  layoutfile="file://{resources}/layout/custom_game/sidebar.xml" />
+		<CustomUIElement type="HeroSelection" layoutfile="file://{resources}/layout/custom_game/multiteam_hero_select_overlay.xml" />
+		<CustomUIElement type="HudTopBar" layoutfile="file://{resources}/layout/custom_game/multiteam_top_scoreboard.xml" />
+	</Panel>
+</root>
