@@ -4,18 +4,18 @@
 "build"
 {
     "BaseClass"                     "ability_datadriven"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 
     "MaxLevel"                      "3"
     "LevelsBetweenUpgrades"         "0"
     
     "Building"                      "1"
-    "AbilityCastRange"              "250"
+    "AbilityCastRange"              "999999"
     "Scale"                         "1"
     "PlayerCanControl"              "1"
 
     "UnitName"                      "npc_ra2_soviet_barracks"
-    "AbilityGoldCost"               "175"
+    "AbilityGoldCost"               "0"
     
     "OnSpellStart"
     {

@@ -1,4 +1,5 @@
 require("libraries/buildinghelper")
+require("sidebar")
 
 -- Generated from template
 
@@ -26,6 +27,8 @@ end
 function CAddonTemplateGameMode:InitGameMode()
 	print( "Template addon is loaded." )
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
+	self:InitListeners()
+	
 end
 
 -- Evaluate the state of the game
@@ -36,4 +39,8 @@ function CAddonTemplateGameMode:OnThink()
 		return nil
 	end
 	return 1
+end
+
+function CAddonTemplateGameMode:InitListeners()
+	CustomGameEventManager:RegisterListener( "unit_queued", OnUnitQueued )
 end
