@@ -65,6 +65,11 @@ function Build( event )
 
     -- A building unit was created
     event:OnConstructionStarted(function(unit)
+        
+        local menu_structures = CustomNetTables:GetTableValue("player_tables", "menu_structures_" .. playerID)
+        menu_structures[unit:GetUnitName()] = 0
+        CustomNetTables:SetTableValue("player_tables", "menu_structures_" .. playerID, menu_structures)
+
         BuildingHelper:print("Started construction of " .. unit:GetUnitName() .. " " .. unit:GetEntityIndex())
         -- Play construction sound
 

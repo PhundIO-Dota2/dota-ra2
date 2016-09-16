@@ -9,7 +9,7 @@
 	
 	// Abilities
 	//----------------------------------------------------------------	
-	"Ability1" 					"build"
+	"Ability1" 					"build_npc_ra2_soviet_barracks"
 	"Ability2" 					""
 	"Ability3" 					""
 	"Ability4" 					""

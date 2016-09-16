@@ -28,6 +28,34 @@
 	        }
 	    }
 	}
+	//============================================================//
+	// Build
+	//============================================================//
+	"build_npc_ra2_soviet_barracks"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+	
+	    "MaxLevel"                      "1"
+	    "LevelsBetweenUpgrades"         "0"
+	    
+	    "Building"                      "1"
+	    "AbilityCastRange"              "999999"
+	    "Scale"                         "1"
+	    "PlayerCanControl"              "1"
+	
+	    "UnitName"                      "npc_ra2_soviet_barracks"
+	    "AbilityGoldCost"               "0"
+	    
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "builder.lua"
+	            "Function"          "Build"
+	        }
+	    }
+	}
 	"conscript_attack"
 	{
 		// General
