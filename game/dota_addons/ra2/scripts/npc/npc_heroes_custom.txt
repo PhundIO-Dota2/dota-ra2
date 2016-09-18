@@ -12,7 +12,7 @@
 		// Abilities
 		//----------------------------------------------------------------	
 		"Ability1" 					"build_npc_ra2_soviet_barracks"
-		"Ability2" 					""
+		"Ability2" 					"build_npc_ra2_tesla_reactor"
 		"Ability3" 					""
 		"Ability4" 					""
 		"Ability5"					""

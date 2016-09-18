@@ -18,7 +18,9 @@
 		<Button onactivate="queueBuilding('npc_ra2_soviet_barracks');">
 			<Image src="file://{images}/custom_game/structures/sbarracks.png"/>
 		</Button>
-
+		<Button onactivate="queueBuilding('npc_ra2_tesla_reactor');">
+			<Image src="file://{images}/custom_game/structures/sbarracks.png"/>
+		</Button>
 
     </Panel>
 </root>

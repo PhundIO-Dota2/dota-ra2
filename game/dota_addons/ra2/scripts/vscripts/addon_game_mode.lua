@@ -30,7 +30,9 @@ function RedAlert2:InitGameMode()
 	print( "Red Alert 2 addon is loaded." )
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
 	self:InitListeners()
-	
+    GameRules:SetStartingGold(10000)
+    GameRules:SetGoldPerTick(0)
+    GameRules:SetPreGameTime(0)
 end
 
 -- Evaluate the state of the game
@@ -51,7 +53,8 @@ end
 function RedAlert2:OnConnectFull( args )
     local pid = args['PlayerID']
 	CustomNetTables:SetTableValue("player_tables", "menu_structures_" .. pid, {
-		npc_ra2_soviet_barracks = 0	
+		npc_ra2_soviet_barracks = 0,
+        npc_ra2_tesla_reactor = 0 
 	})
 
 end
@@ -67,7 +70,6 @@ function RedAlert2:OnBuildingQueued( args )
     
     print(menu_structures[unit])
     if menu_structures[unit] == 0 then
-        PlayerResource:SetGold(pid, 10000, true)
         CustomGameEventManager:Send_ServerToPlayer(player, "building_start", { unit = unit, duration = build_time, cost = cost })
         player:StartBuilding(unit, build_time, cost)
     elseif menu_structures[unit] == 1 then
@@ -104,7 +106,7 @@ function CDOTAPlayer:StartBuilding( unit, duration, cost )
             return nil
         end
         local ratio = elapsed / (duration + hold_duration)
-        local gold_tick = ratio * cost
+        local gold_tick = math.floor(ratio * cost)
         local enough_gold = PlayerResource:GetGold(self:GetPlayerID()) >= gold_tick
         if enough_gold then
             PlayerResource:SpendGold(self:GetPlayerID(), gold_tick, DOTA_ModifyGold_GameTick)
@@ -115,7 +117,7 @@ function CDOTAPlayer:StartBuilding( unit, duration, cost )
         menu_structures[unit] = time / (start_time + duration + hold_duration)
         CustomNetTables:SetTableValue("player_tables", "menu_structures_" .. self:GetPlayerID(), menu_structures)
 
-        return 0.1
+        return 0.05
 
     end)
 
