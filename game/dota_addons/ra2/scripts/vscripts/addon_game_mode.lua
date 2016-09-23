@@ -68,7 +68,6 @@ function RedAlert2:OnBuildingQueued( args )
     local player = PlayerResource:GetPlayer(pid)
     local menu_structures = CustomNetTables:GetTableValue("player_tables", "menu_structures_" .. pid)
     
-    print(menu_structures[unit])
     if menu_structures[unit] == 0 then
         CustomGameEventManager:Send_ServerToPlayer(player, "building_start", { unit = unit, duration = build_time, cost = cost })
         player:StartBuilding(unit, build_time, cost)
