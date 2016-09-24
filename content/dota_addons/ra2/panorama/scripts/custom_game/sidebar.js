@@ -15,10 +15,11 @@ function rightClickItem(name) {
 
 	if (menu_structures[name]) {
 		var paused = menu_structures[name]['paused'],
+			finished = menu_structures[name]['progress'] == 1,
 			event = 'building_cancelled';
-		if (!paused) {
+		if (!paused && !finished) {
 			event = 'building_paused';
-		} 
+		}
 		GameEvents.SendCustomGameEventToServer(event, { name: name });
 	}
 }

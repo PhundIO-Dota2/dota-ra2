@@ -58,11 +58,13 @@ function RedAlert2:OnConnectFull( args )
 	CustomNetTables:SetTableValue("player_tables", "menu_structures_" .. pid, {
 		npc_ra2_soviet_barracks = {
             progress = 0,
-            paused = false
+            paused = false,
+            cancelled = false
         },
         npc_ra2_tesla_reactor = {
             progress = 0,
-            paused = false
+            paused = false,
+            cancelled = false
         }
 	})
 
@@ -127,12 +129,25 @@ end
 
 function RedAlert2:OnBuildingCancelled( args )
 
-    -- local pid = args.PlayerID
-    -- local unit = args.name
-    -- local menu_structures = CustomNetTables:GetTableValue("player_tables", "menu_structures_" .. pid)
+    local pid = args.PlayerID
+    local unit = args.name
+    local cost = GetUnitKV(unit, "BuildCost", 1)
+    local menu_structures = CustomNetTables:GetTableValue("player_tables", "menu_structures_" .. pid)
 
-    -- menu_structures[unit]['paused'] = false
-    -- CustomNetTables:SetTableValue("player_tables", "menu_structures_" .. pid, menu_structures)
+    if not menu_structures[unit] then return end
+
+    if menu_structures[unit]['progress'] >= 1 then
+        menu_structures[unit] = {
+            progress = 0,
+            paused = 0,
+            cancelled = 0
+        }
+        CustomNetTables:SetTableValue("player_tables", "menu_structures_" .. pid, menu_structures)
+        PlayerResource:SpendGold(pid, -cost, DOTA_ModifyGold_GameTick) 
+    elseif menu_structures[unit]['progress'] > 0 then
+        menu_structures[unit]['cancelled'] = 1
+        CustomNetTables:SetTableValue("player_tables", "menu_structures_" .. pid, menu_structures)
+    end
 
 end
 
@@ -142,14 +157,23 @@ function CDOTAPlayer:StartBuilding( unit, duration, cost )
     local time = start_time
     local hold_duration = 0
     local spent = 0
+    local menu_structures = CustomNetTables:GetTableValue("player_tables", "menu_structures_" .. self:GetPlayerID())
+
+    if not menu_structures[unit] then return end
+
+    menu_structures[unit]['cancelled'] = 0
+    CustomNetTables:SetTableValue("player_tables", "menu_structures_" .. self:GetPlayerID(), menu_structures)
 
     Timers:CreateTimer(function()
 
         local prev_time = time
         time = GameRules:GetGameTime()
         local elapsed = time - prev_time
-        local menu_structures = CustomNetTables:GetTableValue("player_tables", "menu_structures_" .. self:GetPlayerID())
+        menu_structures = CustomNetTables:GetTableValue("player_tables", "menu_structures_" .. self:GetPlayerID())
         local paused = menu_structures[unit]['paused'] ~= 0
+        if menu_structures[unit]['cancelled'] == 1 then
+            return self:CancelBuilding(unit, spent)
+        end
         if time >= (start_time + duration + hold_duration) then
         	menu_structures[unit]['progress'] = 1
             CustomNetTables:SetTableValue("player_tables", "menu_structures_" .. self:GetPlayerID(), menu_structures)
@@ -177,5 +201,21 @@ function CDOTAPlayer:StartBuilding( unit, duration, cost )
         return 0.05
 
     end)
+
+end
+
+function CDOTAPlayer:CancelBuilding( unit, spent )
+
+    local menu_structures = CustomNetTables:GetTableValue("player_tables", "menu_structures_" .. self:GetPlayerID())
+
+    menu_structures[unit] = {
+        progress = 0,
+        paused = 0,
+        cancelled = 0
+    }
+    CustomNetTables:SetTableValue("player_tables", "menu_structures_" .. self:GetPlayerID(), menu_structures)
+    PlayerResource:SpendGold(self:GetPlayerID(), -spent, DOTA_ModifyGold_GameTick)
+
+    return nil
 
 end
