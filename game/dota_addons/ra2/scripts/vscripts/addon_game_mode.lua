@@ -48,13 +48,22 @@ end
 function RedAlert2:InitListeners()
 	ListenToGameEvent('player_connect_full', Dynamic_Wrap(RedAlert2, 'OnConnectFull'), self)
 	CustomGameEventManager:RegisterListener( "building_queued", Dynamic_Wrap(RedAlert2, 'OnBuildingQueued') )
+    CustomGameEventManager:RegisterListener( "building_paused", Dynamic_Wrap(RedAlert2, 'OnBuildingPaused') )
+    CustomGameEventManager:RegisterListener( "building_resumed", Dynamic_Wrap(RedAlert2, 'OnBuildingResumed') )
+    CustomGameEventManager:RegisterListener( "building_cancelled", Dynamic_Wrap(RedAlert2, 'OnBuildingCancelled') )
 end
 
 function RedAlert2:OnConnectFull( args )
     local pid = args['PlayerID']
 	CustomNetTables:SetTableValue("player_tables", "menu_structures_" .. pid, {
-		npc_ra2_soviet_barracks = 0,
-        npc_ra2_tesla_reactor = 0 
+		npc_ra2_soviet_barracks = {
+            progress = 0,
+            paused = false
+        },
+        npc_ra2_tesla_reactor = {
+            progress = 0,
+            paused = false
+        }
 	})
 
 end
@@ -68,10 +77,12 @@ function RedAlert2:OnBuildingQueued( args )
     local player = PlayerResource:GetPlayer(pid)
     local menu_structures = CustomNetTables:GetTableValue("player_tables", "menu_structures_" .. pid)
     
-    if menu_structures[unit] == 0 then
+    if not menu_structures[unit] then return end
+
+    if menu_structures[unit]['progress'] == 0 then
         CustomGameEventManager:Send_ServerToPlayer(player, "building_start", { unit = unit, duration = build_time, cost = cost })
         player:StartBuilding(unit, build_time, cost)
-    elseif menu_structures[unit] == 1 then
+    elseif menu_structures[unit]['progress'] == 1 then
         local hero = player:GetAssignedHero()
 
         buildAbility = hero:FindAbilityByName('build_' .. unit)
@@ -81,6 +92,47 @@ function RedAlert2:OnBuildingQueued( args )
     else
         CustomGameEventManager:Send_ServerToPlayer(player, "building_in_progress", { unit = unit })
     end
+
+end
+
+function RedAlert2:OnBuildingPaused( args )
+
+    local pid = args.PlayerID
+    local unit = args.name
+    local menu_structures = CustomNetTables:GetTableValue("player_tables", "menu_structures_" .. pid)
+
+    if not menu_structures[unit] then return end
+
+    -- Checks if the building has started and is not yet finished, otherwise we don't pause
+    if menu_structures[unit]['progress'] == 0 or menu_structures[unit]['progress'] == 1 then
+        return
+    end
+    menu_structures[unit]['paused'] = true
+    CustomNetTables:SetTableValue("player_tables", "menu_structures_" .. pid, menu_structures)
+
+end
+
+function RedAlert2:OnBuildingResumed( args )
+
+    local pid = args.PlayerID
+    local unit = args.name
+    local menu_structures = CustomNetTables:GetTableValue("player_tables", "menu_structures_" .. pid)
+
+    if not menu_structures[unit] then return end
+
+    menu_structures[unit]['paused'] = false
+    CustomNetTables:SetTableValue("player_tables", "menu_structures_" .. pid, menu_structures)
+
+end
+
+function RedAlert2:OnBuildingCancelled( args )
+
+    -- local pid = args.PlayerID
+    -- local unit = args.name
+    -- local menu_structures = CustomNetTables:GetTableValue("player_tables", "menu_structures_" .. pid)
+
+    -- menu_structures[unit]['paused'] = false
+    -- CustomNetTables:SetTableValue("player_tables", "menu_structures_" .. pid, menu_structures)
 
 end
 
@@ -97,23 +149,29 @@ function CDOTAPlayer:StartBuilding( unit, duration, cost )
         time = GameRules:GetGameTime()
         local elapsed = time - prev_time
         local menu_structures = CustomNetTables:GetTableValue("player_tables", "menu_structures_" .. self:GetPlayerID())
+        local paused = menu_structures[unit]['paused'] ~= 0
         if time >= (start_time + duration + hold_duration) then
-        	menu_structures[unit] = 1
+        	menu_structures[unit]['progress'] = 1
             CustomNetTables:SetTableValue("player_tables", "menu_structures_" .. self:GetPlayerID(), menu_structures)
             PlayerResource:SpendGold(self:GetPlayerID(), cost - spent, DOTA_ModifyGold_GameTick)
             CustomGameEventManager:Send_ServerToPlayer(self, "building_done", { unit = unit })
             return nil
         end
-        local ratio = elapsed / (duration + hold_duration)
-        local gold_tick = math.floor(ratio * cost)
+        local ratio = elapsed / duration
+        local gold_tick = ratio * cost
+        if gold_tick - math.floor(gold_tick) < 0.5 then
+            gold_tick = math.floor(gold_tick)
+        else
+            gold_tick = math.ceil(gold_tick)
+        end
         local enough_gold = PlayerResource:GetGold(self:GetPlayerID()) >= gold_tick
-        if enough_gold then
+        if enough_gold and not paused then
             PlayerResource:SpendGold(self:GetPlayerID(), gold_tick, DOTA_ModifyGold_GameTick)
             spent = spent + gold_tick
         else
             hold_duration = hold_duration + elapsed
         end
-        menu_structures[unit] = time / (start_time + duration + hold_duration)
+        menu_structures[unit]['progress'] = (time - (start_time + hold_duration)) / duration
         CustomNetTables:SetTableValue("player_tables", "menu_structures_" .. self:GetPlayerID(), menu_structures)
 
         return 0.05

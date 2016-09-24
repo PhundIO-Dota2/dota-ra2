@@ -67,7 +67,7 @@ function Build( event )
     event:OnConstructionStarted(function(unit)
         
         local menu_structures = CustomNetTables:GetTableValue("player_tables", "menu_structures_" .. playerID)
-        menu_structures[unit:GetUnitName()] = 0
+        menu_structures[unit:GetUnitName()]['progress'] = 0
         CustomNetTables:SetTableValue("player_tables", "menu_structures_" .. playerID, menu_structures)
 
         BuildingHelper:print("Started construction of " .. unit:GetUnitName() .. " " .. unit:GetEntityIndex())
