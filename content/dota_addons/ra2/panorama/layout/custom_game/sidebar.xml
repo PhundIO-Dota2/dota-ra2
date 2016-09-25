@@ -42,13 +42,13 @@
 					<Image src="file://{images}/custom_game/structures/sbarracks.png"/>
 					<Label id="label_npc_ra2_soviet_barracks" text="0"/>
 				</Button>
-		    </Panel>
-
-		    <Panel class="menu-tab" id="tab-defense">
 				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_tesla_reactor');" oncontextmenu="rightClickItem('npc_ra2_tesla_reactor');">
 					<Image src="file://{images}/custom_game/structures/sbarracks.png"/>
 					<Label id="label_npc_ra2_tesla_reactor" text="0"/>
 				</Button>
+		    </Panel>
+
+		    <Panel class="menu-tab" id="tab-defense">
 				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_tesla_reactor');" oncontextmenu="rightClickItem('npc_ra2_tesla_reactor');">
 					<Image src="file://{images}/custom_game/structures/sbarracks.png"/>
 					<Label id="label_npc_ra2_tesla_reactor" text="0"/>

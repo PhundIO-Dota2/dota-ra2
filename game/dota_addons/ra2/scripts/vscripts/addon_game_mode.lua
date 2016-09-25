@@ -160,6 +160,7 @@ function CDOTAPlayer:StartBuilding( unit, duration, cost )
     local menu_structures = CustomNetTables:GetTableValue("player_tables", "menu_structures_" .. self:GetPlayerID())
 
     if not menu_structures[unit] then return end
+    if self:HasStructureInProgress() then return end
 
     menu_structures[unit]['cancelled'] = 0
     CustomNetTables:SetTableValue("player_tables", "menu_structures_" .. self:GetPlayerID(), menu_structures)
@@ -217,5 +218,17 @@ function CDOTAPlayer:CancelBuilding( unit, spent )
     PlayerResource:SpendGold(self:GetPlayerID(), -spent, DOTA_ModifyGold_GameTick)
 
     return nil
+
+end
+
+function CDOTAPlayer:HasStructureInProgress()
+
+    local menu_structures = CustomNetTables:GetTableValue("player_tables", "menu_structures_" .. self:GetPlayerID())
+
+    for name, building in pairs(menu_structures) do 
+        if building['progress'] > 0 then return true end
+    end
+
+    return false
 
 end
