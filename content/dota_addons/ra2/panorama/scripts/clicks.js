@@ -74,7 +74,7 @@ GameUI.SetMouseCallback( function( eventName, arg ) {
     if ( GameUI.GetClickBehaviors() !== CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE )
         return CONTINUE_PROCESSING_EVENT
 
-    var mainSelected = Players.GetLocalPlayerPortraitUnit()
+    var mainSelected = Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID());
 
     if ( eventName === "pressed" || eventName === "doublepressed")
     {

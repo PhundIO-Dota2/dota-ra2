@@ -415,7 +415,7 @@ function SendBuildCommand( params )
     }
 
     pressedShift = GameUI.IsShiftDown();
-    var mainSelected = Players.GetLocalPlayerPortraitUnit(); 
+    var mainSelected =  Players.GetPlayerHeroEntityIndex(Game.GetLocalPlayerID()); 
 
     var mPos = GameUI.GetCursorPosition();
     var GamePos = Game.ScreenXYToWorld(mPos[0], mPos[1]);

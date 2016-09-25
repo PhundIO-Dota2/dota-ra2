@@ -462,11 +462,11 @@ function BuildingHelper:BuildCommand(args)
     end
 
     -- First select from idle builders
-    if #idle_builders > 0 then
-        builder = GetClosestToPosition(idle_builders, location)
-    else
-        builder = GetClosestToPosition(builders, location)
-    end
+    -- if #idle_builders > 0 then
+    --     builder = GetClosestToPosition(idle_builders, location)
+    -- else
+    --     builder = GetClosestToPosition(builders, location)
+    -- end
 
     -- Cancel current action
     if not queue then
