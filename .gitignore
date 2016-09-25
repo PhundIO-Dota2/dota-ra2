@@ -1,4 +1,4 @@
-*
-!content/dota_addons/ra2/*
-!game/dota_addons/ra2/*
-*.bin
+**
+!content/dota_addons/ra2/**
+!game/dota_addons/ra2/**
+**/*.bin

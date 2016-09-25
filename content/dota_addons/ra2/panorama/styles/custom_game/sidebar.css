@@ -1,0 +1,48 @@
+.menu-tab-container {
+	background-color: #444; 
+	margin-top: 300px; 
+	horizontal-align: right; 
+	height: 500px;
+	flow-children: down;
+}
+
+.menu-tab-header {
+	flow-children: right;
+	padding: 10px;
+	horizontal-align: center;
+}
+
+.menu-tab-button {
+	width: 32px;
+	height: 32px;
+	background-color: #0000FFFF;
+	text-align: center;
+	color: #FFF;
+	border: 1px solid #FFF;
+}
+
+.menu-tab-button Label {
+	align: center center; 
+}
+
+.menu-tab {
+	flow-children: right-wrap;
+}
+
+.menu-tab-body {
+	horizontal-align: center;
+	width: 125px;
+	height: 100%;
+	background-color: #000;
+}
+
+.menu-item {
+	border: 1px solid #000;
+}
+
+.menu-item > Label {
+	color: white; 
+	font-weight: bold; 
+	font-size: 18px; 
+	text-shadow: 0px 0px 2px 3.0 #000;
+}

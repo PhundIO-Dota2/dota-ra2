@@ -1,4 +1,8 @@
 <root>
+		<!-- Include stylesheets -->
+	<styles>
+		<include src="file://{resources}/styles/custom_game/sidebar.css" />
+	</styles>
 	<scripts>
 		<include src="file://{resources}/scripts/custom_game/sidebar.js" />
 	</scripts>
@@ -13,16 +17,80 @@
 		GameUI.SetRenderBottomInsetOverride(0);
 	</script>
 
-    <Panel style="overflow: squish scroll; background-color: #FF00FF22; margin-top: 300px; horizontal-align: right; width: 122px; height: 500px; flow-children: right-wrap;">
-   	
-		<Button onactivate="leftClickItem('npc_ra2_soviet_barracks');" oncontextmenu="rightClickItem('npc_ra2_soviet_barracks');">
-			<Image src="file://{images}/custom_game/structures/sbarracks.png"/>
-			<Label id="label_npc_ra2_soviet_barracks" text="0" style="color: white; font-weight: bold; font-size: 18px; text-shadow: 0px 0px 2px 3.0 #000;" />
-		</Button>
-		<Button onactivate="leftClickItem('npc_ra2_tesla_reactor');" oncontextmenu="rightClickItem('npc_ra2_tesla_reactor');">
-			<Image src="file://{images}/custom_game/structures/sbarracks.png"/>
-			<Label id="label_npc_ra2_tesla_reactor" text="0" style="color: white; font-weight: bold; font-size: 18px; text-shadow: 0px 0px 2px 3.0 #000;" />
-		</Button>
 
-    </Panel>
+	<Panel class="menu-tab-container">
+
+		<Panel class="menu-tab-header">
+			<Button class="menu-tab-button" onactivate="showTab('#tab-structure');">
+				<Label text="B"/>
+			</Button>
+			<Button class="menu-tab-button" onactivate="showTab('#tab-defense');">
+				<Label text="D"/>
+			</Button>
+			<Button class="menu-tab-button" onactivate="showTab('#tab-infantry');">
+				<Label text="I"/>
+			</Button>
+<!-- 			<Button class="menu-tab-button" onactivate="showTab('#tab-vehicle');">
+				<Label text="V"/>
+			</Button> -->
+		</Panel>
+
+		<Panel class="menu-tab-body" id="menu-tab-body">
+
+		    <Panel class="menu-tab" id="tab-structure">	   	
+				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_soviet_barracks');" oncontextmenu="rightClickItem('npc_ra2_soviet_barracks');">
+					<Image src="file://{images}/custom_game/structures/sbarracks.png"/>
+					<Label id="label_npc_ra2_soviet_barracks" text="0"/>
+				</Button>
+		    </Panel>
+
+		    <Panel class="menu-tab" id="tab-defense">
+				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_tesla_reactor');" oncontextmenu="rightClickItem('npc_ra2_tesla_reactor');">
+					<Image src="file://{images}/custom_game/structures/sbarracks.png"/>
+					<Label id="label_npc_ra2_tesla_reactor" text="0"/>
+				</Button>
+				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_tesla_reactor');" oncontextmenu="rightClickItem('npc_ra2_tesla_reactor');">
+					<Image src="file://{images}/custom_game/structures/sbarracks.png"/>
+					<Label id="label_npc_ra2_tesla_reactor" text="0"/>
+				</Button>
+		    </Panel>
+
+		    <Panel class="menu-tab" id="tab-infantry">
+				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_tesla_reactor');" oncontextmenu="rightClickItem('npc_ra2_tesla_reactor');">
+					<Image src="file://{images}/custom_game/structures/sbarracks.png"/>
+					<Label id="label_npc_ra2_tesla_reactor" text="0"/>
+				</Button>
+				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_tesla_reactor');" oncontextmenu="rightClickItem('npc_ra2_tesla_reactor');">
+					<Image src="file://{images}/custom_game/structures/sbarracks.png"/>
+					<Label id="label_npc_ra2_tesla_reactor" text="0"/>
+				</Button>
+				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_tesla_reactor');" oncontextmenu="rightClickItem('npc_ra2_tesla_reactor');">
+					<Image src="file://{images}/custom_game/structures/sbarracks.png"/>
+					<Label id="label_npc_ra2_tesla_reactor" text="0"/>
+				</Button>
+		    </Panel>
+
+		    <Panel class="menu-tab" id="tab-vehicle">
+				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_tesla_reactor');" oncontextmenu="rightClickItem('npc_ra2_tesla_reactor');">
+					<Image src="file://{images}/custom_game/structures/sbarracks.png"/>
+					<Label id="label_npc_ra2_tesla_reactor" text="0"/>
+				</Button>
+				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_tesla_reactor');" oncontextmenu="rightClickItem('npc_ra2_tesla_reactor');">
+					<Image src="file://{images}/custom_game/structures/sbarracks.png"/>
+					<Label id="label_npc_ra2_tesla_reactor" text="0"/>
+				</Button>
+				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_tesla_reactor');" oncontextmenu="rightClickItem('npc_ra2_tesla_reactor');">
+					<Image src="file://{images}/custom_game/structures/sbarracks.png"/>
+					<Label id="label_npc_ra2_tesla_reactor" text="0"/>
+				</Button>
+				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_tesla_reactor');" oncontextmenu="rightClickItem('npc_ra2_tesla_reactor');">
+					<Image src="file://{images}/custom_game/structures/sbarracks.png"/>
+					<Label id="label_npc_ra2_tesla_reactor" text="0"/>
+				</Button>
+		    </Panel>
+
+	    </Panel>
+
+	</Panel>
+
 </root>
