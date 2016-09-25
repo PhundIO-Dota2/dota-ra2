@@ -16,7 +16,7 @@
 	    "Scale"                         "1"
 	    "PlayerCanControl"              "1"
 	
-	    "UnitName"                      "npc_ra2_soviet_barracks"
+	    "UnitName"                      ""
 	    "AbilityGoldCost"               "0"
 	    
 	    "OnSpellStart"

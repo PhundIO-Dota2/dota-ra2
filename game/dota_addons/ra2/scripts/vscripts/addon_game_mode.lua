@@ -88,6 +88,7 @@ function RedAlert2:OnBuildingQueued( args )
         local hero = player:GetAssignedHero()
 
         buildAbility = hero:FindAbilityByName('build_' .. unit)
+        DeepPrintTable(buildAbility)
         if buildAbility then 
             hero:CastAbilityNoTarget(buildAbility, pid)
         end
