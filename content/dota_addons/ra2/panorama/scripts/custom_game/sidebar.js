@@ -1,21 +1,22 @@
 "use strict";
 
-function leftClickItem( name ) {
-	var menu_structures = CustomNetTables.GetTableValue( 'player_tables', 'menu_structures_' + Players.GetLocalPlayer()),
+function leftClickItem( name, category ) {
+	var menu_table = CustomNetTables.GetTableValue( 'player_tables', 'menu_' + category + '_' + Players.GetLocalPlayer()),
 		event = 'building_queued';
 
-	if (menu_structures[name] && menu_structures[name]['paused']) {
+	if (menu_table[name] && menu_table[name]['paused']) {
 		event = 'building_resumed';
 	}
+	$.Msg(event);
 	GameEvents.SendCustomGameEventToServer(event, { name: name });
 }
 
-function rightClickItem( name ) {
-	var menu_structures = CustomNetTables.GetTableValue( 'player_tables', 'menu_structures_' + Players.GetLocalPlayer());
+function rightClickItem( name, category ) {
+	var menu_table = CustomNetTables.GetTableValue( 'player_tables', 'menu_' + category + '_' + Players.GetLocalPlayer());
 
-	if (menu_structures[name]) {
-		var paused = menu_structures[name]['paused'],
-			finished = menu_structures[name]['progress'] == 1,
+	if (menu_table[name]) {
+		var paused = menu_table[name]['paused'],
+			finished = menu_table[name]['progress'] == 1,
 			event = 'building_cancelled';
 		if (!paused && !finished) {
 			event = 'building_paused';
@@ -49,7 +50,13 @@ function showTab( id ) {
 
 	function OnPlayerTableChanged( table_name, key, data )
 	{
-		if (key === 'menu_structures_' + Players.GetLocalPlayer()) {
+		if (key === 'menu_structure_' + Players.GetLocalPlayer()) {
+			for (var unit in data) {
+				var label = $('#label_' + unit);
+				label.text = Math.floor(parseFloat(data[unit]['progress']) * 100);
+			}
+		} 
+		else if (key === 'menu_defense_' + Players.GetLocalPlayer()) {
 			for (var unit in data) {
 				var label = $('#label_' + unit);
 				label.text = Math.floor(parseFloat(data[unit]['progress']) * 100);
