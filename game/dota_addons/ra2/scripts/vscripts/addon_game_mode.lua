@@ -46,6 +46,7 @@ end
 
 function RedAlert2:InitListeners()
 	ListenToGameEvent('player_connect_full', Dynamic_Wrap(RedAlert2, 'OnConnectFull'), self)
+    ListenToGameEvent('npc_spawned', Dynamic_Wrap(RedAlert2, 'OnNPCSpawned'), self)
 	CustomGameEventManager:RegisterListener( "building_queued", Dynamic_Wrap(RedAlert2, 'OnBuildingQueued') )
     CustomGameEventManager:RegisterListener( "building_paused", Dynamic_Wrap(RedAlert2, 'OnBuildingPaused') )
     CustomGameEventManager:RegisterListener( "building_resumed", Dynamic_Wrap(RedAlert2, 'OnBuildingResumed') )
@@ -76,6 +77,19 @@ function RedAlert2:OnConnectFull( args )
 
 end
 
+function RedAlert2:OnNPCSpawned(keys)
+
+    local npc = EntIndexToHScript(keys.entindex)
+
+    if npc:IsRealHero() then
+        local ability = npc:FindAbilityByName("hide_hero")
+        ability:UpgradeAbility(true)
+        npc:SetAbilityPoints(0)
+        npc:AddNoDraw()
+    end
+
+end
+
 function RedAlert2:OnBuildingQueued( args )
 
 	local pid = args.PlayerID
@@ -95,10 +109,11 @@ function RedAlert2:OnBuildingQueued( args )
     elseif menu_table[unit]['progress'] == 1 then
         local hero = player:GetAssignedHero()
 
-        buildAbility = hero:AddAbility('build_' .. unit)
-        if buildAbility then 
-            hero:CastAbilityNoTarget(buildAbility, pid)
+        local buildAbility = hero:FindAbilityByName('build_' .. unit)
+        if not buildAbility then 
+            buildAbility = hero:AddAbility('build_' .. unit)
         end
+        hero:CastAbilityNoTarget(buildAbility, pid)
     else
         CustomGameEventManager:Send_ServerToPlayer(player, "building_in_progress", { unit = unit })
     end

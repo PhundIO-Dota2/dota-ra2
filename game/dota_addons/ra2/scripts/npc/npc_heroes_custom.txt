@@ -1,12 +1,14 @@
 "DOTAHeroes"
 {
-	//=================================================================================
-	// Creature: Abaddon
-	//=================================================================================
-	"npc_dota_hero_abaddon"
+	"npc_ra2_russia"
 	{
 		// General
 		//----------------------------------------------------------------
 		"override_hero"				"npc_dota_hero_abaddon"
+	
+		"Ability1"					"hide_hero"
+	
+		"VisionDaytimeRange"		"0"
+		"VisionNighttimeRange"		"0"
 	}
 }
