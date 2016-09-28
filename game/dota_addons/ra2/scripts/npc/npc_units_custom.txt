@@ -12,7 +12,7 @@
 		"SoundSet"					""
 		"GameSoundsFile"			""
 		"Level"						"1"
-		"ModelScale" 				"1"
+		"ModelScale" 				"0.5"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -87,15 +87,16 @@
 	
 		// BuildingHelper Essentials
 		//----------------------------------------------------------------
-		"ConstructionSize"	"2"
-		"BlockPathingSize"	"2"
+		"ConstructionSize"	"1"
+		"BlockPathingSize"	"1"
 		"BuildTime"			"0"
+		"Requires"			"Buildable Allowed"
 	
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"defense"
-		"MenuBuildTime"		"5"
-		"BuildCost"			"1000"
+		"MenuBuildTime"		"1"
+		"BuildCost"			"200"
 	
 	}
 	//=================================================================================	
@@ -188,11 +189,20 @@
 		"ConstructionSize"	"2"
 		"BlockPathingSize"	"2"
 		"BuildTime"			"0"
+		"Requires"			"Buildable Allowed"
+		"Grid"
+		{
+		    "Allowed"
+		    {
+		        "Square"        "10"
+		        "RemoveOnDeath" "true"
+		    }
+		}
 	
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"structure"
-		"MenuBuildTime"		"5"
+		"MenuBuildTime"		"0.5"
 		"BuildCost"			"1000"
 	
 	}
@@ -208,7 +218,7 @@
 		"SoundSet"					""
 		"GameSoundsFile"			""
 		"Level"						"1"
-		"ModelScale" 				"2"
+		"ModelScale" 				"1"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -286,11 +296,19 @@
 		"ConstructionSize"	"4"
 		"BlockPathingSize"	"4"
 		"BuildTime"			"0"
+		"Grid"
+		{
+		    "Allowed"
+		    {
+		        "Square"        "12"
+		        "RemoveOnDeath" "true"
+		    }
+		}
 	
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"structure"
-		"MenuBuildTime"		"5"
+		"MenuBuildTime"		"1"
 		"BuildCost"			"1000"
 	
 	}
@@ -384,6 +402,7 @@
 		"ConstructionSize"	"2"
 		"BlockPathingSize"	"2"
 		"BuildTime"			"0"
+		"Requires"			"Buildable Allowed"
 	
 		// Red Alert 2
 		//----------------------------------------------------------------

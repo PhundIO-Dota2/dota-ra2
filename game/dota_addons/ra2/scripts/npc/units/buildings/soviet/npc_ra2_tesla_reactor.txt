@@ -88,6 +88,15 @@
 	"ConstructionSize"	"2"
 	"BlockPathingSize"	"2"
 	"BuildTime"			"0"
+	"Requires"			"Buildable Allowed"
+	"Grid"
+	{
+	    "Allowed"
+	    {
+	        "Square"        "10"
+	        "RemoveOnDeath" "true"
+	    }
+	}
 
 	// Red Alert 2
 	//----------------------------------------------------------------

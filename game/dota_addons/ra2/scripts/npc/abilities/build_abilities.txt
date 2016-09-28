@@ -1,7 +1,7 @@
 "build_npc_ra2_soviet_barracks"
 {
     "BaseClass"                     "ability_datadriven"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 
     "MaxLevel"                      "1"
     "LevelsBetweenUpgrades"         "0"
@@ -27,7 +27,7 @@
 "build_npc_ra2_tesla_reactor"
 {
     "BaseClass"                     "ability_datadriven"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 
     "MaxLevel"                      "1"
     "LevelsBetweenUpgrades"         "0"
@@ -53,7 +53,7 @@
 "build_npc_ra2_sentry_gun"
 {
     "BaseClass"                     "ability_datadriven"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 
     "MaxLevel"                      "1"
     "LevelsBetweenUpgrades"         "0"
@@ -79,7 +79,7 @@
 "build_npc_ra2_soviet_construction_yard"
 {
     "BaseClass"                     "ability_datadriven"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 
     "MaxLevel"                      "1"
     "LevelsBetweenUpgrades"         "0"

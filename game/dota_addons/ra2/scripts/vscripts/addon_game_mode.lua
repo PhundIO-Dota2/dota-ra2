@@ -32,6 +32,8 @@ function RedAlert2:InitGameMode()
     GameRules:SetStartingGold(10000)
     GameRules:SetGoldPerTick(0)
     GameRules:SetPreGameTime(0)
+
+    BuildingHelper:NewGridType("ALLOWED")
 end
 
 -- Evaluate the state of the game
@@ -56,6 +58,11 @@ end
 function RedAlert2:OnConnectFull( args )
     local pid = args['PlayerID']
 	CustomNetTables:SetTableValue("player_tables", "menu_structure_" .. pid, {
+        npc_ra2_soviet_construction_yard = {
+            progress = 0,
+            paused = false,
+            cancelled = false
+        },
 		npc_ra2_soviet_barracks = {
             progress = 0,
             paused = false,
@@ -100,7 +107,7 @@ function RedAlert2:OnBuildingQueued( args )
     local category = GetUnitKV(unit, "Category", 1)
     local menu_table_name = "menu_" .. category .. "_" .. pid
     local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
-    
+
     if not menu_table[unit] then return end
 
     if menu_table[unit]['progress'] == 0 then

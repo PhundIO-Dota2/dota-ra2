@@ -10,7 +10,7 @@
 	"SoundSet"					""
 	"GameSoundsFile"			""
 	"Level"						"1"
-	"ModelScale" 				"2"
+	"ModelScale" 				"1"
 
 	// Abilities
 	//----------------------------------------------------------------
@@ -88,11 +88,19 @@
 	"ConstructionSize"	"4"
 	"BlockPathingSize"	"4"
 	"BuildTime"			"0"
+	"Grid"
+	{
+	    "Allowed"
+	    {
+	        "Square"        "12"
+	        "RemoveOnDeath" "true"
+	    }
+	}
 
 	// Red Alert 2
 	//----------------------------------------------------------------
 	"Category"			"structure"
-	"MenuBuildTime"		"5"
+	"MenuBuildTime"		"1"
 	"BuildCost"			"1000"
 
 }

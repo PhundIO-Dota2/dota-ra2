@@ -119,6 +119,14 @@ function Build( event )
         -- Give the unit their original attack capability
         unit:SetAttackCapability(unit.original_attack)
 
+        local location = unit:GetAbsOrigin()
+        local grid = unit:GetKeyValue("Grid")
+        if grid and grid["Allowed"] then
+            local size = grid["Allowed"]["Square"] or 0
+            BuildingHelper:AddGridType(size, location, "ALLOWED")
+            unit:AddNewModifier(unit, nil, "modifier_grid_allowed", {})
+        end
+
     end)
 
     -- These callbacks will only fire when the state between below half health/above half health changes.

@@ -7,6 +7,14 @@
 		"override_hero"				"npc_dota_hero_abaddon"
 	
 		"Ability1"					"hide_hero"
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					""
+		"Ability7"					""
+		"Ability8"					""
+		"Ability9"					""
 	
 		"VisionDaytimeRange"		"0"
 		"VisionNighttimeRange"		"0"
