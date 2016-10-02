@@ -102,6 +102,7 @@
 	//----------------------------------------------------------------
 	"Category"			"structure"
 	"MenuBuildTime"		"0.5"
-	"BuildCost"			"1000"
+	"BuildCost"			"500"
+	"Produces"			"infantry"
 
 }

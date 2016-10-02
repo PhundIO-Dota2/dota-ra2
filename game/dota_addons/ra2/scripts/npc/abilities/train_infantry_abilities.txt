@@ -1,0 +1,67 @@
+"train_npc_ra2_conscript"
+{
+    "BaseClass"             "ability_datadriven"
+    "MaxLevel"              "1"
+
+    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+    "AbilityGoldCost"    "0"
+
+    "OnSpellStart"
+    {
+
+        "SpawnUnit"
+        {
+            "UnitName"    "npc_ra2_conscript"
+            "Target"      "CASTER"
+            "UnitCount"   "1"
+            "UnitLimit"   "0"
+            "GrantsGold"  "0"
+            "GrantsXP"    "0"
+            "SpawnRadius" "100"
+            "OnSpawn"
+            {
+                "ApplyModifier"
+                {
+                    "ModifierName" "modifier_phased"
+                    "Target"       "TARGET"
+                    "Duration"     "0.03"
+                }
+            }
+        }
+    }
+}
+
+"train_npc_ra2_tesla_trooper"
+{
+    "BaseClass"             "ability_datadriven"
+    "MaxLevel"              "1"
+
+    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+    "AbilityGoldCost"    "0"
+
+    "OnSpellStart"
+    {
+
+        "SpawnUnit"
+        {
+            "UnitName"    "npc_ra2_tesla_trooper"
+            "Target"      "CASTER"
+            "UnitCount"   "1"
+            "UnitLimit"   "0"
+            "GrantsGold"  "0"
+            "GrantsXP"    "0"
+            "SpawnRadius" "100"
+            "OnSpawn"
+            {
+                "ApplyModifier"
+                {
+                    "ModifierName" "modifier_phased"
+                    "Target"       "TARGET"
+                    "Duration"     "0.03"
+                }
+            }
+        }
+    }
+}

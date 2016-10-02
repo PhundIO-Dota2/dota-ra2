@@ -11,7 +11,7 @@ function CDOTAPlayer:StartBuilding( unit, duration, cost )
     if not menu_table[unit] then return end
     if self:CategoryHasBuildingInProgress(category) then return end
 
-    menu_table[unit]['cancelled'] = 0
+    menu_table[unit]["cancelled"] = 0
     CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
 
     Timers:CreateTimer(function()
@@ -20,12 +20,17 @@ function CDOTAPlayer:StartBuilding( unit, duration, cost )
         time = GameRules:GetGameTime()
         local elapsed = time - prev_time
         menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
-        local paused = menu_table[unit]['paused'] ~= 0
-        if menu_table[unit]['cancelled'] == 1 then
+        local paused = menu_table[unit]["paused"] ~= 0
+        if menu_table[unit]["cancelled"] == 1 then
             return self:CancelBuilding(unit, spent)
         end
         if time >= (start_time + duration + hold_duration) then
-        	menu_table[unit]['progress'] = 1
+            if category == "infantry" or category == "vehicle" then
+                self:SpawnUnit(unit)
+                menu_table[unit]["progress"] = 0
+            else
+                menu_table[unit]["progress"] = 1
+            end
             CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
             PlayerResource:SpendGold(self:GetPlayerID(), cost - spent, DOTA_ModifyGold_GameTick)
             CustomGameEventManager:Send_ServerToPlayer(self, "building_done", { unit = unit })
@@ -45,7 +50,7 @@ function CDOTAPlayer:StartBuilding( unit, duration, cost )
         else
             hold_duration = hold_duration + elapsed
         end
-        menu_table[unit]['progress'] = (time - (start_time + hold_duration)) / duration
+        menu_table[unit]["progress"] = (time - (start_time + hold_duration)) / duration
         CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
 
         return 0.05
@@ -80,9 +85,25 @@ function CDOTAPlayer:CategoryHasBuildingInProgress( category )
     local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
 
     for name, building in pairs(menu_table) do 
-        if building['progress'] > 0 then return true end
+        if building["progress"] > 0 then return true end
     end
 
     return false
 
+end
+
+function CDOTAPlayer:SpawnUnit( unit )
+    local buildings = BuildingHelper:GetBuildings(self:GetPlayerID())
+
+    for key, building in pairs(buildings) do
+        local produces = GetUnitKV(building:GetUnitName(), "Produces", 1)
+        if produces == "infantry" then
+            local trainAbility = building:FindAbilityByName("train_" .. unit)
+            if not trainAbility then
+                trainAbility = building:AddAbility("train_" .. unit)
+            end
+            building:CastAbilityImmediately(trainAbility, self:GetPlayerID())
+            break
+        end
+    end
 end

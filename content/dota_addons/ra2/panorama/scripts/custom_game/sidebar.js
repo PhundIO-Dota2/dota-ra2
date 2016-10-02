@@ -62,6 +62,12 @@ function showTab( id ) {
 				label.text = Math.floor(parseFloat(data[unit]['progress']) * 100);
 			}
 		}
+		else if (key === 'menu_infantry_' + Players.GetLocalPlayer()) {
+			for (var unit in data) {
+				var label = $('#label_' + unit);
+				label.text = Math.floor(parseFloat(data[unit]['progress']) * 100);
+			}
+		}
 	}
 
 })();

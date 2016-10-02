@@ -81,7 +81,18 @@ function RedAlert2:OnConnectFull( args )
             cancelled = false
         }
     })
-
+    CustomNetTables:SetTableValue("player_tables", "menu_infantry_" .. pid, {
+        npc_ra2_conscript = {
+            progress = 0,
+            paused = false,
+            cancelled = false
+        },
+        npc_ra2_tesla_trooper = {
+            progress = 0,
+            paused = false,
+            cancelled = false
+        }
+    })
 end
 
 function RedAlert2:OnNPCSpawned(keys)
@@ -120,7 +131,7 @@ function RedAlert2:OnBuildingQueued( args )
         if not buildAbility then 
             buildAbility = hero:AddAbility('build_' .. unit)
         end
-        hero:CastAbilityNoTarget(buildAbility, pid)
+        hero:CastAbilityImmediately(buildAbility, pid)
     else
         CustomGameEventManager:Send_ServerToPlayer(player, "building_in_progress", { unit = unit })
     end
