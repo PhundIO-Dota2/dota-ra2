@@ -66,10 +66,13 @@ function Build( event )
     -- A building unit was created
     event:OnConstructionStarted(function(unit)
         
+        local player = PlayerResource:GetPlayer(playerID)
         local category = GetUnitKV(unit:GetUnitName(), "Category", 1)
         local menu_table_name = "menu_" .. category .. "_" .. playerID
-        local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
+        -- local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
+        local menu_table = player.menu[category]
         menu_table[unit:GetUnitName()]['progress'] = 0
+        player.menu[category] = menu_table
         CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
 
         BuildingHelper:print("Started construction of " .. unit:GetUnitName() .. " " .. unit:GetEntityIndex())

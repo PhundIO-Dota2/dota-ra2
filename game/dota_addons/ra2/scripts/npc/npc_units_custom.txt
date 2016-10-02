@@ -1144,8 +1144,8 @@
 	
 		// Bounds
 		//----------------------------------------------------------------
-		"RingRadius"				"32"
-		"HealthBarOffset"			"170"
+		"RingRadius"				"16"
+		"HealthBarOffset"			"64"
 		"BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
 	
 		// Bounty

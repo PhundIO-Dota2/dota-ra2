@@ -56,43 +56,46 @@ function RedAlert2:InitListeners()
 end
 
 function RedAlert2:OnConnectFull( args )
-    local pid = args['PlayerID']
-	CustomNetTables:SetTableValue("player_tables", "menu_structure_" .. pid, {
-        npc_ra2_soviet_construction_yard = {
-            progress = 0,
-            paused = false,
-            cancelled = false
-        },
-		npc_ra2_soviet_barracks = {
-            progress = 0,
-            paused = false,
-            cancelled = false
-        },
-        npc_ra2_tesla_reactor = {
-            progress = 0,
-            paused = false,
-            cancelled = false
-        }
-	})
-    CustomNetTables:SetTableValue("player_tables", "menu_defense_" .. pid, {
-        npc_ra2_sentry_gun = {
-            progress = 0,
-            paused = false,
-            cancelled = false
-        }
-    })
-    CustomNetTables:SetTableValue("player_tables", "menu_infantry_" .. pid, {
-        npc_ra2_conscript = {
-            progress = 0,
-            paused = false,
-            cancelled = false
-        },
-        npc_ra2_tesla_trooper = {
-            progress = 0,
-            paused = false,
-            cancelled = false
-        }
-    })
+    local player = PlayerResource:GetPlayer(args['PlayerID'])
+
+    if player then player:Init() end
+	-- CustomNetTables:SetTableValue("player_tables", "menu_structure_" .. pid, {
+ --        npc_ra2_soviet_construction_yard = {
+ --            progress = 0,
+ --            paused = false,
+ --            cancelled = false
+ --        },
+	-- 	npc_ra2_soviet_barracks = {
+ --            progress = 0,
+ --            paused = false,
+ --            cancelled = false
+ --        },
+ --        npc_ra2_tesla_reactor = {
+ --            progress = 0,
+ --            paused = false,
+ --            cancelled = false
+ --        }
+	-- })
+ --    CustomNetTables:SetTableValue("player_tables", "menu_defense_" .. pid, {
+ --        npc_ra2_sentry_gun = {
+ --            progress = 0,
+ --            paused = false,
+ --            cancelled = false
+ --        }
+ --    })
+ --    CustomNetTables:SetTableValue("player_tables", "menu_infantry_" .. pid, {
+ --        npc_ra2_conscript = {
+ --            progress = 0,
+ --            paused = false,
+ --            cancelled = false
+ --        },
+ --        npc_ra2_tesla_trooper = {
+ --            progress = 0,
+ --            paused = false,
+ --            cancelled = false
+ --        }
+ --    })
+ --    CustomNetTables:SetTableValue("player_tables", "infantry_queue_" .. pid, {})
 end
 
 function RedAlert2:OnNPCSpawned(keys)
@@ -111,15 +114,20 @@ end
 function RedAlert2:OnBuildingQueued( args )
 
 	local pid = args.PlayerID
+    local player = PlayerResource:GetPlayer(pid)
     local unit = args.name
     local build_time = GetUnitKV(unit, "MenuBuildTime", 1)
     local cost = GetUnitKV(unit, "BuildCost", 1)
-    local player = PlayerResource:GetPlayer(pid)
     local category = GetUnitKV(unit, "Category", 1)
     local menu_table_name = "menu_" .. category .. "_" .. pid
-    local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
+    -- local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
+    local menu_table = player.menu[category]
 
     if not menu_table[unit] then return end
+    if category == "infantry" and player:CategoryHasBuildingInProgress(category) then
+        player:AddUnitToQueue(category, unit)
+        return
+    end
 
     if menu_table[unit]['progress'] == 0 then
         CustomGameEventManager:Send_ServerToPlayer(player, "building_start", { unit = unit, duration = build_time, cost = cost })
@@ -141,10 +149,12 @@ end
 function RedAlert2:OnBuildingPaused( args )
 
     local pid = args.PlayerID
+    local player = PlayerResource:GetPlayer(pid)
     local unit = args.name
     local category = GetUnitKV(unit, "Category", 1)
     local menu_table_name = "menu_" .. category .. "_" .. pid
-    local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
+    -- local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
+    local menu_table = player.menu[category]
 
     if not menu_table[unit] then return end
 
@@ -153,6 +163,7 @@ function RedAlert2:OnBuildingPaused( args )
         return
     end
     menu_table[unit]['paused'] = true
+    player.menu[category] = menu_table
     CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
 
 end
@@ -160,14 +171,17 @@ end
 function RedAlert2:OnBuildingResumed( args )
 
     local pid = args.PlayerID
+    local player = PlayerResource:GetPlayer(pid)
     local unit = args.name
     local category = GetUnitKV(unit, "Category", 1)
     local menu_table_name = "menu_" .. category .. "_" .. pid
-    local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
+    -- local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
+    local menu_table = player.menu[category]
 
     if not menu_table[unit] then return end
 
     menu_table[unit]['paused'] = false
+    player.menu[category] = menu_table
     CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
 
 end
@@ -175,13 +189,19 @@ end
 function RedAlert2:OnBuildingCancelled( args )
 
     local pid = args.PlayerID
+    local player = PlayerResource:GetPlayer(pid)
     local unit = args.name
     local cost = GetUnitKV(unit, "BuildCost", 1)
     local category = GetUnitKV(unit, "Category", 1)
     local menu_table_name = "menu_" .. category .. "_" .. pid
-    local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
+    -- local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
+    local menu_table = player.menu[category]
 
     if not menu_table[unit] then return end
+    if category == "infantry" and player:HasUnitQueued(category, unit) then
+        player:RemoveUnitFromQueue(category, unit)
+        return
+    end
 
     if menu_table[unit]['progress'] >= 1 then
         menu_table[unit] = {
@@ -189,10 +209,12 @@ function RedAlert2:OnBuildingCancelled( args )
             paused = 0,
             cancelled = 0
         }
+        player.menu[category] = menu_table
         CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
         PlayerResource:SpendGold(pid, -cost, DOTA_ModifyGold_GameTick) 
     elseif menu_table[unit]['progress'] > 0 then
         menu_table[unit]['cancelled'] = 1
+        player.menu[category] = menu_table
         CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
     end
 
