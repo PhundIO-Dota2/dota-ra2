@@ -68,6 +68,31 @@ function showTab( id ) {
 				label.text = Math.floor(parseFloat(data[unit]['progress']) * 100);
 			}
 		}
+		else if (key === 'queue_' + Players.GetLocalPlayer()) {
+			var counts = {};
+			$.Msg(data);
+			for (var key in data.infantry) {
+				if(!counts[data.infantry[key]]) {
+					counts[data.infantry[key]] = 0;
+				}
+				++counts[data.infantry[key]];
+			}
+			for (var unit in counts) {
+				var label = $('#queue_' + unit);
+				label.text = counts[unit];
+			}
+			// for(var i = 0; i < data.infantry; ++i) {
+			// 	if(!result[data.infantry[i]]) {
+			// 		result[data.infantry[i]] = 0;
+			// 	}
+			// 	++result[data.infantry[i]];
+			// }
+			$.Msg(counts);
+			// for (var unit in data.infantry) {
+				// var label = $('#queue_' + unit);
+				// label.text = Math.floor(parseInt(data.infantry[unit]));
+			// }	
+		}
 	}
 
 })();

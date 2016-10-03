@@ -47,6 +47,7 @@ function CDOTAPlayer:Init()
     CustomNetTables:SetTableValue("player_tables", "menu_structure_" .. pid, self.menu.structure)
     CustomNetTables:SetTableValue("player_tables", "menu_defense_" .. pid, self.menu.defense)
     CustomNetTables:SetTableValue("player_tables", "menu_infantry_" .. pid, self.menu.infantry)
+    CustomNetTables:SetTableValue("player_tables", "queue_" .. pid, self.queue)
 end
 
 function CDOTAPlayer:StartBuilding( unit, duration, cost )
@@ -175,7 +176,7 @@ function CDOTAPlayer:AdvanceQueue( category )
     local queue = self.queue[category]
     local next_unit = queue[1]
     table.remove(queue, 1)
-    -- CustomNetTables:SetTableValue("player_tables", category .. "_queue_" .. self:GetPlayerID(), queue)
+    CustomNetTables:SetTableValue("player_tables", "queue_" .. self:GetPlayerID(), self.queue)
     if next_unit then
         local build_time = GetUnitKV(next_unit, "MenuBuildTime", 1)
         local cost = GetUnitKV(next_unit, "BuildCost", 1)
@@ -205,9 +206,7 @@ function CDOTAPlayer:AddUnitToQueue( category, unit )
     local queue = self.queue[category]
 
     table.insert(self.queue[category], unit)
-    print("ADD " .. unit)
-    DeepPrintTable(self.queue[category])
-    -- CustomNetTables:SetTableValue("player_tables", category .. "_queue_" .. self:GetPlayerID(), queue)
+    CustomNetTables:SetTableValue("player_tables", "queue_" .. self:GetPlayerID(), self.queue)
 
 end
 
@@ -220,8 +219,9 @@ function CDOTAPlayer:RemoveUnitFromQueue( category, unit )
     for k, v in pairs(queue) do
         if v == unit then
             table.remove(self.queue[category], k)
-            DeepPrintTable(self.queue[category])
             break
         end
     end
+    CustomNetTables:SetTableValue("player_tables", "queue_" .. self:GetPlayerID(), self.queue)
+
 end

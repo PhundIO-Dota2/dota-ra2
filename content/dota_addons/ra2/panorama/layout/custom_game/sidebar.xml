@@ -63,10 +63,12 @@
 				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_conscript', 'infantry');" oncontextmenu="rightClickItem('npc_ra2_conscript', 'infantry');">
 					<Image src="file://{images}/custom_game/structures/e2icon.png"/>
 					<Label id="label_npc_ra2_conscript" text="0"/>
+					<Label id="queue_npc_ra2_conscript" class="menu-item-queue" text="0"/>
 				</Button>
 				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_tesla_trooper', 'infantry');" oncontextmenu="rightClickItem('npc_ra2_tesla_trooper', 'infantry');">
 					<Image src="file://{images}/custom_game/structures/shkicon.png"/>
 					<Label id="label_npc_ra2_tesla_trooper" text="0"/>
+					<Label id="queue_npc_ra2_tesla_trooper" class="menu-item-queue" text="0"/>
 				</Button>
 		    </Panel>
 

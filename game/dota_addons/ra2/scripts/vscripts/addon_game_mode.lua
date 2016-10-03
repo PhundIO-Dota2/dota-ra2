@@ -129,10 +129,10 @@ function RedAlert2:OnBuildingQueued( args )
         return
     end
 
-    if menu_table[unit]['progress'] == 0 then
+    if menu_table[unit]['progress'] == 0 and not player:HasUnitQueued(category, unit) then
         CustomGameEventManager:Send_ServerToPlayer(player, "building_start", { unit = unit, duration = build_time, cost = cost })
         player:StartBuilding(unit, build_time, cost)
-    elseif menu_table[unit]['progress'] == 1 then
+    elseif menu_table[unit]['progress'] == 1 and (category == "structure" or category == "defense") then
         local hero = player:GetAssignedHero()
 
         local buildAbility = hero:FindAbilityByName('build_' .. unit)

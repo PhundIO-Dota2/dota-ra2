@@ -46,3 +46,8 @@
 	font-size: 18px; 
 	text-shadow: 0px 0px 2px 3.0 #000;
 }
+
+Label.menu-item-queue {
+	align-self: right;
+	align: right bottom;
+}
