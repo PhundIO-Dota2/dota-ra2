@@ -59,43 +59,6 @@ function RedAlert2:OnConnectFull( args )
     local player = PlayerResource:GetPlayer(args['PlayerID'])
 
     if player then player:Init() end
-	-- CustomNetTables:SetTableValue("player_tables", "menu_structure_" .. pid, {
- --        npc_ra2_soviet_construction_yard = {
- --            progress = 0,
- --            paused = false,
- --            cancelled = false
- --        },
-	-- 	npc_ra2_soviet_barracks = {
- --            progress = 0,
- --            paused = false,
- --            cancelled = false
- --        },
- --        npc_ra2_tesla_reactor = {
- --            progress = 0,
- --            paused = false,
- --            cancelled = false
- --        }
-	-- })
- --    CustomNetTables:SetTableValue("player_tables", "menu_defense_" .. pid, {
- --        npc_ra2_sentry_gun = {
- --            progress = 0,
- --            paused = false,
- --            cancelled = false
- --        }
- --    })
- --    CustomNetTables:SetTableValue("player_tables", "menu_infantry_" .. pid, {
- --        npc_ra2_conscript = {
- --            progress = 0,
- --            paused = false,
- --            cancelled = false
- --        },
- --        npc_ra2_tesla_trooper = {
- --            progress = 0,
- --            paused = false,
- --            cancelled = false
- --        }
- --    })
- --    CustomNetTables:SetTableValue("player_tables", "infantry_queue_" .. pid, {})
 end
 
 function RedAlert2:OnNPCSpawned(keys)
@@ -103,7 +66,9 @@ function RedAlert2:OnNPCSpawned(keys)
     local npc = EntIndexToHScript(keys.entindex)
 
     if npc:IsRealHero() then
-        local ability = npc:FindAbilityByName("hide_hero")
+        local ability = npc:FindAbilityByName("spawn_soviet_mcv")
+        ability:UpgradeAbility(true)
+        ability = npc:FindAbilityByName("hide_hero")
         ability:UpgradeAbility(true)
         npc:SetAbilityPoints(0)
         npc:AddNoDraw()

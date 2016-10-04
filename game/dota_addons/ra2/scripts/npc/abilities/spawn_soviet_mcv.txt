@@ -1,0 +1,33 @@
+"spawn_soviet_mcv"
+{
+    "BaseClass"             "ability_datadriven"
+    "MaxLevel"              "1"
+
+    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+    "AbilityGoldCost"    "0"
+
+    "OnUpgrade"
+    {
+
+        "SpawnUnit"
+        {
+            "UnitName"    "npc_ra2_soviet_mcv"
+            "Target"      "CASTER"
+            "UnitCount"   "1"
+            "UnitLimit"   "0"
+            "GrantsGold"  "0"
+            "GrantsXP"    "0"
+            "SpawnRadius" "0"
+            "OnSpawn"
+            {
+                "ApplyModifier"
+                {
+                    "ModifierName" "modifier_phased"
+                    "Target"       "TARGET"
+                    "Duration"     "0.03"
+                }
+            }
+        }
+    }
+}

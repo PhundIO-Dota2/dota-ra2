@@ -573,6 +573,73 @@
 	        }
 	    }       
 	}
+	"soviet_mcv_deploy"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"              		"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
+	
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+	            "ScriptFile" "units/soviet_mcv/soviet_mcv_deploy.lua"
+	            "Function"   "Deploy"
+			}
+		}
+	}
+	"spawn_soviet_mcv"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnUpgrade"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_soviet_mcv"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "0"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
 	"terrorist_attack"
 	{
 		// General
