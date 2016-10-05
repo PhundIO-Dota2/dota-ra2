@@ -219,7 +219,7 @@
 		"SoundSet"					""
 		"GameSoundsFile"			""
 		"Level"						"1"
-		"ModelScale" 				"1"
+		"ModelScale" 				"1.9"
 	
 		// Abilities
 		//----------------------------------------------------------------

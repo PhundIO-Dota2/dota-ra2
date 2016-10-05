@@ -1,3 +1,4 @@
+require("libraries/selection")
 require("libraries/buildinghelper")
 require("libraries/keyvalues")
 require("libraries/timers")
@@ -32,6 +33,7 @@ function RedAlert2:InitGameMode()
     GameRules:SetStartingGold(10000)
     GameRules:SetGoldPerTick(0)
     GameRules:SetPreGameTime(0)
+    GameRules:SetSameHeroSelectionEnabled(true)
 
     BuildingHelper:NewGridType("ALLOWED")
 end
