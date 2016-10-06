@@ -104,5 +104,7 @@
 	"MenuBuildTime"		"0.5"
 	"BuildCost"			"500"
 	"Produces"			"infantry"
+	"Requirement1"		"npc_ra2_soviet_construction_yard"
+	"Requirement2"		"npc_ra2_tesla_reactor"
 
 }

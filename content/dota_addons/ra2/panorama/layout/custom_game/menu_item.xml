@@ -1,0 +1,15 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/sidebar.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/menu_item.js" /> 
+	</scripts>
+
+	<Button class="menu-item" onactivate="startProduction()" oncontextmenu="pauseProduction()">
+		<Image src="file://{images}/custom_game/structures/s_conyard.jpg"/>
+		<Label id="progress" text="0"/>
+		<Label id="queue" class="menu-item-queue" text="0"/>
+		<Label id="label" class="menu-item-label" text=""/>
+	</Button>
+</root>

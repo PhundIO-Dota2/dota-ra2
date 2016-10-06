@@ -30,51 +30,16 @@
 			<Button class="menu-tab-button" onactivate="showTab('#tab-infantry');">
 				<Label text="I"/>
 			</Button>
-<!-- 			<Button class="menu-tab-button" onactivate="showTab('#tab-vehicle');">
+			<Button class="menu-tab-button" onactivate="showTab('#tab-vehicle');">
 				<Label text="V"/>
-			</Button> -->
+			</Button>
 		</Panel>
 
 		<Panel class="menu-tab-body" id="menu-tab-body">
-
-		    <Panel class="menu-tab" id="tab-structure">
-		    	<Button class="menu-item" onactivate="leftClickItem('npc_ra2_soviet_construction_yard', 'structure');" oncontextmenu="rightClickItem('npc_ra2_soviet_construction_yard', 'structure');">
-					<Image src="file://{images}/custom_game/structures/s_conyard.jpg"/>
-					<Label id="label_npc_ra2_soviet_construction_yard" text="0"/>
-				</Button>
-				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_soviet_barracks', 'structure');" oncontextmenu="rightClickItem('npc_ra2_soviet_barracks', 'structure');">
-					<Image src="file://{images}/custom_game/structures/handicon.png"/>
-					<Label id="label_npc_ra2_soviet_barracks" text="0"/>
-				</Button>
-				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_tesla_reactor', 'structure');" oncontextmenu="rightClickItem('npc_ra2_tesla_reactor', 'structure');">
-					<Image src="file://{images}/custom_game/structures/npwricon.png"/>
-					<Label id="label_npc_ra2_tesla_reactor" text="0"/>
-				</Button>
-		    </Panel>
-
-		    <Panel class="menu-tab" id="tab-defense">
-				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_sentry_gun', 'defense');" oncontextmenu="rightClickItem('npc_ra2_sentry_gun', 'defense');">
-					<Image src="file://{images}/custom_game/structures/plticon.png"/>
-					<Label id="label_npc_ra2_sentry_gun" text="0"/>
-				</Button>
-		    </Panel>
-
-		    <Panel class="menu-tab" id="tab-infantry">
-				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_conscript', 'infantry');" oncontextmenu="rightClickItem('npc_ra2_conscript', 'infantry');">
-					<Image src="file://{images}/custom_game/structures/e2icon.png"/>
-					<Label id="label_npc_ra2_conscript" text="0"/>
-					<Label id="queue_npc_ra2_conscript" class="menu-item-queue" text="0"/>
-				</Button>
-				<Button class="menu-item" onactivate="leftClickItem('npc_ra2_tesla_trooper', 'infantry');" oncontextmenu="rightClickItem('npc_ra2_tesla_trooper', 'infantry');">
-					<Image src="file://{images}/custom_game/structures/shkicon.png"/>
-					<Label id="label_npc_ra2_tesla_trooper" text="0"/>
-					<Label id="queue_npc_ra2_tesla_trooper" class="menu-item-queue" text="0"/>
-				</Button>
-		    </Panel>
-
-		    <Panel class="menu-tab" id="tab-vehicle">
-		    </Panel>
-
+		    <Panel class="menu-tab" id="tab-structure"></Panel>
+		    <Panel class="menu-tab" id="tab-defense"></Panel>
+		    <Panel class="menu-tab" id="tab-infantry"></Panel>
+		    <Panel class="menu-tab" id="tab-vehicle"></Panel>
 	    </Panel>
 
 	</Panel>

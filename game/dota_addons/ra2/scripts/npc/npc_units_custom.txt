@@ -97,6 +97,8 @@
 		"Category"			"defense"
 		"MenuBuildTime"		"1"
 		"BuildCost"			"200"
+		"Requirement1"		"npc_ra2_soviet_construction_yard"
+		"Requirement2"		"npc_ra2_soviet_barracks"
 	
 	}
 	//=================================================================================	
@@ -205,6 +207,8 @@
 		"MenuBuildTime"		"0.5"
 		"BuildCost"			"500"
 		"Produces"			"infantry"
+		"Requirement1"		"npc_ra2_soviet_construction_yard"
+		"Requirement2"		"npc_ra2_tesla_reactor"
 	
 	}
 	//=================================================================================	
@@ -418,7 +422,7 @@
 		"Category"			"structure"
 		"MenuBuildTime"		"5"
 		"BuildCost"			"1000"
-	
+		"Requirement1"		"npc_ra2_soviet_construction_yard"
 	}
 	//=================================================================================	
 	// Creature: GI

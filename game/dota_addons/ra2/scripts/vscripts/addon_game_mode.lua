@@ -83,32 +83,9 @@ function RedAlert2:OnBuildingQueued( args )
 	local pid = args.PlayerID
     local player = PlayerResource:GetPlayer(pid)
     local unit = args.name
-    local build_time = GetUnitKV(unit, "MenuBuildTime", 1)
-    local cost = GetUnitKV(unit, "BuildCost", 1)
-    local category = GetUnitKV(unit, "Category", 1)
-    local menu_table_name = "menu_" .. category .. "_" .. pid
-    -- local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
-    local menu_table = player.menu[category]
 
-    if not menu_table[unit] then return end
-    if category == "infantry" and player:CategoryHasBuildingInProgress(category) then
-        player:AddUnitToQueue(category, unit)
-        return
-    end
-
-    if menu_table[unit]['progress'] == 0 and not player:HasUnitQueued(category, unit) then
-        CustomGameEventManager:Send_ServerToPlayer(player, "building_start", { unit = unit, duration = build_time, cost = cost })
-        player:StartBuilding(unit, build_time, cost)
-    elseif menu_table[unit]['progress'] == 1 and (category == "structure" or category == "defense") then
-        local hero = player:GetAssignedHero()
-
-        local buildAbility = hero:FindAbilityByName('build_' .. unit)
-        if not buildAbility then 
-            buildAbility = hero:AddAbility('build_' .. unit)
-        end
-        hero:CastAbilityImmediately(buildAbility, pid)
-    else
-        CustomGameEventManager:Send_ServerToPlayer(player, "building_in_progress", { unit = unit })
+    if player and unit then 
+        player:OnProductionRequest(unit)
     end
 
 end
@@ -118,20 +95,10 @@ function RedAlert2:OnBuildingPaused( args )
     local pid = args.PlayerID
     local player = PlayerResource:GetPlayer(pid)
     local unit = args.name
-    local category = GetUnitKV(unit, "Category", 1)
-    local menu_table_name = "menu_" .. category .. "_" .. pid
-    -- local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
-    local menu_table = player.menu[category]
 
-    if not menu_table[unit] then return end
-
-    -- Checks if the building has started and is not yet finished, otherwise we don't pause
-    if menu_table[unit]['progress'] == 0 or menu_table[unit]['progress'] == 1 then
-        return
+    if player and unit then
+        player:OnProductionPaused(unit)
     end
-    menu_table[unit]['paused'] = true
-    player.menu[category] = menu_table
-    CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
 
 end
 
@@ -140,16 +107,10 @@ function RedAlert2:OnBuildingResumed( args )
     local pid = args.PlayerID
     local player = PlayerResource:GetPlayer(pid)
     local unit = args.name
-    local category = GetUnitKV(unit, "Category", 1)
-    local menu_table_name = "menu_" .. category .. "_" .. pid
-    -- local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
-    local menu_table = player.menu[category]
 
-    if not menu_table[unit] then return end
-
-    menu_table[unit]['paused'] = false
-    player.menu[category] = menu_table
-    CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
+    if player and unit then
+        player:OnProductionResumed(unit)
+    end
 
 end
 
@@ -158,31 +119,35 @@ function RedAlert2:OnBuildingCancelled( args )
     local pid = args.PlayerID
     local player = PlayerResource:GetPlayer(pid)
     local unit = args.name
-    local cost = GetUnitKV(unit, "BuildCost", 1)
-    local category = GetUnitKV(unit, "Category", 1)
-    local menu_table_name = "menu_" .. category .. "_" .. pid
-    -- local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
-    local menu_table = player.menu[category]
 
-    if not menu_table[unit] then return end
-    if category == "infantry" and player:HasUnitQueued(category, unit) then
-        player:RemoveUnitFromQueue(category, unit)
-        return
+    if player and unit then
+        player:OnProductionCancelled(unit)
     end
+    -- local cost = GetUnitKV(unit, "BuildCost", 1)
+    -- local category = GetUnitKV(unit, "Category", 1)
+    -- local menu_table_name = "menu_" .. category .. "_" .. pid
+    -- -- local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
+    -- local menu_table = player.menu[category]
 
-    if menu_table[unit]['progress'] >= 1 then
-        menu_table[unit] = {
-            progress = 0,
-            paused = 0,
-            cancelled = 0
-        }
-        player.menu[category] = menu_table
-        CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
-        PlayerResource:SpendGold(pid, -cost, DOTA_ModifyGold_GameTick) 
-    elseif menu_table[unit]['progress'] > 0 then
-        menu_table[unit]['cancelled'] = 1
-        player.menu[category] = menu_table
-        CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
-    end
+    -- if not menu_table[unit] then return end
+    -- if category == "infantry" and player:HasUnitQueued(category, unit) then
+    --     player:RemoveUnitFromQueue(category, unit)
+    --     return
+    -- end
+
+    -- if menu_table[unit]['progress'] >= 1 then
+    --     menu_table[unit] = {
+    --         progress = 0,
+    --         paused = 0,
+    --         cancelled = 0
+    --     }
+    --     player.menu[category] = menu_table
+    --     CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
+    --     PlayerResource:SpendGold(pid, -cost, DOTA_ModifyGold_GameTick) 
+    -- elseif menu_table[unit]['progress'] > 0 then
+    --     menu_table[unit]['cancelled'] = 1
+    --     player.menu[category] = menu_table
+    --     CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
+    -- end
 
 end

@@ -26,12 +26,14 @@
 }
 
 .menu-tab {
+	overflow: scroll;
+	height: 100%;
 	flow-children: right-wrap;
 }
 
 .menu-tab-body {
 	horizontal-align: center;
-	width: 125px;
+	width: 225px;
 	height: 100%;
 	background-color: #000;
 }
@@ -48,6 +50,10 @@
 }
 
 Label.menu-item-queue {
-	align-self: right;
 	align: right bottom;
+}
+
+Label.menu-item-label {
+	font-size: 12px;
+	align: left center;
 }

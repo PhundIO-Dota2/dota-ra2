@@ -880,4 +880,38 @@
 	        }
 	    }
 	}
+	
+	"train_npc_ra2_crazy_ivan"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_crazy_ivan"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
 }

@@ -103,5 +103,5 @@
 	"Category"			"structure"
 	"MenuBuildTime"		"5"
 	"BuildCost"			"1000"
-
+	"Requirement1"		"npc_ra2_soviet_construction_yard"
 }

@@ -1,68 +1,153 @@
 function CDOTAPlayer:Init()
 
     local pid = self:GetPlayerID()
-
-    self.menu = {
-        structure = {
-            npc_ra2_soviet_construction_yard = {
-                progress = 0,
-                paused = false,
-                cancelled = false
-            },
-            npc_ra2_soviet_barracks = {
-                progress = 0,
-                paused = false,
-                cancelled = false
-            },
-            npc_ra2_tesla_reactor = {
-                progress = 0,
-                paused = false,
-                cancelled = false
-            }
-        },
-        defense = {
-            npc_ra2_sentry_gun = {
-                progress = 0,
-                paused = false,
-                cancelled = false
-            }
-        },
-        infantry = {
-            npc_ra2_conscript = {
-                progress = 0,
-                paused = false,
-                cancelled = false
-            },
-            npc_ra2_tesla_trooper = {
-                progress = 0,
-                paused = false,
-                cancelled = false
-            }
-        }
+    local units = LoadKeyValues("scripts/kv/soviet_units.kv")
+    local categories = {
+        structure   = units["Structures"],
+        defense     = units["Defenses"],
+        infantry    = units["Infantry"],
+        vehicle     = units["Vehicles"],
+        naval       = units["Naval"],
+        airforce    = units["Airforce"]
     }
+
+    self.menu = {}
+    for category, values in pairs(categories) do
+        if values then
+            self.menu[category] = {}
+            for _, value in pairs(values) do
+                self.menu[category][value] = {
+                    progress = 0,
+                    paused = false,
+                    cancelled = false,
+                    unlocked = false
+                }
+            end
+        end
+        CustomNetTables:SetTableValue("player_tables", "menu_" .. category .. "_" .. pid, self.menu[category])
+    end
+
     self.queue = {
-        infantry = {}
+        infantry = {},
+        vehicle = {},
+        naval = {},
+        airforce = {}
     }
-
-    CustomNetTables:SetTableValue("player_tables", "menu_structure_" .. pid, self.menu.structure)
-    CustomNetTables:SetTableValue("player_tables", "menu_defense_" .. pid, self.menu.defense)
-    CustomNetTables:SetTableValue("player_tables", "menu_infantry_" .. pid, self.menu.infantry)
     CustomNetTables:SetTableValue("player_tables", "queue_" .. pid, self.queue)
+
 end
 
-function CDOTAPlayer:StartBuilding( unit, duration, cost )
+function CDOTAPlayer:OnProductionRequest( unit )
 
+    local pid = self:GetPlayerID()
+    local category = GetUnitKV(unit, "Category", 1)
+    local menu_table_name = "menu_" .. category .. "_" .. pid
+    -- local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
+    local menu_table = self.menu[category]
+
+    if not menu_table[unit] or not self:HasRequiredBuildings(unit) then return end
+
+    if (category == "infantry" or category == "vehicle") and self:CategoryHasProductionInProgress(category) then
+        self:AddUnitToQueue(category, unit)
+        return
+    end
+
+    -- If the unit is not in production and is not already queued
+    if menu_table[unit]['progress'] == 0 and not self:HasUnitQueued(category, unit) then
+        self:StartProduction(unit)
+    -- If the production is finished and it's a building, then start building placement
+    elseif menu_table[unit]['progress'] == 1 and (category == "structure" or category == "defense") then
+        self:StartBuildingPlacement(unit)
+    end
+
+end
+
+function CDOTAPlayer:OnProductionPaused( unit )
+
+    local pid = self:GetPlayerID()
+    local category = GetUnitKV(unit, "Category", 1)
+    local menu_table_name = "menu_" .. category .. "_" .. pid
+    -- local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
+    local menu_table = self.menu[category]
+
+    if not menu_table[unit] then return end
+
+    -- Checks if the production is actually in progress (0 means not started, 1 means finished)
+    if menu_table[unit]['progress'] > 0 and menu_table[unit]['progress'] < 1 then
+        menu_table[unit]['paused'] = true
+        self.menu[category] = menu_table
+        CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
+    end
+
+end
+
+function CDOTAPlayer:OnProductionResumed( unit )
+
+    local pid = self:GetPlayerID()
+    local category = GetUnitKV(unit, "Category", 1)
+    local menu_table_name = "menu_" .. category .. "_" .. pid
+    local menu_table = self.menu[category]
+
+    if not menu_table[unit] then return end
+
+    menu_table[unit]['paused'] = false
+    self.menu[category] = menu_table
+    CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
+
+end
+
+function CDOTAPlayer:OnProductionCancelled( unit )
+
+    local pid = self:GetPlayerID()
+    local cost = GetUnitKV(unit, "BuildCost", 1)
+    local category = GetUnitKV(unit, "Category", 1)
+    local menu_table = self.menu[category]
+
+    if not menu_table[unit] then return end
+
+    if category == "infantry" and self:HasUnitQueued(category, unit) then
+        self:RemoveUnitFromQueue(category, unit)
+        return
+    end
+
+    if menu_table[unit]['progress'] >= 1 then
+        self:CancelProduction(unit, cost)
+    elseif menu_table[unit]['progress'] > 0 then
+        local menu_table_name = "menu_" .. category .. "_" .. pid
+
+        menu_table[unit]['cancelled'] = 1
+        self.menu[category] = menu_table
+        CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
+    end
+
+end
+
+function CDOTAPlayer:StartBuildingPlacement( unit )
+
+    local hero = self:GetAssignedHero()
+    local buildAbility = hero:FindAbilityByName('build_' .. unit)
+
+    if not buildAbility then 
+        buildAbility = hero:AddAbility('build_' .. unit)
+    end
+    hero:CastAbilityImmediately(buildAbility, self:GetPlayerID())
+
+end
+
+function CDOTAPlayer:StartProduction( unit )
+
+    local duration = GetUnitKV(unit, "MenuBuildTime", 1)
+    local cost = GetUnitKV(unit, "BuildCost", 1)
     local start_time = GameRules:GetGameTime()
     local time = start_time
     local hold_duration = 0
     local spent = 0
     local category = GetUnitKV(unit, "Category", 1)
     local menu_table_name = "menu_" .. category .. "_" .. self:GetPlayerID()
-    -- local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
     local menu_table = self.menu[category]
 
     if not menu_table[unit] then return end
-    if self:CategoryHasBuildingInProgress(category) then return end
+    if self:CategoryHasProductionInProgress(category) then return end
 
     menu_table[unit]["cancelled"] = 0
     self.menu[category] = menu_table
@@ -76,7 +161,7 @@ function CDOTAPlayer:StartBuilding( unit, duration, cost )
         menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
         local paused = menu_table[unit]["paused"] ~= 0
         if menu_table[unit]["cancelled"] == 1 then
-            return self:CancelBuilding(unit, spent)
+            return self:CancelProduction(unit, spent)
         end
         if time >= (start_time + duration + hold_duration) then
             if category == "infantry" or category == "vehicle" then
@@ -116,7 +201,7 @@ function CDOTAPlayer:StartBuilding( unit, duration, cost )
 
 end
 
-function CDOTAPlayer:CancelBuilding( unit, spent )
+function CDOTAPlayer:CancelProduction( unit, spent )
 
 	local category = GetUnitKV(unit, "Category", 1)
 	local menu_table_name = "menu_" .. category .. "_" .. self:GetPlayerID()
@@ -138,10 +223,25 @@ function CDOTAPlayer:CancelBuilding( unit, spent )
 
 end
 
-function CDOTAPlayer:CategoryHasBuildingInProgress( category )
+function CDOTAPlayer:OnBuildingPlaced( unit )
 
-	-- local menu_table_name = "menu_" .. category .. "_" .. self:GetPlayerID()
-    -- local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
+    self:ResetProductionState(unit)
+
+end
+
+function CDOTAPlayer:ResetProductionState( unit )
+
+    local category = GetUnitKV(unit, "Category", 1)
+    local menu_table_name = "menu_" .. category .. "_" .. self:GetPlayerID()
+    local menu_table = self.menu[category]
+    menu_table[unit]['progress'] = 0
+    self.menu[category] = menu_table
+    CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
+
+end
+
+function CDOTAPlayer:CategoryHasProductionInProgress( category )
+
     local menu_table = self.menu[category]
 
     for name, building in pairs(menu_table) do 
@@ -171,16 +271,40 @@ function CDOTAPlayer:SpawnUnit( unit )
 
 end
 
+function CDOTAPlayer:HasRequiredBuildings( unit )
+
+    local buildings = BuildingHelper:GetBuildings(self:GetPlayerID())
+    local i = 1
+    local requiredUnit = GetUnitKV(unit, "Requirement" .. i, 1)
+    local result = true
+
+    while requiredUnit do
+        local found = false
+        for key, building in pairs(buildings) do
+            if building:GetUnitName() == requiredUnit then
+                found = true
+            end
+        end
+        result = result and found
+        i = i + 1
+        requiredUnit = GetUnitKV(unit, "Requirement" .. i, 1)
+    end
+
+    return result
+
+end
+
 function CDOTAPlayer:AdvanceQueue( category )
 
     local queue = self.queue[category]
     local next_unit = queue[1]
+
     table.remove(queue, 1)
     CustomNetTables:SetTableValue("player_tables", "queue_" .. self:GetPlayerID(), self.queue)
     if next_unit then
         local build_time = GetUnitKV(next_unit, "MenuBuildTime", 1)
         local cost = GetUnitKV(next_unit, "BuildCost", 1)
-        self:StartBuilding(next_unit, build_time, cost)
+        self:StartProduction(next_unit, build_time, cost)
     end
 
 end

@@ -95,5 +95,7 @@
 	"Category"			"defense"
 	"MenuBuildTime"		"1"
 	"BuildCost"			"200"
+	"Requirement1"		"npc_ra2_soviet_construction_yard"
+	"Requirement2"		"npc_ra2_soviet_barracks"
 
 }
