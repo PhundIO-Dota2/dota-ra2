@@ -2,10 +2,9 @@ require("libraries/buildinghelper")
 
 function Deploy( event )
 
+    local building = "npc_ra2_soviet_construction_yard"
 	local caster = event.caster
-
-	DeepPrintTable(caster:GetOwner())
-	local conyard = BuildingHelper:PlaceBuilding(caster:GetOwner(), "npc_ra2_soviet_construction_yard", caster:GetAbsOrigin())
+	local conyard = BuildingHelper:PlaceBuilding(caster:GetOwner(), building, caster:GetAbsOrigin())
     local location = conyard:GetAbsOrigin()
     local grid = conyard:GetKeyValue("Grid")
     if grid and grid["Allowed"] then
@@ -13,6 +12,8 @@ function Deploy( event )
         BuildingHelper:AddGridType(size, location, "ALLOWED")
         conyard:AddNewModifier(conyard, nil, "modifier_grid_allowed", {})
     end
+    local player = caster:GetPlayerOwner()
+    player:OnBuildingPlaced(building)
     caster:Destroy()
 
 end

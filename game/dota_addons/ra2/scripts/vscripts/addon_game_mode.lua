@@ -123,31 +123,5 @@ function RedAlert2:OnBuildingCancelled( args )
     if player and unit then
         player:OnProductionCancelled(unit)
     end
-    -- local cost = GetUnitKV(unit, "BuildCost", 1)
-    -- local category = GetUnitKV(unit, "Category", 1)
-    -- local menu_table_name = "menu_" .. category .. "_" .. pid
-    -- -- local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
-    -- local menu_table = player.menu[category]
-
-    -- if not menu_table[unit] then return end
-    -- if category == "infantry" and player:HasUnitQueued(category, unit) then
-    --     player:RemoveUnitFromQueue(category, unit)
-    --     return
-    -- end
-
-    -- if menu_table[unit]['progress'] >= 1 then
-    --     menu_table[unit] = {
-    --         progress = 0,
-    --         paused = 0,
-    --         cancelled = 0
-    --     }
-    --     player.menu[category] = menu_table
-    --     CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
-    --     PlayerResource:SpendGold(pid, -cost, DOTA_ModifyGold_GameTick) 
-    -- elseif menu_table[unit]['progress'] > 0 then
-    --     menu_table[unit]['cancelled'] = 1
-    --     player.menu[category] = menu_table
-    --     CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
-    -- end
 
 end

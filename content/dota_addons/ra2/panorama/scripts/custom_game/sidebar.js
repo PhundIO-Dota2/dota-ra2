@@ -41,51 +41,32 @@ function showTab( id ) {
 	CustomNetTables.SubscribeNetTableListener( 'player_tables', OnPlayerTableChanged );
 
 	var tabs = $('#menu-tab-body').Children();
+	var menuItems = {};
 
 	tabs.forEach(function (tab) {
 		tab.style.visibility = 'collapse';
 	});
 	showTab('#tab-structure');
 
-	var categories = ['structure', 'defense', 'infantry', 'vehicle', 'naval', 'airforce'];
-	categories.forEach(function(category) {
-		var menu_table = CustomNetTables.GetTableValue('player_tables', 'menu_' + category + '_' + Players.GetLocalPlayer());
-		for (var unit in menu_table) {
-			var menu_tab = category === 'naval' || category === 'airforce' ? 'vehicle' : category;
-			var menuItem = $.CreatePanel('Panel', $('#tab-' + menu_tab), 'item-' + unit);
-			menuItem.category = category;
-			menuItem.unit = unit;
-			menuItem.BLoadLayout('file://{resources}/layout/custom_game/menu_item.xml', false, false);
-		}
-	});
+	var categories = [
+		'structure',
+		'defense',
+		'infantry',
+		'vehicle'
+	]
 
-	function OnPlayerTableChanged( table_name, key, data )
-	{
-		if (key === 'menu_structure_' + Players.GetLocalPlayer()) {
-			for (var unit in data) {
-				var label = $('#label_' + unit);
-				if (label) {
-					label.text = Math.floor(parseFloat(data[unit]['progress']) * 100);
+	function OnPlayerTableChanged( table_name, key, data ) {
+		categories.forEach(function(category) {
+			if (key === 'menu_' + category + '_' + Players.GetLocalPlayer()) {
+				for (var unit in data) {
+					var panel = menuItems[unit];
+					if (!panel) {
+						panel = createItemPanel(category, unit);
+					}
 				}
-			}
-		} 
-		else if (key === 'menu_defense_' + Players.GetLocalPlayer()) {
-			for (var unit in data) {
-				var label = $('#label_' + unit);
-				if (label) {
-					label.text = Math.floor(parseFloat(data[unit]['progress']) * 100);
-				}
-			}
-		}
-		else if (key === 'menu_infantry_' + Players.GetLocalPlayer()) {
-			for (var unit in data) {
-				var label = $('#label_' + unit);
-				if (label) {
-					label.text = Math.floor(parseFloat(data[unit]['progress']) * 100);
-				}
-			}
-		}
-		else if (key === 'queue_' + Players.GetLocalPlayer()) {
+			} 
+		});
+		if (key === 'queue_' + Players.GetLocalPlayer()) {
 			var counts = {};
 			for (var key in data.infantry) {
 				if(!counts[data.infantry[key]]) {
@@ -100,6 +81,21 @@ function showTab( id ) {
 				}
 			}
 		}
+	}
+
+	function createItemPanel( category, unit ) 
+	{
+		var menu_tab = category === 'naval' || category === 'airforce' ? 'vehicle' : category;
+		var menuItem = $.CreatePanel('Panel', $('#tab-' + menu_tab), 'item-' + unit);
+		
+		menuItem.category = category;
+		menuItem.unit = unit;
+		menuItem.BLoadLayout('file://{resources}/layout/custom_game/menu_item.xml', false, false);
+
+		menuItems[unit] = menuItem;
+		
+		return menuItem;
+
 	}
 
 })();

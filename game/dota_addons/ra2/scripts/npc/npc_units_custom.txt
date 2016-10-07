@@ -312,7 +312,6 @@
 	
 		// Red Alert 2
 		//----------------------------------------------------------------
-		"Category"			"structure"
 		"MenuBuildTime"		"1"
 		"BuildCost"			"1000"
 	

@@ -66,18 +66,8 @@ function Build( event )
     -- A building unit was created
     event:OnConstructionStarted(function(unit)
         
-        local player = PlayerResource:GetPlayer(playerID)
-
-        player:OnBuildingPlaced(unit:GetUnitName())
-        -- local category = GetUnitKV(unit:GetUnitName(), "Category", 1)
-        -- local menu_table_name = "menu_" .. category .. "_" .. playerID
-        -- -- local menu_table = CustomNetTables:GetTableValue("player_tables", menu_table_name)
-        -- local menu_table = player.menu[category]
-        -- menu_table[unit:GetUnitName()]['progress'] = 0
-        -- player.menu[category] = menu_table
-        -- CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
-
         BuildingHelper:print("Started construction of " .. unit:GetUnitName() .. " " .. unit:GetEntityIndex())
+
         -- Play construction sound
 
         -- If it's an item-ability and has charges, remove a charge or remove the item if no charges left
@@ -114,6 +104,9 @@ function Build( event )
     event:OnConstructionCompleted(function(unit)
         BuildingHelper:print("Completed construction of " .. unit:GetUnitName() .. " " .. unit:GetEntityIndex())
         
+        local player = PlayerResource:GetPlayer(playerID)
+        player:OnBuildingPlaced(unit:GetUnitName())
+
         -- Play construction complete sound
         
         -- Remove the item

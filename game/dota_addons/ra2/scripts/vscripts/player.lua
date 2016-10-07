@@ -1,29 +1,18 @@
+require('libraries/keyvalues')
+
 function CDOTAPlayer:Init()
 
     local pid = self:GetPlayerID()
-    local units = LoadKeyValues("scripts/kv/soviet_units.kv")
-    local categories = {
-        structure   = units["Structures"],
-        defense     = units["Defenses"],
-        infantry    = units["Infantry"],
-        vehicle     = units["Vehicles"],
-        naval       = units["Naval"],
-        airforce    = units["Airforce"]
-    }
 
-    self.menu = {}
-    for category, values in pairs(categories) do
-        if values then
-            self.menu[category] = {}
-            for _, value in pairs(values) do
-                self.menu[category][value] = {
-                    progress = 0,
-                    paused = false,
-                    cancelled = false,
-                    unlocked = false
-                }
-            end
-        end
+    self.menu = {
+        structure = {},
+        defense = {},
+        infantry = {},
+        vehicle = {},
+        naval = {},
+        airforce = {}
+    }
+    for category, values in pairs(self.menu) do
         CustomNetTables:SetTableValue("player_tables", "menu_" .. category .. "_" .. pid, self.menu[category])
     end
 
@@ -223,20 +212,46 @@ function CDOTAPlayer:CancelProduction( unit, spent )
 
 end
 
-function CDOTAPlayer:OnBuildingPlaced( unit )
+function CDOTAPlayer:OnBuildingPlaced( building )
 
-    self:ResetProductionState(unit)
+    self:UnlockUnits(building)
+    self:ResetProductionState(building)
+
+end
+
+function CDOTAPlayer:UnlockUnits( unit )
+
+    local units = KeyValues.UnitKV
+
+    for unit, kv in pairs(units) do
+        if kv["Category"] and self:HasRequiredBuildings(unit) then
+            local category = kv["Category"]
+            local menu_table_name = "menu_" .. category .. "_" .. self:GetPlayerID()
+            local menu_table = self.menu[category]
+            self.menu[category][unit] = {
+                progress = 0, 
+                paused = 0, 
+                cancelled = 0 
+            }
+            CustomNetTables:SetTableValue("player_tables", menu_table_name, self.menu[category])
+        end
+    end
+
 
 end
 
 function CDOTAPlayer:ResetProductionState( unit )
 
     local category = GetUnitKV(unit, "Category", 1)
+    if not category then return end
     local menu_table_name = "menu_" .. category .. "_" .. self:GetPlayerID()
     local menu_table = self.menu[category]
-    menu_table[unit]['progress'] = 0
-    self.menu[category] = menu_table
-    CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
+
+    if menu_table[unit] then
+        menu_table[unit]['progress'] = 0
+        self.menu[category] = menu_table
+        CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
+    end
 
 end
 
@@ -283,6 +298,7 @@ function CDOTAPlayer:HasRequiredBuildings( unit )
         for key, building in pairs(buildings) do
             if building:GetUnitName() == requiredUnit then
                 found = true
+                break
             end
         end
         result = result and found
