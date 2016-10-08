@@ -1,5 +1,10 @@
 "use strict";
 
+GameUI.SetCameraYaw(-45);
+GameUI.SetCameraPitchMin(60);
+GameUI.SetCameraPitchMax(60);
+// GameUI.SetCameraDistance(2000);
+
 function leftClickItem( name, category ) {
 	var menu_table = CustomNetTables.GetTableValue( 'player_tables', 'menu_' + category + '_' + Players.GetLocalPlayer()),
 		event = 'building_queued';
@@ -66,21 +71,6 @@ function showTab( id ) {
 				}
 			} 
 		});
-		if (key === 'queue_' + Players.GetLocalPlayer()) {
-			var counts = {};
-			for (var key in data.infantry) {
-				if(!counts[data.infantry[key]]) {
-					counts[data.infantry[key]] = 0;
-				}
-				++counts[data.infantry[key]];
-			}
-			for (var unit in counts) {
-				var label = $('#queue_' + unit);
-				if (label) {
-					label.text = counts[unit];
-				}
-			}
-		}
 	}
 
 	function createItemPanel( category, unit ) 

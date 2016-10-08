@@ -34,7 +34,9 @@ function RedAlert2:InitGameMode()
     GameRules:SetGoldPerTick(0)
     GameRules:SetPreGameTime(0)
     GameRules:SetSameHeroSelectionEnabled(true)
-
+    local mode = GameRules:GetGameModeEntity()
+    mode:SetUnseenFogOfWarEnabled(true)
+    mode:SetCameraDistanceOverride(1300)
     BuildingHelper:NewGridType("ALLOWED")
 end
 

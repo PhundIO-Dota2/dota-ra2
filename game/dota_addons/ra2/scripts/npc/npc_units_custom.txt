@@ -521,6 +521,7 @@
 		"Category"			"infantry"
 		"MenuBuildTime"		"2"
 		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_allied_barracks"
 	}
 	//=================================================================================	
 	// Creature: Rocketeer
@@ -622,6 +623,8 @@
 		"Category"			"infantry"
 		"MenuBuildTime"		"2"
 		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_allied_barracks"
+		"Requirement2"		"npc_ra2_airforce_command"
 	}
 	//=================================================================================	
 	// Creature: Sniper
@@ -718,6 +721,7 @@
 		"Category"			"infantry"
 		"MenuBuildTime"		"2"
 		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_allied_barracks"
 	}
 	//=================================================================================	
 	// Creature: Attack Dog
@@ -811,6 +815,7 @@
 		"Category"			"infantry"
 		"MenuBuildTime"		"2"
 		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_soviet_barracks"
 	
 	}
 	//=================================================================================	
@@ -909,6 +914,7 @@
 		"Category"			"infantry"
 		"MenuBuildTime"		"2"
 		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_soviet_barracks"
 	
 	}
 	//=================================================================================	
@@ -1003,6 +1009,8 @@
 		"Category"			"infantry"
 		"MenuBuildTime"		"2"
 		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_soviet_barracks"
+		"Requirement2"		"npc_ra2_battle_lab"
 	}
 	//=================================================================================	
 	// Creature: Terrorist
@@ -1106,6 +1114,7 @@
 		"Category"			"infantry"
 		"MenuBuildTime"		"2"
 		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_soviet_barracks"
 	
 	}
 	//=================================================================================	
@@ -1205,6 +1214,7 @@
 		"Category"			"infantry"
 		"MenuBuildTime"		"2"
 		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_soviet_barracks"
 	}
 	//=================================================================================	
 	// Creature: Conscript
@@ -1296,6 +1306,8 @@
 		"Category"			"vehicle"
 		"MenuBuildTime"		"2"
 		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_soviet_war_factory"
+		"Requirement1"		"npc_ra2_battle_lab"
 	
 	}
 }

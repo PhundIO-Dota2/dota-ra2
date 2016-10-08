@@ -48,6 +48,6 @@ function OnPlayerTableChanged( table_name, key, data )
 			++counts[data.infantry[key]];
 		}
 		var label = $('#queue');
-		label.text = counts[unit];
+		label.text = counts[unit] || "";
 	}
 }

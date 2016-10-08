@@ -9,7 +9,7 @@
 	<Button class="menu-item" onactivate="startProduction()" oncontextmenu="pauseProduction()">
 		<Image src="file://{images}/custom_game/structures/s_conyard.jpg"/>
 		<Label id="progress" text="0"/>
-		<Label id="queue" class="menu-item-queue" text="0"/>
+		<Label id="queue" class="menu-item-queue" text=""/>
 		<Label id="label" class="menu-item-label" text=""/>
 	</Button>
 </root>

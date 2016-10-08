@@ -93,4 +93,5 @@
 	"Category"			"infantry"
 	"MenuBuildTime"		"2"
 	"BuildCost"			"100"
+	"Requirement1"		"npc_ra2_allied_barracks"
 }
