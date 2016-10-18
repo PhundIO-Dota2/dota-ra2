@@ -33,13 +33,41 @@
 
 .menu-tab-body {
 	horizontal-align: center;
-	width: 225px;
+	width: 125px;
 	height: 100%;
 	background-color: #000;
 }
 
 .menu-item {
-	border: 1px solid #000;
+	width: 60px;
+	height: 48px;
+	font-size: 10px;
+	margin: 1px;
+}
+
+.cameo {
+
+	background-image: url("file://{images}/custom_game/structures/npc_ra2_clone_vat.png");
+	background-image: url("file://{images}/custom_game/structures/npc_ra2_flak_cannon.png");
+	background-image: url("file://{images}/custom_game/structures/npc_ra2_iron_curtain.png");
+	background-image: url("file://{images}/custom_game/structures/npc_ra2_nuclear_reactor.png");
+	background-image: url("file://{images}/custom_game/structures/npc_ra2_nuke_silo.png");
+	background-image: url("file://{images}/custom_game/structures/npc_ra2_radar_tower.png");
+	background-image: url("file://{images}/custom_game/structures/npc_ra2_sentry_gun.png");
+	background-image: url("file://{images}/custom_game/structures/npc_ra2_soviet_barracks.png");
+	background-image: url("file://{images}/custom_game/structures/npc_ra2_soviet_battle_lab.png");
+	background-image: url("file://{images}/custom_game/structures/npc_ra2_soviet_construction_yard.png");
+	background-image: url("file://{images}/custom_game/structures/npc_ra2_soviet_naval_shipyard.png");
+	background-image: url("file://{images}/custom_game/structures/npc_ra2_soviet_ore_refinery.png");
+	background-image: url("file://{images}/custom_game/structures/npc_ra2_soviet_service_depot.png");
+	background-image: url("file://{images}/custom_game/structures/npc_ra2_soviet_wall.png");
+	background-image: url("file://{images}/custom_game/structures/npc_ra2_soviet_war_factory.png");
+	background-image: url("file://{images}/custom_game/structures/npc_ra2_tesla_coil.png");
+	background-image: url("file://{images}/custom_game/structures/npc_ra2_tesla_reactor.png");
+	background-image: none;
+
+	width: 100%;
+	height: 100%;
 }
 
 .menu-item > Label {
@@ -54,6 +82,6 @@ Label.menu-item-queue {
 }
 
 Label.menu-item-label {
-	font-size: 12px;
-	align: left center;
+	font-size: 10px;
+	align: left bottom;
 }

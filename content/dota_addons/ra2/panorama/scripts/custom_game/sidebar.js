@@ -5,30 +5,6 @@ GameUI.SetCameraPitchMin(60);
 GameUI.SetCameraPitchMax(60);
 // GameUI.SetCameraDistance(2000);
 
-function leftClickItem( name, category ) {
-	var menu_table = CustomNetTables.GetTableValue( 'player_tables', 'menu_' + category + '_' + Players.GetLocalPlayer()),
-		event = 'building_queued';
-
-	if (menu_table[name] && menu_table[name]['paused']) {
-		event = 'building_resumed';
-	}
-	GameEvents.SendCustomGameEventToServer(event, { name: name });
-}
-
-function rightClickItem( name, category ) {
-	var menu_table = CustomNetTables.GetTableValue( 'player_tables', 'menu_' + category + '_' + Players.GetLocalPlayer());
-
-	if (menu_table[name]) {
-		var paused = menu_table[name]['paused'],
-			finished = menu_table[name]['progress'] == 1,
-			event = 'building_cancelled';
-		if (!paused && !finished) {
-			event = 'building_paused';
-		}
-		GameEvents.SendCustomGameEventToServer(event, { name: name });
-	}
-}
-
 function showTab( id ) {
 	var tabs = $('#menu-tab-body').Children();
 

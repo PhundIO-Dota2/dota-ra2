@@ -7,7 +7,7 @@
 	</scripts>
 
 	<Button class="menu-item" onactivate="startProduction()" oncontextmenu="pauseProduction()">
-		<Image src="file://{images}/custom_game/structures/s_conyard.jpg"/>
+		<Panel id="cameo" class="cameo"></Panel>
 		<Label id="progress" text="0"/>
 		<Label id="queue" class="menu-item-queue" text=""/>
 		<Label id="label" class="menu-item-label" text=""/>

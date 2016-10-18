@@ -1,6 +1,654 @@
 "DOTAUnits"
 {
 	//=================================================================================	
+	// Creature: Clone Vat
+	//=================================================================================
+	"npc_ra2_clone_vat"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					""
+		"GameSoundsFile"			""
+		"Level"						"1"
+		"ModelScale" 				"1.2"
+	
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"		// Damage range min.
+		"AttackDamageMax"			"0"		// Damage range max.
+		"AttackRate"				"0"		// Speed of attack.
+		"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
+		"AttackRange"				"0"		// Range within a target can be attacked.	     
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"128"
+		"HealthBarOffset"			"170"
+		"BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.			
+	
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"384"		// Range of vision during day light.
+		"VisionNighttimeRange"		"384"		// Range of vision at night time.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+		}
+	
+		// BuildingHelper Essentials
+		//----------------------------------------------------------------
+		"ConstructionSize"	"2"
+		"BlockPathingSize"	"2"
+		"BuildTime"			"0"
+		"Requires"			"Buildable Allowed"
+		"Grid"
+		{
+		    "Allowed"
+		    {
+		        "Square"        "10"
+		        "RemoveOnDeath" "true"
+		    }
+		}
+	
+		// Red Alert 2
+		//----------------------------------------------------------------
+		"Category"			"defense"
+		"MenuBuildTime"		"1"
+		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_soviet_construction_yard"
+		"Requirement2"		"npc_ra2_soviet_battle_lab"
+	}
+	//=================================================================================	
+	// Creature: Flak Cannon
+	//=================================================================================
+	"npc_ra2_flak_cannon"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					""
+		"GameSoundsFile"			""
+		"Level"						"1"
+		"ModelScale" 				"1.2"
+	
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"		// Damage range min.
+		"AttackDamageMax"			"0"		// Damage range max.
+		"AttackRate"				"0"		// Speed of attack.
+		"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
+		"AttackRange"				"0"		// Range within a target can be attacked.	     
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"128"
+		"HealthBarOffset"			"170"
+		"BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.			
+	
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"384"		// Range of vision during day light.
+		"VisionNighttimeRange"		"384"		// Range of vision at night time.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+		}
+	
+		// BuildingHelper Essentials
+		//----------------------------------------------------------------
+		"ConstructionSize"	"2"
+		"BlockPathingSize"	"2"
+		"BuildTime"			"0"
+		"Requires"			"Buildable Allowed"
+		"Grid"
+		{
+		    "Allowed"
+		    {
+		        "Square"        "10"
+		        "RemoveOnDeath" "true"
+		    }
+		}
+	
+		// Red Alert 2
+		//----------------------------------------------------------------
+		"Category"			"defense"
+		"MenuBuildTime"		"1"
+		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_soviet_construction_yard"
+		"Requirement1"		"npc_ra2_soviet_barracks"
+	}
+	//=================================================================================	
+	// Creature: Iron Curtain
+	//=================================================================================
+	"npc_ra2_iron_curtain"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					""
+		"GameSoundsFile"			""
+		"Level"						"1"
+		"ModelScale" 				"1.2"
+	
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"		// Damage range min.
+		"AttackDamageMax"			"0"		// Damage range max.
+		"AttackRate"				"0"		// Speed of attack.
+		"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
+		"AttackRange"				"0"		// Range within a target can be attacked.	     
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"128"
+		"HealthBarOffset"			"170"
+		"BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.			
+	
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"384"		// Range of vision during day light.
+		"VisionNighttimeRange"		"384"		// Range of vision at night time.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+		}
+	
+		// BuildingHelper Essentials
+		//----------------------------------------------------------------
+		"ConstructionSize"	"2"
+		"BlockPathingSize"	"2"
+		"BuildTime"			"0"
+		"Requires"			"Buildable Allowed"
+		"Grid"
+		{
+		    "Allowed"
+		    {
+		        "Square"        "10"
+		        "RemoveOnDeath" "true"
+		    }
+		}
+	
+		// Red Alert 2
+		//----------------------------------------------------------------
+		"Category"			"defense"
+		"MenuBuildTime"		"1"
+		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_soviet_construction_yard"
+		"Requirement2"		"npc_ra2_soviet_battle_lab"
+	}
+	//=================================================================================	
+	// Creature: Nuclear Reactor
+	//=================================================================================
+	"npc_ra2_nuclear_reactor"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					""
+		"GameSoundsFile"			""
+		"Level"						"1"
+		"ModelScale" 				"1.2"
+	
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"		// Damage range min.
+		"AttackDamageMax"			"0"		// Damage range max.
+		"AttackRate"				"0"		// Speed of attack.
+		"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
+		"AttackRange"				"0"		// Range within a target can be attacked.	     
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"128"
+		"HealthBarOffset"			"170"
+		"BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.			
+	
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"384"		// Range of vision during day light.
+		"VisionNighttimeRange"		"384"		// Range of vision at night time.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+		}
+	
+		// BuildingHelper Essentials
+		//----------------------------------------------------------------
+		"ConstructionSize"	"2"
+		"BlockPathingSize"	"2"
+		"BuildTime"			"0"
+		"Requires"			"Buildable Allowed"
+		"Grid"
+		{
+		    "Allowed"
+		    {
+		        "Square"        "10"
+		        "RemoveOnDeath" "true"
+		    }
+		}
+	
+		// Red Alert 2
+		//----------------------------------------------------------------
+		"Category"			"structure"
+		"MenuBuildTime"		"1"
+		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_soviet_construction_yard"
+		"Requirement2"		"npc_ra2_soviet_battle_lab"
+	}
+	//=================================================================================	
+	// Creature: Nuke Silo
+	//=================================================================================
+	"npc_ra2_nuke_silo"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					""
+		"GameSoundsFile"			""
+		"Level"						"1"
+		"ModelScale" 				"1.2"
+	
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"		// Damage range min.
+		"AttackDamageMax"			"0"		// Damage range max.
+		"AttackRate"				"0"		// Speed of attack.
+		"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
+		"AttackRange"				"0"		// Range within a target can be attacked.	     
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"128"
+		"HealthBarOffset"			"170"
+		"BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.			
+	
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"384"		// Range of vision during day light.
+		"VisionNighttimeRange"		"384"		// Range of vision at night time.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+		}
+	
+		// BuildingHelper Essentials
+		//----------------------------------------------------------------
+		"ConstructionSize"	"2"
+		"BlockPathingSize"	"2"
+		"BuildTime"			"0"
+		"Requires"			"Buildable Allowed"
+		"Grid"
+		{
+		    "Allowed"
+		    {
+		        "Square"        "10"
+		        "RemoveOnDeath" "true"
+		    }
+		}
+	
+		// Red Alert 2
+		//----------------------------------------------------------------
+		"Category"			"defense"
+		"MenuBuildTime"		"1"
+		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_soviet_construction_yard"
+		"Requirement2"		"npc_ra2_soviet_battle_lab"
+	}
+	//=================================================================================	
+	// Creature: Radar Tower
+	//=================================================================================
+	"npc_ra2_radar_tower"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					""
+		"GameSoundsFile"			""
+		"Level"						"1"
+		"ModelScale" 				"1.2"
+	
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"		// Damage range min.
+		"AttackDamageMax"			"0"		// Damage range max.
+		"AttackRate"				"0"		// Speed of attack.
+		"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
+		"AttackRange"				"0"		// Range within a target can be attacked.	     
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"128"
+		"HealthBarOffset"			"170"
+		"BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.			
+	
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"384"		// Range of vision during day light.
+		"VisionNighttimeRange"		"384"		// Range of vision at night time.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+		}
+	
+		// BuildingHelper Essentials
+		//----------------------------------------------------------------
+		"ConstructionSize"	"2"
+		"BlockPathingSize"	"2"
+		"BuildTime"			"0"
+		"Requires"			"Buildable Allowed"
+		"Grid"
+		{
+		    "Allowed"
+		    {
+		        "Square"        "10"
+		        "RemoveOnDeath" "true"
+		    }
+		}
+	
+		// Red Alert 2
+		//----------------------------------------------------------------
+		"Category"			"structure"
+		"MenuBuildTime"		"1"
+		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_soviet_construction_yard"
+		"Requirement2"		"npc_ra2_soviet_ore_refinery"
+	}
+	//=================================================================================	
 	// Creature: Soviet Barracks
 	//=================================================================================
 	"npc_ra2_sentry_gun"	
@@ -96,7 +744,7 @@
 		//----------------------------------------------------------------
 		"Category"			"defense"
 		"MenuBuildTime"		"1"
-		"BuildCost"			"200"
+		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_barracks"
 	
@@ -204,12 +852,121 @@
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"structure"
-		"MenuBuildTime"		"0.5"
-		"BuildCost"			"500"
+		"MenuBuildTime"		"1"
+		"BuildCost"			"100"
 		"Produces"			"infantry"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_tesla_reactor"
 	
+	}
+	//=================================================================================	
+	// Creature: Soviet Battle Lab
+	//=================================================================================
+	"npc_ra2_soviet_battle_lab"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					""
+		"GameSoundsFile"			""
+		"Level"						"1"
+		"ModelScale" 				"1.2"
+	
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"		// Damage range min.
+		"AttackDamageMax"			"0"		// Damage range max.
+		"AttackRate"				"0"		// Speed of attack.
+		"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
+		"AttackRange"				"0"		// Range within a target can be attacked.	     
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"128"
+		"HealthBarOffset"			"170"
+		"BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.			
+	
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"384"		// Range of vision during day light.
+		"VisionNighttimeRange"		"384"		// Range of vision at night time.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+		}
+	
+		// BuildingHelper Essentials
+		//----------------------------------------------------------------
+		"ConstructionSize"	"2"
+		"BlockPathingSize"	"2"
+		"BuildTime"			"0"
+		"Requires"			"Buildable Allowed"
+		"Grid"
+		{
+		    "Allowed"
+		    {
+		        "Square"        "10"
+		        "RemoveOnDeath" "true"
+		    }
+		}
+	
+		// Red Alert 2
+		//----------------------------------------------------------------
+		"Category"			"structure"
+		"MenuBuildTime"		"1"
+		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_soviet_construction_yard"
+		"Requirement2"		"npc_ra2_soviet_war_factory"
+		"Requirement3"		"npc_ra2_radar_tower"
 	}
 	//=================================================================================	
 	// Creature: Soviet Construction Yard
@@ -313,11 +1070,655 @@
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"MenuBuildTime"		"1"
-		"BuildCost"			"1000"
+		"BuildCost"			"100"
 	
 	}
 	//=================================================================================	
-	// Creature: Soviet Barracks
+	// Creature: Soviet Naval Shipyard
+	//=================================================================================
+	"npc_ra2_soviet_naval_shipyard"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					""
+		"GameSoundsFile"			""
+		"Level"						"1"
+		"ModelScale" 				"1.2"
+	
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"		// Damage range min.
+		"AttackDamageMax"			"0"		// Damage range max.
+		"AttackRate"				"0"		// Speed of attack.
+		"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
+		"AttackRange"				"0"		// Range within a target can be attacked.	     
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"128"
+		"HealthBarOffset"			"170"
+		"BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.			
+	
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"384"		// Range of vision during day light.
+		"VisionNighttimeRange"		"384"		// Range of vision at night time.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+		}
+	
+		// BuildingHelper Essentials
+		//----------------------------------------------------------------
+		"ConstructionSize"	"2"
+		"BlockPathingSize"	"2"
+		"BuildTime"			"0"
+		"Requires"			"Buildable Allowed"
+		"Grid"
+		{
+		    "Allowed"
+		    {
+		        "Square"        "10"
+		        "RemoveOnDeath" "true"
+		    }
+		}
+	
+		// Red Alert 2
+		//----------------------------------------------------------------
+		"Category"			"structure"
+		"MenuBuildTime"		"1"
+		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_soviet_construction_yard"
+		"Requirement2"		"npc_ra2_soviet_ore_refinery"
+		"Requirement3"		"npc_ra2_tesla_reactor"
+	}
+	//=================================================================================	
+	// Creature: Soviet Ore Refinery
+	//=================================================================================
+	"npc_ra2_soviet_ore_refinery"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					""
+		"GameSoundsFile"			""
+		"Level"						"1"
+		"ModelScale" 				"1.2"
+	
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"		// Damage range min.
+		"AttackDamageMax"			"0"		// Damage range max.
+		"AttackRate"				"0"		// Speed of attack.
+		"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
+		"AttackRange"				"0"		// Range within a target can be attacked.	     
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"128"
+		"HealthBarOffset"			"170"
+		"BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.			
+	
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"384"		// Range of vision during day light.
+		"VisionNighttimeRange"		"384"		// Range of vision at night time.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+		}
+	
+		// BuildingHelper Essentials
+		//----------------------------------------------------------------
+		"ConstructionSize"	"2"
+		"BlockPathingSize"	"2"
+		"BuildTime"			"0"
+		"Requires"			"Buildable Allowed"
+		"Grid"
+		{
+		    "Allowed"
+		    {
+		        "Square"        "10"
+		        "RemoveOnDeath" "true"
+		    }
+		}
+	
+		// Red Alert 2
+		//----------------------------------------------------------------
+		"Category"			"structure"
+		"MenuBuildTime"		"1"
+		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_soviet_construction_yard"
+		"Requirement2"		"npc_ra2_tesla_reactor"
+	}
+	//=================================================================================	
+	// Creature: Soviet Service Depot
+	//=================================================================================
+	"npc_ra2_soviet_service_depot"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					""
+		"GameSoundsFile"			""
+		"Level"						"1"
+		"ModelScale" 				"1.2"
+	
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"		// Damage range min.
+		"AttackDamageMax"			"0"		// Damage range max.
+		"AttackRate"				"0"		// Speed of attack.
+		"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
+		"AttackRange"				"0"		// Range within a target can be attacked.	     
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"128"
+		"HealthBarOffset"			"170"
+		"BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.			
+	
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"384"		// Range of vision during day light.
+		"VisionNighttimeRange"		"384"		// Range of vision at night time.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+		}
+	
+		// BuildingHelper Essentials
+		//----------------------------------------------------------------
+		"ConstructionSize"	"2"
+		"BlockPathingSize"	"2"
+		"BuildTime"			"0"
+		"Requires"			"Buildable Allowed"
+		"Grid"
+		{
+		    "Allowed"
+		    {
+		        "Square"        "10"
+		        "RemoveOnDeath" "true"
+		    }
+		}
+	
+		// Red Alert 2
+		//----------------------------------------------------------------
+		"Category"			"structure"
+		"MenuBuildTime"		"1"
+		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_soviet_construction_yard"
+		"Requirement2"		"npc_ra2_soviet_war_factory"
+	}
+	//=================================================================================	
+	// Creature: Soviet Walls
+	//=================================================================================
+	"npc_ra2_soviet_wall"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					""
+		"GameSoundsFile"			""
+		"Level"						"1"
+		"ModelScale" 				"0.5"
+	
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"		// Damage range min.
+		"AttackDamageMax"			"0"		// Damage range max.
+		"AttackRate"				"0"		// Speed of attack.
+		"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
+		"AttackRange"				"0"		// Range within a target can be attacked.	     
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"128"
+		"HealthBarOffset"			"170"
+		"BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.			
+	
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"384"		// Range of vision during day light.
+		"VisionNighttimeRange"		"384"		// Range of vision at night time.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+		}
+	
+		// BuildingHelper Essentials
+		//----------------------------------------------------------------
+		"ConstructionSize"	"1"
+		"BlockPathingSize"	"1"
+		"BuildTime"			"0"
+		"Requires"			"Buildable Allowed"
+	
+		// Red Alert 2
+		//----------------------------------------------------------------
+		"Category"			"defense"
+		"MenuBuildTime"		"1"
+		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_soviet_construction_yard"
+		"Requirement2"		"npc_ra2_soviet_barracks"
+	
+	}
+	//=================================================================================	
+	// Creature: Soviet War Factory
+	//=================================================================================
+	"npc_ra2_soviet_war_factory"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					""
+		"GameSoundsFile"			""
+		"Level"						"1"
+		"ModelScale" 				"1.2"
+	
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"		// Damage range min.
+		"AttackDamageMax"			"0"		// Damage range max.
+		"AttackRate"				"0"		// Speed of attack.
+		"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
+		"AttackRange"				"0"		// Range within a target can be attacked.	     
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"128"
+		"HealthBarOffset"			"170"
+		"BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"0"		// Gold earned min.
+		"BountyGoldMax"				"0"		// Gold earned max.
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.			
+	
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"500"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"384"		// Range of vision during day light.
+		"VisionNighttimeRange"		"384"		// Range of vision at night time.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			//Level Up
+			"HPGain"					"0"
+			"DamageGain"				"0"
+			"ArmorGain"					"0"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"0"
+			"BountyGain"				"0"
+			"XPGain"					"0"
+		}
+	
+		// BuildingHelper Essentials
+		//----------------------------------------------------------------
+		"ConstructionSize"	"2"
+		"BlockPathingSize"	"2"
+		"BuildTime"			"0"
+		"Requires"			"Buildable Allowed"
+		"Grid"
+		{
+		    "Allowed"
+		    {
+		        "Square"        "10"
+		        "RemoveOnDeath" "true"
+		    }
+		}
+	
+		// Red Alert 2
+		//----------------------------------------------------------------
+		"Category"			"structure"
+		"MenuBuildTime"		"1"
+		"BuildCost"			"100"
+		"Requirement1"		"npc_ra2_soviet_construction_yard"
+		"Requirement2"		"npc_ra2_soviet_ore_refinery"
+		"Requirement3"		"npc_ra2_soviet_barracks"
+	}
+	
+// Creature: Tesla Coil
+//=================================================================================
+"npc_ra2_tesla_coil"	
+{
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					""
+	"GameSoundsFile"			""
+	"Level"						"1"
+	"ModelScale" 				"1.2"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					""			// Ability 1
+	"Ability2"					""			// Ability 2
+	"Ability3"					""			// Ability 3
+	"Ability4"					""			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"0"			// Physical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+	"AttackDamageMin"			"0"		// Damage range min.
+	"AttackDamageMax"			"0"		// Damage range max.
+	"AttackRate"				"0"		// Speed of attack.
+	"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
+	"AttackRange"				"0"		// Range within a target can be attacked.	     
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"128"
+	"HealthBarOffset"			"170"
+	"BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"0"		// Experience earn.
+	"BountyGoldMin"				"0"		// Gold earned min.
+	"BountyGoldMax"				"0"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+	"MovementSpeed"				"0"		// Speed.			
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"500"		// Base health.
+	"StatusHealthRegen"			"0"			// Health regeneration rate.
+	"StatusMana"				"0"			// Base mana.
+	"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"384"		// Range of vision during day light.
+	"VisionNighttimeRange"		"384"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_GOODGUYS"						// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	// Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+	{
+		//Level Up
+		"HPGain"					"0"
+		"DamageGain"				"0"
+		"ArmorGain"					"0"
+		"MagicResistGain"			"0"
+		"MoveSpeedGain"				"0"
+		"BountyGain"				"0"
+		"XPGain"					"0"
+	}
+
+	// BuildingHelper Essentials
+	//----------------------------------------------------------------
+	"ConstructionSize"	"2"
+	"BlockPathingSize"	"2"
+	"BuildTime"			"0"
+	"Requires"			"Buildable Allowed"
+	"Grid"
+	{
+	    "Allowed"
+	    {
+	        "Square"        "10"
+	        "RemoveOnDeath" "true"
+	    }
+	}
+
+	// Red Alert 2
+	//----------------------------------------------------------------
+	"Category"			"defense"
+	"MenuBuildTime"		"1"
+	"BuildCost"			"100"
+	"Requirement1"		"npc_ra2_soviet_construction_yard"
+	"Requirement2"		"npc_ra2_tesla_reactor"
+	"Requirement3"		"npc_ra2_radar_tower"
+}
+	//=================================================================================	
+	// Creature: Tesla reactor
 	//=================================================================================
 	"npc_ra2_tesla_reactor"	
 	{
@@ -419,8 +1820,8 @@
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"structure"
-		"MenuBuildTime"		"5"
-		"BuildCost"			"1000"
+		"MenuBuildTime"		"1"
+		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 	}
 	//=================================================================================	
@@ -1010,7 +2411,7 @@
 		"MenuBuildTime"		"2"
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_barracks"
-		"Requirement2"		"npc_ra2_battle_lab"
+		"Requirement2"		"npc_ra2_soviet_battle_lab"
 	}
 	//=================================================================================	
 	// Creature: Terrorist
@@ -1307,7 +2708,7 @@
 		"MenuBuildTime"		"2"
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_war_factory"
-		"Requirement1"		"npc_ra2_battle_lab"
+		"Requirement2"		"npc_ra2_soviet_battle_lab"
 	
 	}
 }

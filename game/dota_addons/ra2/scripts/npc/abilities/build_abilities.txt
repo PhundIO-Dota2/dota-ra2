@@ -1,4 +1,4 @@
-"build_npc_ra2_soviet_barracks"
+"build_npc_ra2_clone_vat"
 {
     "BaseClass"                     "ability_datadriven"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
@@ -11,7 +11,7 @@
     "Scale"                         "1"
     "PlayerCanControl"              "1"
 
-    "UnitName"                      "npc_ra2_soviet_barracks"
+    "UnitName"                      "npc_ra2_clone_vat"
     "AbilityGoldCost"               "0"
     
     "OnSpellStart"
@@ -24,7 +24,7 @@
     }
 }
 
-"build_npc_ra2_tesla_reactor"
+"build_npc_ra2_flak_cannon"
 {
     "BaseClass"                     "ability_datadriven"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
@@ -37,7 +37,111 @@
     "Scale"                         "1"
     "PlayerCanControl"              "1"
 
-    "UnitName"                      "npc_ra2_tesla_reactor"
+    "UnitName"                      "npc_ra2_flak_cannon"
+    "AbilityGoldCost"               "0"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "builder.lua"
+            "Function"          "Build"
+        }
+    }
+}
+
+"build_npc_ra2_iron_curtain"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+
+    "MaxLevel"                      "1"
+    "LevelsBetweenUpgrades"         "0"
+    
+    "Building"                      "1"
+    "AbilityCastRange"              "999999"
+    "Scale"                         "1"
+    "PlayerCanControl"              "1"
+
+    "UnitName"                      "npc_ra2_iron_curtain"
+    "AbilityGoldCost"               "0"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "builder.lua"
+            "Function"          "Build"
+        }
+    }
+}
+
+"build_npc_ra2_nuclear_reactor"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+
+    "MaxLevel"                      "1"
+    "LevelsBetweenUpgrades"         "0"
+    
+    "Building"                      "1"
+    "AbilityCastRange"              "999999"
+    "Scale"                         "1"
+    "PlayerCanControl"              "1"
+
+    "UnitName"                      "npc_ra2_nuclear_reactor"
+    "AbilityGoldCost"               "0"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "builder.lua"
+            "Function"          "Build"
+        }
+    }
+}
+
+"build_npc_ra2_nuke_silo"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+
+    "MaxLevel"                      "1"
+    "LevelsBetweenUpgrades"         "0"
+    
+    "Building"                      "1"
+    "AbilityCastRange"              "999999"
+    "Scale"                         "1"
+    "PlayerCanControl"              "1"
+
+    "UnitName"                      "npc_ra2_nuke_silo"
+    "AbilityGoldCost"               "0"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "builder.lua"
+            "Function"          "Build"
+        }
+    }
+}
+
+"build_npc_ra2_radar_tower"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+
+    "MaxLevel"                      "1"
+    "LevelsBetweenUpgrades"         "0"
+    
+    "Building"                      "1"
+    "AbilityCastRange"              "999999"
+    "Scale"                         "1"
+    "PlayerCanControl"              "1"
+
+    "UnitName"                      "npc_ra2_radar_tower"
     "AbilityGoldCost"               "0"
     
     "OnSpellStart"
@@ -76,6 +180,58 @@
     }
 }
 
+"build_npc_ra2_soviet_barracks"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+
+    "MaxLevel"                      "1"
+    "LevelsBetweenUpgrades"         "0"
+    
+    "Building"                      "1"
+    "AbilityCastRange"              "999999"
+    "Scale"                         "1"
+    "PlayerCanControl"              "1"
+
+    "UnitName"                      "npc_ra2_soviet_barracks"
+    "AbilityGoldCost"               "0"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "builder.lua"
+            "Function"          "Build"
+        }
+    }
+}
+
+"build_npc_ra2_soviet_battle_lab"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+
+    "MaxLevel"                      "1"
+    "LevelsBetweenUpgrades"         "0"
+    
+    "Building"                      "1"
+    "AbilityCastRange"              "999999"
+    "Scale"                         "1"
+    "PlayerCanControl"              "1"
+
+    "UnitName"                      "npc_ra2_soviet_battle_lab"
+    "AbilityGoldCost"               "0"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "builder.lua"
+            "Function"          "Build"
+        }
+    }
+}
+
 "build_npc_ra2_soviet_construction_yard"
 {
     "BaseClass"                     "ability_datadriven"
@@ -89,7 +245,189 @@
     "Scale"                         "1"
     "PlayerCanControl"              "1"
 
-    "UnitName"                      "npc_ra2_soviet_construction_yard"
+    "UnitName"                      "npc_ra2_soviet_construction_y"
+    "AbilityGoldCost"               "0"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "builder.lua"
+            "Function"          "Build"
+        }
+    }
+}
+
+"build_npc_ra2_soviet_naval_shipyard"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+
+    "MaxLevel"                      "1"
+    "LevelsBetweenUpgrades"         "0"
+    
+    "Building"                      "1"
+    "AbilityCastRange"              "999999"
+    "Scale"                         "1"
+    "PlayerCanControl"              "1"
+
+    "UnitName"                      "npc_ra2_soviet_naval_shipyard"
+    "AbilityGoldCost"               "0"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "builder.lua"
+            "Function"          "Build"
+        }
+    }
+}
+
+"build_npc_ra2_soviet_ore_refinery"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+
+    "MaxLevel"                      "1"
+    "LevelsBetweenUpgrades"         "0"
+    
+    "Building"                      "1"
+    "AbilityCastRange"              "999999"
+    "Scale"                         "1"
+    "PlayerCanControl"              "1"
+
+    "UnitName"                      "npc_ra2_soviet_ore_refinery"
+    "AbilityGoldCost"               "0"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "builder.lua"
+            "Function"          "Build"
+        }
+    }
+}
+
+"build_npc_ra2_soviet_service_depot"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+
+    "MaxLevel"                      "1"
+    "LevelsBetweenUpgrades"         "0"
+    
+    "Building"                      "1"
+    "AbilityCastRange"              "999999"
+    "Scale"                         "1"
+    "PlayerCanControl"              "1"
+
+    "UnitName"                      "npc_ra2_soviet_service_depot"
+    "AbilityGoldCost"               "0"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "builder.lua"
+            "Function"          "Build"
+        }
+    }
+}
+
+"build_npc_ra2_soviet_wall"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+
+    "MaxLevel"                      "1"
+    "LevelsBetweenUpgrades"         "0"
+    
+    "Building"                      "1"
+    "AbilityCastRange"              "999999"
+    "Scale"                         "1"
+    "PlayerCanControl"              "1"
+
+    "UnitName"                      "npc_ra2_soviet_wall"
+    "AbilityGoldCost"               "0"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "builder.lua"
+            "Function"          "Build"
+        }
+    }
+}
+
+"build_npc_ra2_soviet_war_factory"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+
+    "MaxLevel"                      "1"
+    "LevelsBetweenUpgrades"         "0"
+    
+    "Building"                      "1"
+    "AbilityCastRange"              "999999"
+    "Scale"                         "1"
+    "PlayerCanControl"              "1"
+
+    "UnitName"                      "npc_ra2_soviet_war_factory"
+    "AbilityGoldCost"               "0"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "builder.lua"
+            "Function"          "Build"
+        }
+    }
+}
+
+"build_npc_ra2_tesla_coil"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+
+    "MaxLevel"                      "1"
+    "LevelsBetweenUpgrades"         "0"
+    
+    "Building"                      "1"
+    "AbilityCastRange"              "999999"
+    "Scale"                         "1"
+    "PlayerCanControl"              "1"
+
+    "UnitName"                      "npc_ra2_tesla_coil"
+    "AbilityGoldCost"               "0"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "builder.lua"
+            "Function"          "Build"
+        }
+    }
+}
+
+"build_npc_ra2_tesla_reactor"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+
+    "MaxLevel"                      "1"
+    "LevelsBetweenUpgrades"         "0"
+    
+    "Building"                      "1"
+    "AbilityCastRange"              "999999"
+    "Scale"                         "1"
+    "PlayerCanControl"              "1"
+
+    "UnitName"                      "npc_ra2_tesla_reactor"
     "AbilityGoldCost"               "0"
     
     "OnSpellStart"

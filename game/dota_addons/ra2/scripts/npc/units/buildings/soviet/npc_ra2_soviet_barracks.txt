@@ -101,8 +101,8 @@
 	// Red Alert 2
 	//----------------------------------------------------------------
 	"Category"			"structure"
-	"MenuBuildTime"		"0.5"
-	"BuildCost"			"500"
+	"MenuBuildTime"		"1"
+	"BuildCost"			"100"
 	"Produces"			"infantry"
 	"Requirement1"		"npc_ra2_soviet_construction_yard"
 	"Requirement2"		"npc_ra2_tesla_reactor"

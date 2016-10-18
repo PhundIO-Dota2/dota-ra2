@@ -1,5 +1,5 @@
 //=================================================================================	
-// Creature: Soviet Barracks
+// Creature: Tesla reactor
 //=================================================================================
 "npc_ra2_tesla_reactor"	
 {
@@ -101,7 +101,7 @@
 	// Red Alert 2
 	//----------------------------------------------------------------
 	"Category"			"structure"
-	"MenuBuildTime"		"5"
-	"BuildCost"			"1000"
+	"MenuBuildTime"		"1"
+	"BuildCost"			"100"
 	"Requirement1"		"npc_ra2_soviet_construction_yard"
 }

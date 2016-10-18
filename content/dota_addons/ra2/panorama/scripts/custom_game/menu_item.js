@@ -3,10 +3,10 @@
 var Root = $.GetContextPanel();
 var unit = Root.unit;
 var category = Root.category;
-var cameo = Root.cameo; 
 var playerID = Game.GetLocalPlayerID();
 
 $('#label').text = unit;
+$('#cameo').style.backgroundImage = 'url("file://{images}/custom_game/structures/' + unit + '.png");';
 
 function startProduction() {
 	var menu_table = CustomNetTables.GetTableValue( 'player_tables', 'menu_' + category + '_' + Players.GetLocalPlayer()),

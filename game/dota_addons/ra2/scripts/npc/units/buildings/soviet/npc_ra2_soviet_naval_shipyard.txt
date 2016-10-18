@@ -1,24 +1,23 @@
 //=================================================================================	
-// Creature: Crazy Ivan
+// Creature: Soviet Naval Shipyard
 //=================================================================================
-// -createhero npc_ra2_crazy_ivan
-"npc_ra2_crazy_ivan"
+"npc_ra2_soviet_naval_shipyard"	
 {
 	// General
 	//----------------------------------------------------------------
-	"Model"						"models/creeps/neutral_creeps/n_creep_forest_trolls/n_creep_forest_troll_high_priest.vmdl"	// Model.
+	"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
 	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					"n_creep_trollCommon"
-	"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+	"SoundSet"					""
+	"GameSoundsFile"			""
 	"Level"						"1"
-	"ModelScale" 				"0.5"
+	"ModelScale" 				"1.2"
 
 	// Abilities
 	//----------------------------------------------------------------
-	"Ability1"					"crazy_ivan_attack" // Ability 1
-	"Ability2"					""			 // Ability 2
-	"Ability3"					""			 // Ability 3
-	"Ability4"					""			 // Ability 4
+	"Ability1"					""			// Ability 1
+	"Ability2"					""			// Ability 2
+	"Ability3"					""			// Ability 3
+	"Ability4"					""			// Ability 4
 
 	// Armor
 	//----------------------------------------------------------------
@@ -26,20 +25,19 @@
 
 	// Attack
 	//----------------------------------------------------------------
-	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"           "0"       // Damage range min.
-	"AttackDamageMax"           "0"       // Damage range max.
-	"AttackRate"                "1.67"
-	"AttackAnimationPoint"      "0"
-	"AttackAcquisitionRange"    "96"    // Range within a target can be acquired.
-	"AttackRange"               "96"     // Range within a target can be attacked.
-
+	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+	"AttackDamageMin"			"0"		// Damage range min.
+	"AttackDamageMax"			"0"		// Damage range max.
+	"AttackRate"				"0"		// Speed of attack.
+	"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
+	"AttackRange"				"0"		// Range within a target can be attacked.	     
 
 	// Bounds
 	//----------------------------------------------------------------
-	"RingRadius"				"32"
+	"RingRadius"				"128"
 	"HealthBarOffset"			"170"
-	"BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
+	"BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
 
 	// Bounty
 	//----------------------------------------------------------------
@@ -49,12 +47,12 @@
 
 	// Movement
 	//----------------------------------------------------------------
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"256"		// Speed.			
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+	"MovementSpeed"				"0"		// Speed.			
 
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"				"125"		// Base health.
+	"StatusHealth"				"500"		// Base health.
 	"StatusHealthRegen"			"0"			// Health regeneration rate.
 	"StatusMana"				"0"			// Base mana.
 	"StatusManaRegen"			"0"		// Mana regeneration rate.		 
@@ -85,11 +83,27 @@
 		"XPGain"					"0"
 	}
 
+	// BuildingHelper Essentials
+	//----------------------------------------------------------------
+	"ConstructionSize"	"2"
+	"BlockPathingSize"	"2"
+	"BuildTime"			"0"
+	"Requires"			"Buildable Allowed"
+	"Grid"
+	{
+	    "Allowed"
+	    {
+	        "Square"        "10"
+	        "RemoveOnDeath" "true"
+	    }
+	}
+
 	// Red Alert 2
 	//----------------------------------------------------------------
-	"Category"			"infantry"
-	"MenuBuildTime"		"2"
+	"Category"			"structure"
+	"MenuBuildTime"		"1"
 	"BuildCost"			"100"
-	"Requirement1"		"npc_ra2_soviet_barracks"
-	"Requirement2"		"npc_ra2_soviet_battle_lab"
+	"Requirement1"		"npc_ra2_soviet_construction_yard"
+	"Requirement2"		"npc_ra2_soviet_ore_refinery"
+	"Requirement3"		"npc_ra2_tesla_reactor"
 }
