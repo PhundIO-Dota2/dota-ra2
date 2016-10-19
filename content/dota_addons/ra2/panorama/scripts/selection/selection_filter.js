@@ -121,9 +121,7 @@ function FirstBuildingEntityFromSelection( entityList ){
 }
 
 function IsCustomBuilding( entityIndex ){
-    var ability_building = Entities.GetAbilityByName( entityIndex, "ability_building")
-    var ability_tower = Entities.GetAbilityByName( entityIndex, "ability_tower")
-    return (ability_building != -1 || ability_tower != -1)
+    return !Entities.HasMovementCapability(entityIndex);
 }
 
 function IsMechanical( entityIndex ) {

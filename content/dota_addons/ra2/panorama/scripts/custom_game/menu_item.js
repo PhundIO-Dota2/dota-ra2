@@ -41,11 +41,11 @@ function OnPlayerTableChanged( table_name, key, data )
 	}
 	else if (key === 'queue_' + playerID) {
 		var counts = {};
-		for (var key in data.infantry) {
-			if(!counts[data.infantry[key]]) {
-				counts[data.infantry[key]] = 0;
+		for (var key in data[category]) {
+			if(!counts[data[category][key]]) {
+				counts[data[category][key]] = 0;
 			}
-			++counts[data.infantry[key]];
+			++counts[data[category][key]];
 		}
 		var label = $('#queue');
 		label.text = counts[unit] || "";

@@ -984,7 +984,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"ability_building"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -1604,6 +1604,7 @@
 		"Category"			"structure"
 		"MenuBuildTime"		"1"
 		"BuildCost"			"100"
+		"Produces"			"vehicle"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_ore_refinery"
 		"Requirement3"		"npc_ra2_soviet_barracks"

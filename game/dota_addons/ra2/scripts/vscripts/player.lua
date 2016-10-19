@@ -156,7 +156,7 @@ function CDOTAPlayer:StartProduction( unit )
             if category == "infantry" or category == "vehicle" then
                 menu_table[unit]["progress"] = 0
                 self.menu[category] = menu_table
-                self:SpawnUnit(unit)
+                self:SpawnUnit(unit, category)
             else
                 menu_table[unit]["progress"] = 1
             end
@@ -267,19 +267,19 @@ function CDOTAPlayer:CategoryHasProductionInProgress( category )
 
 end
 
-function CDOTAPlayer:SpawnUnit( unit )
+function CDOTAPlayer:SpawnUnit( unit, category )
     
     local buildings = BuildingHelper:GetBuildings(self:GetPlayerID())
 
     for key, building in pairs(buildings) do
         local production = GetUnitKV(building:GetUnitName(), "Produces", 1)
-        if production == "infantry" then
+        if production == category then
             local trainAbility = building:FindAbilityByName("train_" .. unit)
             if not trainAbility then
                 trainAbility = building:AddAbility("train_" .. unit)
             end
             building:CastAbilityImmediately(trainAbility, self:GetPlayerID())
-            self:AdvanceQueue(production)
+            self:AdvanceQueue(category)
             break
         end
     end

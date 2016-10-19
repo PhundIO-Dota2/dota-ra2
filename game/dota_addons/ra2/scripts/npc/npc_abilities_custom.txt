@@ -1151,6 +1151,40 @@
 	        }
 	    }
 	}
+	"train_npc_ra2_chrono_ivan"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_chrono_ivan"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
 	"train_npc_ra2_conscript"
 	{
 	    "BaseClass"             "ability_datadriven"
@@ -1166,6 +1200,210 @@
 	        "SpawnUnit"
 	        {
 	            "UnitName"    "npc_ra2_conscript"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_crazy_ivan"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_crazy_ivan"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_desolator"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_desolator"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_flak_trooper"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_flak_trooper"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_soviet_attack_dog"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_soviet_attack_dog"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_soviet_engineer"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_soviet_engineer"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_terrorist"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_terrorist"
 	            "Target"      "CASTER"
 	            "UnitCount"   "1"
 	            "UnitLimit"   "0"
@@ -1219,7 +1457,7 @@
 	    }
 	}
 	
-	"train_npc_ra2_crazy_ivan"
+	"train_npc_ra2_yuri"
 	{
 	    "BaseClass"             "ability_datadriven"
 	    "MaxLevel"              "1"
@@ -1233,7 +1471,551 @@
 	
 	        "SpawnUnit"
 	        {
-	            "UnitName"    "npc_ra2_crazy_ivan"
+	            "UnitName"    "npc_ra2_yuri"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_yuri_prime"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_yuri_prime"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_dreadnought"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_dreadnought"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_giant_squid"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_giant_squid"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_sea_scorpion"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_sea_scorpion"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_soviet_amphibious_transport"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_soviet_amphibious_transport"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_typhoon_attack_submarine"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_typhoon_attack_submarine"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_apocalypse_tank"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_apocalypse_tank"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_demolition_truck"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_demolition_truck"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_flak_track"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_flak_track"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_kirov_airship"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_kirov_airship"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_rhino_tank"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_rhino_tank"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_soviet_mcv"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_soviet_mcv"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_terror_drone"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_terror_drone"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_tesla_tank"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_tesla_tank"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_v3_rocket_launcher"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_v3_rocket_launcher"
+	            "Target"      "CASTER"
+	            "UnitCount"   "1"
+	            "UnitLimit"   "0"
+	            "GrantsGold"  "0"
+	            "GrantsXP"    "0"
+	            "SpawnRadius" "100"
+	            "OnSpawn"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "ModifierName" "modifier_phased"
+	                    "Target"       "TARGET"
+	                    "Duration"     "0.03"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"train_npc_ra2_war_miner"
+	{
+	    "BaseClass"             "ability_datadriven"
+	    "MaxLevel"              "1"
+	
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	
+	    "AbilityGoldCost"    "0"
+	
+	    "OnSpellStart"
+	    {
+	
+	        "SpawnUnit"
+	        {
+	            "UnitName"    "npc_ra2_war_miner"
 	            "Target"      "CASTER"
 	            "UnitCount"   "1"
 	            "UnitLimit"   "0"
