@@ -6,7 +6,7 @@ var category = Root.category;
 var playerID = Game.GetLocalPlayerID();
 
 $('#label').text = unit;
-$('#cameo').style.backgroundImage = 'url("file://{images}/custom_game/structures/' + unit + '.png");';
+$('#cameo').style.backgroundImage = 'url("file://{images}/custom_game/units/' + unit + '.png");';
 
 function startProduction() {
 	var menu_table = CustomNetTables.GetTableValue( 'player_tables', 'menu_' + category + '_' + Players.GetLocalPlayer()),

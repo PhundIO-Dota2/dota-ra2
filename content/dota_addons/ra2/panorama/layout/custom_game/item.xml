@@ -6,7 +6,7 @@
 
 	<!-- <Panel> -->
 		<Button onactivate="queueBuilding('npc_ra2_soviet_barracks');">
-			<Image src="file://{images}/custom_game/structures/sbarracks.png"/>
+			<Image src="file://{images}/custom_game/units/sbarracks.png"/>
 		</Button>
 	<!-- </Panel> -->
 

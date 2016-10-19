@@ -1,24 +1,23 @@
 //=================================================================================	
-// Creature: Attack Dog
+// Creature: Conscript
 //=================================================================================
-// -createhero npc_ra2_attack_dog
-"npc_ra2_attack_dog"
+"npc_ra2_flak_trooper"	
 {
 	// General
 	//----------------------------------------------------------------
-	"Model"						"models/creeps/neutral_creeps/n_creep_worg_small/n_creep_worg_small.vmdl"	// Model.
+	"Model"						"models/heroes/sniper/sniper.vmdl"	// Model.
 	"BaseClass"					"npc_dota_creature"
 	"SoundSet"					"Hero_Sniper"
-	"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
 	"Level"						"1"
 	"ModelScale" 				"0.5"
 
 	// Abilities
 	//----------------------------------------------------------------
-	"Ability1"					"dog_pounce" // Ability 1
-	"Ability2"					""			 // Ability 2
-	"Ability3"					""			 // Ability 3
-	"Ability4"					""			 // Ability 4
+	"Ability1"					""			// Ability 1
+	"Ability2"					""			// Ability 2
+	"Ability3"					""			// Ability 3
+	"Ability4"					""			// Ability 4
 
 	// Armor
 	//----------------------------------------------------------------
@@ -27,13 +26,12 @@
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"           "0"       // Damage range min.
-	"AttackDamageMax"           "0"       // Damage range max.
-	"AttackRate"                "1"
-	"AttackAnimationPoint"      "0"
-	"AttackAcquisitionRange"    "576"    // Range within a target can be acquired.
-	"AttackRange"               "96"     // Range within a target can be attacked.
-
+	"AttackDamageMin"			"15"		// Damage range min.
+	"AttackDamageMax"			"15"		// Damage range max.
+	"AttackRate"				"0.83"		// Speed of attack.
+	"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"320"		// Range within a target can be acquired.
+	"AttackRange"				"256"		// Range within a target can be attacked.     
 
 	// Bounds
 	//----------------------------------------------------------------
@@ -50,19 +48,19 @@
 	// Movement
 	//----------------------------------------------------------------
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"512"		// Speed.			
+	"MovementSpeed"				"256"		// Speed.			
 
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"				"100"		// Base health.
+	"StatusHealth"				"125"		// Base health.
 	"StatusHealthRegen"			"0"			// Health regeneration rate.
 	"StatusMana"				"0"			// Base mana.
 	"StatusManaRegen"			"0"		// Mana regeneration rate.		 
 	
 	// Vision
 	//----------------------------------------------------------------
-	"VisionDaytimeRange"		"576"		// Range of vision during day light.
-	"VisionNighttimeRange"		"576"		// Range of vision at night time.
+	"VisionDaytimeRange"		"320"		// Range of vision during day light.
+	"VisionNighttimeRange"		"320"		// Range of vision at night time.
 
 	// Team
 	//----------------------------------------------------------------
@@ -83,6 +81,12 @@
 		"MoveSpeedGain"				"0"
 		"BountyGain"				"0"
 		"XPGain"					"0"
+		"AttachWearables"
+		{
+		    "Wearable1" { "ItemDef" "4698" } // Sharpshooter Stache
+		    "Wearable4" { "ItemDef" "5431" } // Hare Hunt Rifle
+		    "Wearable5" { "ItemDef" "6330" } // Wild West Shoulders
+		}
 	}
 
 	// Red Alert 2
@@ -91,5 +95,6 @@
 	"MenuBuildTime"		"2"
 	"BuildCost"			"100"
 	"Requirement1"		"npc_ra2_soviet_barracks"
+	"Requirement2"		"npc_ra2_radar_tower"
 
 }
