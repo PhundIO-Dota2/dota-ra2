@@ -4,23 +4,29 @@ function CDOTAPlayer:Init()
 
     local pid = self:GetPlayerID()
 
+    self.unitCategories = {
+        airforce = true,
+        infantry = true, 
+        naval = true, 
+        vehicle = true
+    }
     self.menu = {
-        structure = {},
+        airforce = {},
         defense = {},
         infantry = {},
-        vehicle = {},
         naval = {},
-        airforce = {}
+        structure = {},
+        vehicle = {}
     }
     for category, values in pairs(self.menu) do
         CustomNetTables:SetTableValue("player_tables", "menu_" .. category .. "_" .. pid, self.menu[category])
     end
 
     self.queue = {
+        airforce = {},
         infantry = {},
-        vehicle = {},
         naval = {},
-        airforce = {}
+        vehicle = {}
     }
     CustomNetTables:SetTableValue("player_tables", "queue_" .. pid, self.queue)
 
@@ -36,7 +42,7 @@ function CDOTAPlayer:OnProductionRequest( unit )
 
     if not menu_table[unit] or not self:HasRequiredBuildings(unit) then return end
 
-    if (category == "infantry" or category == "vehicle") and self:CategoryHasProductionInProgress(category) then
+    if self.unitCategories[category] and self:CategoryHasProductionInProgress(category) then
         self:AddUnitToQueue(category, unit)
         return
     end
@@ -94,7 +100,7 @@ function CDOTAPlayer:OnProductionCancelled( unit )
 
     if not menu_table[unit] then return end
 
-    if category == "infantry" and self:HasUnitQueued(category, unit) then
+    if self.unitCategories[category] and self:HasUnitQueued(category, unit) then
         self:RemoveUnitFromQueue(category, unit)
         return
     end
@@ -153,7 +159,7 @@ function CDOTAPlayer:StartProduction( unit )
             return self:CancelProduction(unit, spent)
         end
         if time >= (start_time + duration + hold_duration) then
-            if category == "infantry" or category == "vehicle" then
+            if self.unitCategories[category] then
                 menu_table[unit]["progress"] = 0
                 self.menu[category] = menu_table
                 self:SpawnUnit(unit, category)

@@ -1178,6 +1178,7 @@
 		"Category"			"structure"
 		"MenuBuildTime"		"1"
 		"BuildCost"			"100"
+		"Produces"			"naval"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_ore_refinery"
 		"Requirement3"		"npc_ra2_tesla_reactor"
@@ -3300,7 +3301,7 @@
 	
 		// Red Alert 2
 		//----------------------------------------------------------------
-		"Category"			"vehicle"
+		"Category"			"naval"
 		"MenuBuildTime"		"2"
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_naval_shipyard"
@@ -3391,7 +3392,7 @@
 	
 		// Red Alert 2
 		//----------------------------------------------------------------
-		"Category"			"vehicle"
+		"Category"			"naval"
 		"MenuBuildTime"		"2"
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_naval_shipyard"
@@ -3482,7 +3483,7 @@
 	
 		// Red Alert 2
 		//----------------------------------------------------------------
-		"Category"			"vehicle"
+		"Category"			"naval"
 		"MenuBuildTime"		"2"
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_naval_shipyard"
@@ -3572,7 +3573,7 @@
 	
 		// Red Alert 2
 		//----------------------------------------------------------------
-		"Category"			"vehicle"
+		"Category"			"naval"
 		"MenuBuildTime"		"2"
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_naval_shipyard"
@@ -3662,7 +3663,7 @@
 	
 		// Red Alert 2
 		//----------------------------------------------------------------
-		"Category"			"vehicle"
+		"Category"			"naval"
 		"MenuBuildTime"		"2"
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_naval_shipyard"

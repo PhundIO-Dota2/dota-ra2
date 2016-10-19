@@ -82,7 +82,7 @@
 
 	// Red Alert 2
 	//----------------------------------------------------------------
-	"Category"			"vehicle"
+	"Category"			"naval"
 	"MenuBuildTime"		"2"
 	"BuildCost"			"100"
 	"Requirement1"		"npc_ra2_soviet_naval_shipyard"

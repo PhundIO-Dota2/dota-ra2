@@ -30,9 +30,11 @@ function showTab( id ) {
 	showTab('#tab-structure');
 
 	var categories = [
-		'structure',
+		'airforce',
 		'defense',
 		'infantry',
+		'naval',
+		'structure',
 		'vehicle'
 	]
 
