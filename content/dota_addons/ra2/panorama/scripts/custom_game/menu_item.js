@@ -36,8 +36,10 @@ CustomNetTables.SubscribeNetTableListener( 'player_tables', OnPlayerTableChanged
 function OnPlayerTableChanged( table_name, key, data )
 {
 	if (key === 'menu_' + category + '_' + playerID) {
-		var label = $('#progress');
-		label.text = Math.floor(parseFloat(data[unit]['progress']) * 100);
+		var progress = parseFloat(data[unit]['progress'])
+		var overlay = $('#progressOverlay');
+		overlay.style.visibility = data[unit]['progress'] > 0 ? 'visible' : 'collapse';
+		overlay.style.clip = 'radial(50.0% 50.0%, 0.0deg, ' + ((1 - progress) * -360) + 'deg);';
 	}
 	else if (key === 'queue_' + playerID) {
 		var counts = {};

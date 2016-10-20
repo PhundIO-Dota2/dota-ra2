@@ -8,8 +8,8 @@
 
 	<Button class="menu-item" onactivate="startProduction()" oncontextmenu="pauseProduction()">
 		<Panel id="cameo" class="cameo"></Panel>
-		<Label id="progress" text="0"/>
-		<Label id="queue" class="menu-item-queue" text=""/>
+		<Panel id="progressOverlay" class="progress-overlay"></Panel>
 		<Label id="label" class="menu-item-label" text=""/>
+		<Label id="queue" class="menu-item-queue" text=""/>
 	</Button>
 </root>
