@@ -230,19 +230,21 @@ function CDOTAPlayer:UnlockUnits( unit )
     local units = KeyValues.UnitKV
 
     for unit, kv in pairs(units) do
-        if kv["Category"] and self:HasRequiredBuildings(unit) then
-            local category = kv["Category"]
+        local category = kv["Category"]
+        if category then
             local menu_table_name = "menu_" .. category .. "_" .. self:GetPlayerID()
-            local menu_table = self.menu[category]
-            self.menu[category][unit] = {
-                progress = 0, 
-                paused = 0, 
-                cancelled = 0 
-            }
+            if self:HasRequiredBuildings(unit) then
+                self.menu[category][unit] = {
+                    progress = 0, 
+                    paused = 0, 
+                    cancelled = 0 
+                }
+            elseif self.menu[category][unit] then
+                self.menu[category][unit] = nil
+            end
             CustomNetTables:SetTableValue("player_tables", menu_table_name, self.menu[category])
         end
     end
-
 
 end
 

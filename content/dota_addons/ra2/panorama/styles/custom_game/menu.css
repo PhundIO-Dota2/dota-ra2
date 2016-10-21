@@ -74,3 +74,8 @@ Label.menu-item-label {
 	font-size: 10px;
 	align: left bottom;
 }
+
+Label.menu-item-status {
+	font-size: 10px;
+	align: center center;
+}

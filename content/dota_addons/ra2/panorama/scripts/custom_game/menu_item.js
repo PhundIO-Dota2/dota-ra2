@@ -1,14 +1,14 @@
 "use strict";
 
-var Root = $.GetContextPanel();
-var unit = Root.unit;
-var category = Root.category;
-var playerID = Game.GetLocalPlayerID();
-
-$('#label').text = unit;
-$('#cameo').style.backgroundImage = 'url("file://{images}/custom_game/units/' + unit + '.png");';
+var Root = $.GetContextPanel(),
+	unit = Root.unit,
+	category = Root.category,
+	playerID = Game.GetLocalPlayerID(),
+	overlay = $('#progressOverlay'),
+	statusLabel = $('#status');
 
 function startProduction() {
+
 	var menu_table = CustomNetTables.GetTableValue( 'player_tables', 'menu_' + category + '_' + Players.GetLocalPlayer()),
 		event = 'building_queued';
 
@@ -16,9 +16,11 @@ function startProduction() {
 		event = 'building_resumed';
 	}
 	GameEvents.SendCustomGameEventToServer(event, { name: unit });
+
 }
 
 function pauseProduction() {
+
 	var menu_table = CustomNetTables.GetTableValue( 'player_tables', 'menu_' + category + '_' + Players.GetLocalPlayer());
 
 	if (menu_table[unit]) {
@@ -30,26 +32,45 @@ function pauseProduction() {
 		}
 		GameEvents.SendCustomGameEventToServer(event, { name: unit });
 	}
+
 }
 
-CustomNetTables.SubscribeNetTableListener( 'player_tables', OnPlayerTableChanged );
-function OnPlayerTableChanged( table_name, key, data )
-{
-	if (key === 'menu_' + category + '_' + playerID) {
-		var progress = parseFloat(data[unit]['progress'])
-		var overlay = $('#progressOverlay');
-		overlay.style.visibility = data[unit]['progress'] > 0 ? 'visible' : 'collapse';
-		overlay.style.clip = 'radial(50.0% 50.0%, 0.0deg, ' + ((1 - progress) * -360) + 'deg);';
+(function () {
+
+	$('#label').text = unit;
+	$('#cameo').style.backgroundImage = 'url("file://{images}/custom_game/units/' + unit + '.png");';
+
+	function getStatusText(status) {
+
+		if (status['paused']) { return 'PAUSED'; }
+		if (status['progress'] === 1) { return 'READY'; }
+
+		return '';
+
 	}
-	else if (key === 'queue_' + playerID) {
-		var counts = {};
-		for (var key in data[category]) {
-			if(!counts[data[category][key]]) {
-				counts[data[category][key]] = 0;
-			}
-			++counts[data[category][key]];
+
+	Root.subscriber = CustomNetTables.SubscribeNetTableListener( 'player_tables', OnPlayerTableChanged );
+	function OnPlayerTableChanged( table_name, key, data ) {
+
+		if (key === 'menu_' + category + '_' + playerID) {
+			if (!data[unit]) { return; }
+			var progress = parseFloat(data[unit]['progress'])
+			overlay.style.visibility = data[unit]['progress'] > 0 ? 'visible' : 'collapse';
+			overlay.style.clip = 'radial(50.0% 50.0%, 0.0deg, ' + ((1 - progress) * -360) + 'deg);';
+			statusLabel.text = getStatusText(data[unit]);
 		}
-		var label = $('#queue');
-		label.text = counts[unit] || "";
+		else if (key === 'queue_' + playerID) {
+			var counts = {};
+			for (var key in data[category]) {
+				if(!counts[data[category][key]]) {
+					counts[data[category][key]] = 0;
+				}
+				++counts[data[category][key]];
+			}
+			var label = $('#queue');
+			label.text = counts[unit] || "";
+		}
+
 	}
-}
+
+})();

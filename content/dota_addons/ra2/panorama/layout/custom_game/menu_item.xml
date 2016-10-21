@@ -1,6 +1,6 @@
 <root>
 	<styles>
-		<include src="file://{resources}/styles/custom_game/sidebar.css" />
+		<include src="file://{resources}/styles/custom_game/menu.css" />
 	</styles>
 	<scripts>
 		<include src="file://{resources}/scripts/custom_game/menu_item.js" /> 
@@ -10,6 +10,7 @@
 		<Panel id="cameo" class="cameo"></Panel>
 		<Panel id="progressOverlay" class="progress-overlay"></Panel>
 		<Label id="label" class="menu-item-label" text=""/>
+		<Label id="status" class="menu-item-status" text=""/>
 		<Label id="queue" class="menu-item-queue" text=""/>
 	</Button>
 </root>
