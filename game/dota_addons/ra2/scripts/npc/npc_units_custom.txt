@@ -975,12 +975,12 @@
 	{
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+		"Model"						"models/ra2_soviet_construction_yard.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					""
 		"GameSoundsFile"			""
 		"Level"						"1"
-		"ModelScale" 				"1.9"
+		"ModelScale" 				"1"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -1005,7 +1005,7 @@
 	
 		// Bounds
 		//----------------------------------------------------------------
-		"RingRadius"				"128"
+		"RingRadius"				"256"
 		"HealthBarOffset"			"170"
 		"BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
 	

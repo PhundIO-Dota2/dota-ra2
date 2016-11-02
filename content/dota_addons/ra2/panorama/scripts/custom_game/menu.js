@@ -29,7 +29,7 @@ function showTab( id ) {
 	function Initialize() {
 
 		// Camera setup
-		GameUI.SetCameraYaw(-45);
+		GameUI.SetCameraYaw(45);
 		GameUI.SetCameraPitchMin(60);
 		GameUI.SetCameraPitchMax(60);
 		// GameUI.SetCameraDistance(2000);
