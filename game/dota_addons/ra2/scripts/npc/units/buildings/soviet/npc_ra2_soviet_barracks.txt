@@ -5,7 +5,7 @@
 {
 	// General
 	//----------------------------------------------------------------
-	"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+	"Model"						"models/ra2_soviet_barracks.vmdl"	// Model.
 	"BaseClass"					"npc_dota_creature"
 	"SoundSet"					""
 	"GameSoundsFile"			""

@@ -756,7 +756,7 @@
 	{
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+		"Model"						"models/ra2_soviet_barracks.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					""
 		"GameSoundsFile"			""
@@ -1726,12 +1726,12 @@
 	{
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+		"Model"						"models/ra2_tesla_reactor.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					""
 		"GameSoundsFile"			""
 		"Level"						"1"
-		"ModelScale" 				"1.2"
+		"ModelScale" 				"1"
 	
 		// Abilities
 		//----------------------------------------------------------------

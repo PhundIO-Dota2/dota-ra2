@@ -5,8 +5,8 @@
 		m_meshList = 
 		[
 			{
-				m_meshName = "ra2_soviet_construction_yard"
-				m_meshFile = "models/ra2_soviet_construction_yard.fbx"
+				m_meshName = "ra2_soviet_barracks"
+				m_meshFile = "models/ra2_soviet_barracks.fbx"
 				m_materialSearchPath = ""
 				m_bSkinParentedObjects = true
 				m_bLegacySkinParentedTransforms = false
@@ -61,8 +61,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "rootbone"
-								m_vMinBounds = [ -127.516373, -0.000012, -127.516373 ]
-								m_vMaxBounds = [ 127.516373, 101.629814, 127.516373 ]
+								m_vMinBounds = [ -50.886314, 0.0, -50.886311 ]
+								m_vMaxBounds = [ 50.886314, 294.47052, 50.886311 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -111,7 +111,7 @@
 		[
 			{
 				m_sSearchMaterial = "material.vmat"
-				m_sReplaceMaterial = "materials/ra2_soviet_construction_yard.vmat"
+				m_sReplaceMaterial = "materials/ra2_soviet_barracks.vmat"
 			},
 		]
 	}

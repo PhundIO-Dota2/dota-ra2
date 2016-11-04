@@ -12,6 +12,6 @@ Layer0
 	g_vColorTint2 "[1.000000 1.000000 1.000000 0.000000]"
 	g_vTexCoordOffset "[0.000 0.000]"
 	g_vTexCoordScale "[1.000 1.000]"
-	TextureColor "materials/ra2_soviet_construction_yard_color.png"
-	TextureTintMask "materials/ra2_soviet_construction_yard_tint.png"
+	TextureColor "materials/ra2_tesla_reactor_color.png"
+	TextureTintMask "materials/ra2_tesla_reactor_tint.png"
 }
