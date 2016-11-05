@@ -8,8 +8,8 @@ Layer0
 	F_TINT_MASK 1
 
 	//---- Color ----
-	g_vColorTint "[0.686275 0.000000 0.000000 0.000000]"
-	g_vColorTint2 "[1.000000 1.000000 1.000000 0.000000]"
+	g_vColorTint "[0.501961 0.501961 0.501961 1.000000]"
+	g_vColorTint2 "[0.662745 0.662745 0.662745 1.000000]"
 	g_vTexCoordOffset "[0.000 0.000]"
 	g_vTexCoordScale "[1.000 1.000]"
 	TextureColor "materials/ra2_soviet_barracks_color.png"
