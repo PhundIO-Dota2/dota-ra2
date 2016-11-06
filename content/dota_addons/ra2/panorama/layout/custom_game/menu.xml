@@ -27,13 +27,13 @@
 			</Panel>
 
 			<Panel class="menu-tab-header" id="menu-tab-header">
-				<Button class="menu-tab-button tab-structure" id="bt-tab-structure" onactivate="showTab('#bt-tab-structure', '#tab-structure');">
+				<Button class="menu-tab-button tab-structure disabled" id="bt-tab-structure" onactivate="showTab('#bt-tab-structure', '#tab-structure');">
 				</Button>
-				<Button class="menu-tab-button tab-defense" id="bt-tab-defense" onactivate="showTab('#bt-tab-defense', '#tab-defense');">
+				<Button class="menu-tab-button tab-defense disabled" id="bt-tab-defense" onactivate="showTab('#bt-tab-defense', '#tab-defense');">
 				</Button>
-				<Button class="menu-tab-button tab-infantry" id="bt-tab-infantry" onactivate="showTab('#bt-tab-infantry', '#tab-infantry');">
+				<Button class="menu-tab-button tab-infantry disabled" id="bt-tab-infantry" onactivate="showTab('#bt-tab-infantry', '#tab-infantry');">
 				</Button>
-				<Button class="menu-tab-button tab-vehicle" id="bt-tab-vehicle" onactivate="showTab('#bt-tab-vehicle', '#tab-vehicle');">
+				<Button class="menu-tab-button tab-vehicle disabled" id="bt-tab-vehicle" onactivate="showTab('#bt-tab-vehicle', '#tab-vehicle');">
 				</Button>
 			</Panel>
 
@@ -47,6 +47,9 @@
 		    <Panel class="menu-tab-footer">
 		    </Panel>
 
+		</Panel>
+
+		<Panel class="menu-addon">
 		</Panel>
 
 	</Panel>

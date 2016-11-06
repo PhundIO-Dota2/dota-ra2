@@ -1,0 +1,5 @@
+<root>
+	<Panel style="width: 100%; height: 100%; background-color: black;">
+		<Image src="file://{images}/custom_game/titlemd.png" scaling="stretch-to-fit-y-preserve-aspect" style="height: 100%; width: height-percentage(105.33%);"/>
+	</Panel>
+</root>

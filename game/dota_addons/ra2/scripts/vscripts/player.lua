@@ -213,6 +213,7 @@ function CDOTAPlayer:CancelProduction( unit, spent )
     PlayerResource:SpendGold(self:GetPlayerID(), -spent, DOTA_ModifyGold_GameTick)
 
     BuildingHelper:CancelCommand({ PlayerID = self:GetPlayerID() })
+    self:AdvanceQueue(category)
 
     return nil
 

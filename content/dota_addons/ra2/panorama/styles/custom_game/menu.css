@@ -31,7 +31,7 @@
 }
 
 .menu-tab-container {
-	height: 100%;
+	height: fill-parent-flow(1.0);
 	width: 100%;
 	flow-children: down;
 }
@@ -80,6 +80,13 @@
 	vertical-align: bottom;
 }
 
+.menu-addon {
+	width: 100%;
+	height: 63px;
+	background-image: url('file://{images}/custom_game/addon 0000.png');
+	vertical-align: bottom;
+}
+
 .menu-item {
 	width: 60px;
 	height: 48px;
@@ -93,6 +100,14 @@
 	height: 100%;
 }
 
+.menu-item {
+	border: 1px solid transparent;
+}
+
+.menu-item:hover {
+	border-color: yellow;
+}
+
 .menu-item > Label {
 	color: white; 
 	font-weight: bold; 
@@ -102,13 +117,20 @@
 .progress-overlay {
 	width: 100%;
 	height: 100%;
-	background-color: #000000E6;
+	background-color: yellow;
 	background-size: 100% 100%;
 	visibility: collapse;
+	opacity: 0.3;
 }
 
 Label.menu-item-queue {
-	align: right bottom;
+	color: yellow;
+	font-size: 12px;
+	align: right top;
+	background-color: #000000EE;
+	padding: 4px;
+	text-align: center;
+	visibility: collapse;
 }
 
 Label.menu-item-label {
@@ -127,12 +149,17 @@ Label.menu-item-status {
 	visibility: collapse;
 }
 
+
 .tab-structure {
 	background-image: url('file://{images}/custom_game/tab00 0000.png');
 }
 
 .tab-structure.active {
 	background-image: url('file://{images}/custom_game/tab00 0001.png');	
+}
+
+.tab-structure.disabled {
+	background-image: url('file://{images}/custom_game/tab00 0002.png');
 }
 
 .tab-defense {
@@ -143,6 +170,10 @@ Label.menu-item-status {
 	background-image: url('file://{images}/custom_game/tab01 0001.png');
 }
 
+.tab-defense.disabled {
+	background-image: url('file://{images}/custom_game/tab01 0002.png');
+}
+
 .tab-infantry {
 	background-image: url('file://{images}/custom_game/tab02 0000.png');
 }
@@ -151,10 +182,18 @@ Label.menu-item-status {
 	background-image: url('file://{images}/custom_game/tab02 0001.png');
 }
 
+.tab-infantry.disabled {
+	background-image: url('file://{images}/custom_game/tab02 0002.png');
+}
+
 .tab-vehicle {
 	background-image: url('file://{images}/custom_game/tab03 0000.png');
 }
 
 .tab-vehicle.active {
 	background-image: url('file://{images}/custom_game/tab03 0001.png');
+}
+
+.tab-vehicle.disabled {
+	background-image: url('file://{images}/custom_game/tab03 0002.png');
 }

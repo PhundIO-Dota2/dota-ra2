@@ -67,8 +67,9 @@ function pauseProduction() {
 				}
 				++counts[data[category][key]];
 			}
-			var label = $('#queue');
-			label.text = counts[unit] || "";
+			var queueLabel = $('#queue');
+			queueLabel.text = counts[unit] || "";
+			queueLabel.style.visibility = queueLabel.text ? 'visible' : 'collapse';
 		}
 
 	}
