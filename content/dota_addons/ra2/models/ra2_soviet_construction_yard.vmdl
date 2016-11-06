@@ -5,8 +5,8 @@
 		m_meshList = 
 		[
 			{
-				m_meshName = "ra2_soviet_construction_yard"
-				m_meshFile = "models/ra2_soviet_construction_yard.fbx"
+				m_meshName = "4x4"
+				m_meshFile = "models/4x4.fbx"
 				m_materialSearchPath = ""
 				m_bSkinParentedObjects = true
 				m_bLegacySkinParentedTransforms = false
@@ -61,8 +61,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "rootbone"
-								m_vMinBounds = [ -127.516373, -0.000012, -127.516373 ]
-								m_vMaxBounds = [ 127.516373, 101.629814, 127.516373 ]
+								m_vMinBounds = [ -118.552917, -0.000015, -118.552902 ]
+								m_vMaxBounds = [ 118.552917, 95.999992, 118.552902 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -110,7 +110,7 @@
 		m_vMaterialRemapList = 
 		[
 			{
-				m_sSearchMaterial = "material.vmat"
+				m_sSearchMaterial = "*"
 				m_sReplaceMaterial = "materials/ra2_soviet_construction_yard.vmat"
 			},
 		]
@@ -127,7 +127,7 @@
 	m_nMaxClothVertsPerMesh = 2048
 	m_bBuildClothBoneHierarchy = false
 	m_nNavType = "AUTH_NAV_MESH"
-	m_bMakeUniqueVMeshes = false
+	m_bMakeUniqueVMeshes = true
 	m_bMakeImplicitBindPoseSequence = false
 	m_bAdjustSkeletonFromBoneFlags = false
 	m_pAnimGroups = [  ]

@@ -85,15 +85,15 @@
 
 	// BuildingHelper Essentials
 	//----------------------------------------------------------------
-	"ConstructionSize"	"2"
-	"BlockPathingSize"	"2"
+	"ConstructionSize"	"4"
+	"BlockPathingSize"	"4"
 	"BuildTime"			"0"
 	"Requires"			"Buildable Allowed"
 	"Grid"
 	{
 	    "Allowed"
 	    {
-	        "Square"        "10"
+	        "Square"        "15"
 	        "RemoveOnDeath" "true"
 	    }
 	}

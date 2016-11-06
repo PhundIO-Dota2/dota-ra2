@@ -5,8 +5,8 @@
 		m_meshList = 
 		[
 			{
-				m_meshName = "ra2_tesla_reactor"
-				m_meshFile = "models/ra2_tesla_reactor.fbx"
+				m_meshName = "2x3"
+				m_meshFile = "models/2x3.fbx"
 				m_materialSearchPath = ""
 				m_bSkinParentedObjects = true
 				m_bLegacySkinParentedTransforms = false
@@ -61,8 +61,8 @@
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
 								m_sBoneName = "rootbone"
-								m_vMinBounds = [ -63.999992, -0.000015, -95.999985 ]
-								m_vMaxBounds = [ 71.219185, 128.819168, 96.013351 ]
+								m_vMinBounds = [ -59.276459, -0.000008, -88.914688 ]
+								m_vMaxBounds = [ 59.276459, 51.200008, 88.914658 ]
 								m_bTranslationOnly = false
 								m_cRenderColor = [ 0, 0, 0, 0 ]
 							},
@@ -110,7 +110,7 @@
 		m_vMaterialRemapList = 
 		[
 			{
-				m_sSearchMaterial = "material.vmat"
+				m_sSearchMaterial = "*"
 				m_sReplaceMaterial = "materials/ra2_tesla_reactor.vmat"
 			},
 		]
@@ -127,7 +127,7 @@
 	m_nMaxClothVertsPerMesh = 2048
 	m_bBuildClothBoneHierarchy = false
 	m_nNavType = "AUTH_NAV_MESH"
-	m_bMakeUniqueVMeshes = false
+	m_bMakeUniqueVMeshes = true
 	m_bMakeImplicitBindPoseSequence = false
 	m_bAdjustSkeletonFromBoneFlags = false
 	m_pAnimGroups = [  ]

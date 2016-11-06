@@ -92,7 +92,7 @@
 	{
 	    "Allowed"
 	    {
-	        "Square"        "12"
+	        "Square"        "15"
 	        "RemoveOnDeath" "true"
 	    }
 	}

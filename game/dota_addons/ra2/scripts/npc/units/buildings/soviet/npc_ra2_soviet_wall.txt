@@ -5,12 +5,12 @@
 {
 	// General
 	//----------------------------------------------------------------
-	"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+	"Model"						"models/ra2_soviet_wall.vmdl"	// Model.
 	"BaseClass"					"npc_dota_creature"
 	"SoundSet"					""
 	"GameSoundsFile"			""
 	"Level"						"1"
-	"ModelScale" 				"0.5"
+	"ModelScale" 				"1"
 
 	// Abilities
 	//----------------------------------------------------------------

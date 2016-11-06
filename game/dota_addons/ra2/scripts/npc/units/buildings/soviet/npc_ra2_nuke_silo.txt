@@ -5,12 +5,12 @@
 {
 	// General
 	//----------------------------------------------------------------
-	"Model"						"models/buildings/building_plain_reference.vmdl"	// Model.
+	"Model"						"models/ra2_nuke_silo.vmdl"	// Model.
 	"BaseClass"					"npc_dota_creature"
 	"SoundSet"					""
 	"GameSoundsFile"			""
 	"Level"						"1"
-	"ModelScale" 				"1.2"
+	"ModelScale" 				"1"
 
 	// Abilities
 	//----------------------------------------------------------------
@@ -85,15 +85,15 @@
 
 	// BuildingHelper Essentials
 	//----------------------------------------------------------------
-	"ConstructionSize"	"2"
-	"BlockPathingSize"	"2"
+	"ConstructionSize"	"3"
+	"BlockPathingSize"	"3"
 	"BuildTime"			"0"
 	"Requires"			"Buildable Allowed"
 	"Grid"
 	{
 	    "Allowed"
 	    {
-	        "Square"        "10"
+	        "Square"        "15"
 	        "RemoveOnDeath" "true"
 	    }
 	}
