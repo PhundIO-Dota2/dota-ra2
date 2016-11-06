@@ -97,10 +97,11 @@ function RedAlert2:OnNPCSpawned(keys)
     if npc:IsRealHero() then
         local ability = npc:FindAbilityByName("spawn_soviet_mcv")
         ability:UpgradeAbility(true)
-        -- ability = npc:FindAbilityByName("hide_hero")
-        -- ability:UpgradeAbility(true)
+        ability = npc:FindAbilityByName("hide_hero")
+        ability:UpgradeAbility(true)
         npc:SetAbilityPoints(0)
-        -- npc:AddNoDraw()
+        npc:AddNoDraw()
+        SendToConsole('dota_hud_radar_x_flipped 1')
     end
 
 end
