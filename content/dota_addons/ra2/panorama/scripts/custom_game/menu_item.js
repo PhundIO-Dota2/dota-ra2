@@ -16,7 +16,6 @@ function startProduction() {
 		event = 'building_resumed';
 	}
 	GameEvents.SendCustomGameEventToServer(event, { name: unit });
-
 }
 
 function pauseProduction() {
@@ -42,8 +41,8 @@ function pauseProduction() {
 
 	function getStatusText(status) {
 
-		if (status['paused']) { return 'PAUSED'; }
-		if (status['progress'] === 1) { return 'READY'; }
+		if (status['paused']) { return 'On Hold'; }
+		if (status['progress'] === 1) { return 'Ready'; }
 
 		return '';
 
@@ -58,6 +57,7 @@ function pauseProduction() {
 			overlay.style.visibility = data[unit]['progress'] > 0 ? 'visible' : 'collapse';
 			overlay.style.clip = 'radial(50.0% 50.0%, 0.0deg, ' + ((1 - progress) * -360) + 'deg);';
 			statusLabel.text = getStatusText(data[unit]);
+			statusLabel.style.visibility = statusLabel.text ? 'visible' : 'collapse';
 		}
 		else if (key === 'queue_' + playerID) {
 			var counts = {};

@@ -52,7 +52,7 @@ function RedAlert2:InitGameMode()
 
     local mode = GameRules:GetGameModeEntity()
     mode:SetUnseenFogOfWarEnabled(true)
-    mode:SetCameraDistanceOverride(1300)
+    mode:SetCameraDistanceOverride(1400)
     BuildingHelper:NewGridType("ALLOWED")
 
 end

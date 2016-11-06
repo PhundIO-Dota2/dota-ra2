@@ -7,29 +7,47 @@
 		<include src="file://{resources}/scripts/custom_game/menu.js" />
 	</scripts>
 
-	<Panel class="menu-tab-container">
+	<Panel class="menu-container">
 
-		<Panel class="menu-tab-header">
-			<Button class="menu-tab-button" onactivate="showTab('#tab-structure');">
-				<Label text="B"/>
-			</Button>
-			<Button class="menu-tab-button" onactivate="showTab('#tab-defense');">
-				<Label text="D"/>
-			</Button>
-			<Button class="menu-tab-button" onactivate="showTab('#tab-infantry');">
-				<Label text="I"/>
-			</Button>
-			<Button class="menu-tab-button" onactivate="showTab('#tab-vehicle');">
-				<Label text="V"/>
-			</Button>
+		<Panel class="menu-ore">
+			<Label id="ore" text=""/>
 		</Panel>
 
-		<Panel class="menu-tab-body" id="menu-tab-body">
-		    <Panel class="menu-tab" id="tab-structure"></Panel>
-		    <Panel class="menu-tab" id="tab-defense"></Panel>
-		    <Panel class="menu-tab" id="tab-infantry"></Panel>
-		    <Panel class="menu-tab" id="tab-vehicle"></Panel>
-	    </Panel>
+		<Panel class="menu-top">
+		</Panel>
+
+		<Panel class="menu-radar">
+		</Panel>
+
+		<Panel class="menu-tab-container">
+
+			<Panel class="menu-tools">
+				<Button class="bt-sell"></Button>
+				<Button class="bt-repair"></Button>
+			</Panel>
+
+			<Panel class="menu-tab-header" id="menu-tab-header">
+				<Button class="menu-tab-button tab-structure" id="bt-tab-structure" onactivate="showTab('#bt-tab-structure', '#tab-structure');">
+				</Button>
+				<Button class="menu-tab-button tab-defense" id="bt-tab-defense" onactivate="showTab('#bt-tab-defense', '#tab-defense');">
+				</Button>
+				<Button class="menu-tab-button tab-infantry" id="bt-tab-infantry" onactivate="showTab('#bt-tab-infantry', '#tab-infantry');">
+				</Button>
+				<Button class="menu-tab-button tab-vehicle" id="bt-tab-vehicle" onactivate="showTab('#bt-tab-vehicle', '#tab-vehicle');">
+				</Button>
+			</Panel>
+
+			<Panel class="menu-tab-body" id="menu-tab-body">
+			    <Panel class="menu-tab" id="tab-structure"></Panel>
+			    <Panel class="menu-tab" id="tab-defense"></Panel>
+			    <Panel class="menu-tab" id="tab-infantry"></Panel>
+			    <Panel class="menu-tab" id="tab-vehicle"></Panel>
+		    </Panel>
+
+		    <Panel class="menu-tab-footer">
+		    </Panel>
+
+		</Panel>
 
 	</Panel>
 

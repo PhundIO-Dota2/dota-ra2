@@ -1,24 +1,56 @@
-.menu-tab-container {
-	background-color: #444; 
-	margin-top: 300px; 
+.menu-container {
 	horizontal-align: right; 
-	height: 500px;
+	width: 168px;
+	height: 100%;
+	flow-children: down;
+}
+
+.menu-ore {
+	width: 100%;
+	height: 16px;
+	background-image: url('file://{images}/custom_game/credits 0000.png');
+}
+
+.menu-ore Label {
+	color: yellow;
+	padding-top: 4px;
+	text-align: center;
+	width: 100%;
+}
+
+.menu-top {
+	width: 100%;
+	height: 32px;
+	background-image: url('file://{images}/custom_game/top 0000.png');
+}
+
+.menu-radar {
+	width: 100%;
+	height: 110px;
+	background-image: url('file://{images}/custom_game/radar 0000.png');
+}
+
+.menu-tab-container {
+	height: 100%;
+	width: 100%;
 	flow-children: down;
 }
 
 .menu-tab-header {
 	flow-children: right;
-	padding: 10px;
 	horizontal-align: center;
+	padding: 0px 21px 4px 20px;
+	width: 100%;
+	height: 69px;
+	background-image: url('file://{images}/custom_game/side1 0000.png');
 }
 
 .menu-tab-button {
 	width: 32px;
-	height: 32px;
-	background-color: #0000FFFF;
+	height: 28px;
 	text-align: center;
 	color: #FFF;
-	border: 1px solid #FFF;
+	align: center bottom; 
 }
 
 .menu-tab-button Label {
@@ -33,9 +65,19 @@
 
 .menu-tab-body {
 	horizontal-align: center;
-	width: 125px;
-	height: 100%;
+	width: 100%;
+	height: fill-parent-flow(1.0);
 	background-color: #000;
+	background-image: url('file://{images}/custom_game/side2 0000.png');
+	background-repeat: repeat-y;
+	padding: 0px 20px;
+}
+
+.menu-tab-footer {
+	width: 100%;
+	height: 26px;
+	background-image: url('file://{images}/custom_game/side3 0000.png');
+	vertical-align: bottom;
 }
 
 .menu-item {
@@ -54,8 +96,7 @@
 .menu-item > Label {
 	color: white; 
 	font-weight: bold; 
-	font-size: 18px; 
-	text-shadow: 0px 0px 2px 3.0 #000;
+	font-size: 18px;
 }
 
 .progress-overlay {
@@ -73,9 +114,47 @@ Label.menu-item-queue {
 Label.menu-item-label {
 	font-size: 10px;
 	align: left bottom;
+	background-color: #000000DD;
 }
 
 Label.menu-item-status {
-	font-size: 10px;
-	align: center center;
+	color: yellow;
+	font-size: 12px;
+	align: center top;
+	background-color: #000000EE;
+	padding: 4px;
+	text-align: center;
+	visibility: collapse;
+}
+
+.tab-structure {
+	background-image: url('file://{images}/custom_game/tab00 0000.png');
+}
+
+.tab-structure.active {
+	background-image: url('file://{images}/custom_game/tab00 0001.png');	
+}
+
+.tab-defense {
+	background-image: url('file://{images}/custom_game/tab01 0000.png');
+}
+
+.tab-defense.active {
+	background-image: url('file://{images}/custom_game/tab01 0001.png');
+}
+
+.tab-infantry {
+	background-image: url('file://{images}/custom_game/tab02 0000.png');
+}
+
+.tab-infantry.active {
+	background-image: url('file://{images}/custom_game/tab02 0001.png');
+}
+
+.tab-vehicle {
+	background-image: url('file://{images}/custom_game/tab03 0000.png');
+}
+
+.tab-vehicle.active {
+	background-image: url('file://{images}/custom_game/tab03 0001.png');
 }
