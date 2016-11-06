@@ -18,7 +18,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "0"
+            "SpawnRadius" "100"
             "OnSpawn"
             {
                 "ApplyModifier"

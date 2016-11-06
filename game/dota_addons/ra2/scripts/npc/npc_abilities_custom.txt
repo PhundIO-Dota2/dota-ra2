@@ -492,7 +492,7 @@
 	            "UnitLimit"   "0"
 	            "GrantsGold"  "0"
 	            "GrantsXP"    "0"
-	            "SpawnRadius" "0"
+	            "SpawnRadius" "100"
 	            "OnSpawn"
 	            {
 	                "ApplyModifier"
@@ -510,7 +510,7 @@
 	    "BaseClass"             "ability_datadriven"
 	    "MaxLevel"              "1"
 	
-	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	
 	    "AbilityGoldCost"    "0"
 	
