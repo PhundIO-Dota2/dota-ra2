@@ -1,8 +1,20 @@
-require('libraries/keyvalues')
+require("libraries/keyvalues")
 
 function CDOTAPlayer:Init()
 
     local pid = self:GetPlayerID()
+
+    self.teamColors = {}
+    self.teamColors[DOTA_TEAM_GOODGUYS]  = { 61, 210, 150 } --        Teal
+    self.teamColors[DOTA_TEAM_BADGUYS]   = { 243, 201, 9 }     --     Yellow
+    self.teamColors[DOTA_TEAM_CUSTOM_1]  = { 197, 77, 168 } --        Pink
+    self.teamColors[DOTA_TEAM_CUSTOM_2]  = { 255, 108, 0 }     --     Orange
+    self.teamColors[DOTA_TEAM_CUSTOM_3]  = { 140, 42, 244 } --        Purple
+    self.teamColors[DOTA_TEAM_CUSTOM_4]  = { 52, 85, 255 }     --     Blue
+    self.teamColors[DOTA_TEAM_CUSTOM_5]  = { 199, 228, 13 } --        Olive
+    self.teamColors[DOTA_TEAM_CUSTOM_6]  = { 129, 83, 54 }     --     Brown
+    self.teamColors[DOTA_TEAM_CUSTOM_7]  = { 27, 192, 216 } --        Light Blue
+    self.teamColors[DOTA_TEAM_CUSTOM_8]  = { 101, 212, 19 } --        Dark Green
 
     self.unitCategories = {
         airforce = true,
@@ -322,6 +334,8 @@ end
 function CDOTAPlayer:AdvanceQueue( category )
 
     local queue = self.queue[category]
+    if not queue then return end
+    
     local next_unit = queue[1]
 
     table.remove(queue, 1)
@@ -372,5 +386,11 @@ function CDOTAPlayer:RemoveUnitFromQueue( category, unit )
         end
     end
     CustomNetTables:SetTableValue("player_tables", "queue_" .. self:GetPlayerID(), self.queue)
+
+end
+
+function CDOTAPlayer:GetTeamColor()
+
+    return unpack(self.teamColors[self:GetTeam()]);
 
 end

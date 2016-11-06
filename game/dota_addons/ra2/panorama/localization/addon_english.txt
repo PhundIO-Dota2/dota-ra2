@@ -1,0 +1,22 @@
+"addon"
+{
+    "Language"        "English"
+    "Tokens"
+    {    
+    	"addon_game_name"	"Red Alert 2"
+
+		"on_hold" 			"On Hold"
+		"ready"				"Ready"
+
+		"DOTA_GoodGuys"		"Teal Seal"
+		"DOTA_BadGuys"		"Yellow Engineer"
+		"DOTA_Custom1"		"Pink Ivan"
+		"DOTA_Custom2"		"Orange Spy"
+		"DOTA_Custom3"		"Purple Tanya"
+		"DOTA_Custom4"		"Blue GI"
+		"DOTA_Custom5"		"Olive Sniper"
+		"DOTA_Custom6"		"Brown Conscript"
+		"DOTA_Custom7"		"Cyan Trooper"
+		"DOTA_Custom8"		"Green Desolator"
+	}
+}

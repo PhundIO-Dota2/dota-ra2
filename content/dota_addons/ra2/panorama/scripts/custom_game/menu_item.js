@@ -41,8 +41,8 @@ function pauseProduction() {
 
 	function getStatusText(status) {
 
-		if (status['paused']) { return 'On Hold'; }
-		if (status['progress'] === 1) { return 'Ready'; }
+		if (status['paused']) { return '#on_hold'; }
+		if (status['progress'] === 1) { return '#ready'; }
 
 		return '';
 
@@ -56,7 +56,7 @@ function pauseProduction() {
 			var progress = parseFloat(data[unit]['progress'])
 			overlay.style.visibility = data[unit]['progress'] > 0 ? 'visible' : 'collapse';
 			overlay.style.clip = 'radial(50.0% 50.0%, 0.0deg, ' + ((1 - progress) * -360) + 'deg);';
-			statusLabel.text = getStatusText(data[unit]);
+			statusLabel.text = $.Localize(getStatusText(data[unit]));
 			statusLabel.style.visibility = statusLabel.text ? 'visible' : 'collapse';
 		}
 		else if (key === 'queue_' + playerID) {

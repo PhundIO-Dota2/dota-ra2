@@ -939,6 +939,7 @@ function BuildingHelper:PlaceBuilding(player, name, location, construction_size,
     building:SetNeverMoveToClearSpace(true)
     building:SetOwner(playersHero)
     building:SetAbsOrigin(model_location)
+    building:SetRenderColor(player:GetTeamColor())
     building.construction_size = construction_size
     building.blockers = gridNavBlockers
 
@@ -1096,6 +1097,7 @@ function BuildingHelper:StartBuilding(builder)
     local model_offset = GetUnitKV(unitName, "ModelOffset") or 0
     location.z = location.z + model_offset
     building:SetAbsOrigin(location)
+    building:SetRenderColor(player:GetTeamColor())
     building.blockers = gridNavBlockers
     building.construction_size = construction_size
     building.buildingTable = buildingTable
