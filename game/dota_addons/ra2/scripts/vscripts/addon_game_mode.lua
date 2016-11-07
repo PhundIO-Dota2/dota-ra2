@@ -95,13 +95,15 @@ function RedAlert2:OnNPCSpawned(keys)
     local npc = EntIndexToHScript(keys.entindex)
 
     if npc:IsRealHero() then
-        local ability = npc:FindAbilityByName("spawn_soviet_mcv")
-        ability:UpgradeAbility(true)
-        ability = npc:FindAbilityByName("hide_hero")
-        ability:UpgradeAbility(true)
-        npc:SetAbilityPoints(0)
-        npc:AddNoDraw()
-        SendToConsole('dota_hud_radar_x_flipped 1')
+        Timers:CreateTimer(function() 
+            local ability = npc:FindAbilityByName("spawn_soviet_mcv")
+            ability:UpgradeAbility(true)
+            -- npc:CastAbilityImmediately(ability, npc:GetPlayerOwnerID())
+            ability = npc:FindAbilityByName("hide_hero")
+            ability:UpgradeAbility(true)
+            npc:SetAbilityPoints(0)
+            npc:AddNoDraw()
+        end)
     end
 
 end
