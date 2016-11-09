@@ -87,5 +87,6 @@
 	"BuildCost"			"100"
 	"Requirement1"		"npc_ra2_soviet_war_factory"
 	"Requirement2"		"npc_ra2_radar_tower"
+	"Requirement3"		"todo_unlock_this_with_country"
 
 }
