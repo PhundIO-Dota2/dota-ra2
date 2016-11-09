@@ -180,7 +180,7 @@ end
 
 function CDOTAPlayer:StartProduction( unit )
 
-    local duration = GetUnitKV(unit, "MenuBuildTime", 1)
+    local duration = GetUnitKV(unit, "MenuBuildTime", 1) * 1
     local cost = GetUnitKV(unit, "BuildCost", 1)
     local start_time = GameRules:GetGameTime()
     local time = start_time

@@ -42,6 +42,7 @@
 		"npc_ra2_soviet_attack_dog"				"Attack Dog"			
 		"npc_ra2_soviet_barracks"				"Barracks"			
 		"npc_ra2_soviet_battle_lab"				"Battle Lab"		
+		"npc_ra2_soviet_construction_yard"		"Soviet Construction Yard"
 		"npc_ra2_soviet_engineer"				"Engineer"			
 		"npc_ra2_soviet_MCV"					"Soviet MCV"		
 		"npc_ra2_soviet_naval_shipyard"			"Naval Shipyard"

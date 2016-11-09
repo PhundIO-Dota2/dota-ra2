@@ -1,0 +1,33 @@
+"spawn_war_miner"
+{
+    "BaseClass"             "ability_datadriven"
+    "MaxLevel"              "1"
+
+    "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+    "AbilityGoldCost"    "0"
+
+    "OnUpgrade"
+    {
+
+        "SpawnUnit"
+        {
+            "UnitName"    "npc_ra2_war_miner"
+            "Target"      "TARGET"
+            "UnitCount"   "1"
+            "UnitLimit"   "0"
+            "GrantsGold"  "0"
+            "GrantsXP"    "0"
+            "SpawnRadius" "1"
+            "OnSpawn"
+            {
+                "ApplyModifier"
+                {
+                    "ModifierName" "modifier_phased"
+                    "Target"       "TARGET"
+                    "Duration"     "0.03"
+                }
+            }
+        }
+    }
+}

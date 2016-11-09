@@ -2,7 +2,7 @@
 {
 	// General
 	//----------------------------------------------------------------
-	"Model"						"models/creeps/lane_creeps/creep_bad_siege/creep_bad_siege.vmdl"	// Model.
+	"Model"						"models/items/courier/tinkbot/tinkbot.vmdl"	// Model.
 	"BaseClass"					"npc_dota_creature"
 	"SoundSet"					"Hero_Sniper"
 	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"

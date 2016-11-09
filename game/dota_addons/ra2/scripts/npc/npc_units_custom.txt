@@ -1200,7 +1200,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"spawn_war_miner"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -4495,7 +4495,7 @@
 	{
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/creeps/lane_creeps/creep_bad_siege/creep_bad_siege.vmdl"	// Model.
+		"Model"						"models/items/courier/tinkbot/tinkbot.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"Hero_Sniper"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
