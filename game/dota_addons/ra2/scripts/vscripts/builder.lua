@@ -105,7 +105,7 @@ function Build( event )
         BuildingHelper:print("Completed construction of " .. unit:GetUnitName() .. " " .. unit:GetEntityIndex())
         
         local player = PlayerResource:GetPlayer(playerID)
-        player:OnBuildingPlaced(unit:GetUnitName())
+        player:OnBuildingPlaced(unit)
 
         -- Play construction complete sound
         

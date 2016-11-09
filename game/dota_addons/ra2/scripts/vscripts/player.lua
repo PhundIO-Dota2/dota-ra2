@@ -42,6 +42,43 @@ function CDOTAPlayer:Init()
     }
     CustomNetTables:SetTableValue("player_tables", "queue_" .. pid, self.queue)
 
+    ListenToGameEvent("npc_spawned", Dynamic_Wrap(CDOTAPlayer, "OnNPCSpawned"), self)
+    ListenToGameEvent("entity_killed", Dynamic_Wrap(CDOTAPlayer, "OnEntityKilled"), self)
+
+    self.unitCount = 0
+
+end
+
+function CDOTAPlayer:OnNPCSpawned( keys )
+
+    local npc = EntIndexToHScript(keys.entindex)
+
+    if npc:IsRealHero() then
+        Timers:CreateTimer(function() 
+            local ability = npc:FindAbilityByName("spawn_soviet_mcv")
+            ability:UpgradeAbility(true)
+            ability = npc:FindAbilityByName("hide_hero")
+            ability:UpgradeAbility(true)
+            npc:SetAbilityPoints(0)
+            npc:AddNoDraw()
+        end)
+    end
+
+end
+
+function CDOTAPlayer:OnEntityKilled( keys )
+
+    local entityKilled = EntIndexToHScript(keys.entindex_killed)
+    local teamID = entityKilled:GetTeam()
+
+    if entityKilled:GetClassname() == "npc_dota_creature" and teamID == self:GetTeam() then
+        self.unitCount = self.unitCount - 1
+    end
+    print(self.unitCount)
+    if self.unitCount <= 0 then
+        GameRules:MakeTeamLose(self:GetTeam())
+    end
+
 end
 
 function CDOTAPlayer:OnProductionRequest( unit )
@@ -233,12 +270,13 @@ end
 
 function CDOTAPlayer:OnBuildingPlaced( building )
 
-    self:UnlockUnits(building)
-    self:ResetProductionState(building)
+    self.unitCount = self.unitCount + 1
+    self:UnlockUnits()
+    self:ResetProductionState(building:GetUnitName())
 
 end
 
-function CDOTAPlayer:UnlockUnits( unit )
+function CDOTAPlayer:UnlockUnits()
 
     local units = KeyValues.UnitKV
 
@@ -300,6 +338,7 @@ function CDOTAPlayer:SpawnUnit( unit, category )
                 trainAbility = building:AddAbility("train_" .. unit)
             end
             building:CastAbilityImmediately(trainAbility, self:GetPlayerID())
+            self.unitCount = self.unitCount + 1
             self:AdvanceQueue(category)
             break
         end

@@ -13,7 +13,7 @@ function Deploy( event )
         conyard:AddNewModifier(conyard, nil, "modifier_grid_allowed", {})
     end
     local player = caster:GetPlayerOwner()
-    player:OnBuildingPlaced(building)
+    player:OnBuildingPlaced(conyard)
     caster:Destroy()
 
 end

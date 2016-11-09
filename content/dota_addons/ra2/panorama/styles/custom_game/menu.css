@@ -135,9 +135,13 @@ Label.menu-item-queue {
 }
 
 Label.menu-item-label {
-	font-size: 10px;
-	align: left bottom;
+	font-size: 8px;
+	width: 100%;
+	align: center bottom;
 	background-color: #000000DD;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: normal;
 }
 
 Label.menu-item-status {

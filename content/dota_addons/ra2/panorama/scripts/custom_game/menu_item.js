@@ -36,7 +36,7 @@ function pauseProduction() {
 
 (function () {
 
-	$('#label').text = unit;
+	$('#label').text = $.Localize(unit);
 	$('#cameo').style.backgroundImage = 'url("file://{images}/custom_game/units/' + unit + '.png");';
 
 	function getStatusText(status) {

@@ -3,6 +3,7 @@
 	"TeamCount" 	"10"
     "maps"          "test"
     "IsPlayable"    "1"
+
     "template_map"
     {
         "MaxPlayers"	"10"

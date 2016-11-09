@@ -8,5 +8,6 @@
 		<CustomUIElement type="Hud"  layoutfile="file://{resources}/layout/custom_game/selection.xml" />
 		<CustomUIElement type="Hud"  layoutfile="file://{resources}/layout/custom_game/menu.xml" />
 		<CustomUIElement type="HeroSelection" layoutfile="file://{resources}/layout/custom_game/multiteam_hero_select_overlay.xml" />
+		<CustomUIElement type="FlyoutScoreboard" layoutfile="file://{resources}/layout/custom_game/multiteam_flyout_scoreboard.xml" />
 	</Panel>
 </root>

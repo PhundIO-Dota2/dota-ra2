@@ -56,6 +56,8 @@ function RedAlert2:InitGameMode()
     mode:SetCameraDistanceOverride(1400)
     BuildingHelper:NewGridType("ALLOWED")
 
+    self.units = {}
+
 end
 
 -- Evaluate the state of the game
@@ -73,8 +75,9 @@ end
 function RedAlert2:InitListeners()
 
 	ListenToGameEvent("player_connect_full", Dynamic_Wrap(RedAlert2, "OnConnectFull"), self)
-    ListenToGameEvent("npc_spawned", Dynamic_Wrap(RedAlert2, "OnNPCSpawned"), self)
-
+    -- ListenToGameEvent("npc_spawned", Dynamic_Wrap(RedAlert2, "OnNPCSpawned"), self)
+    -- ListenToGameEvent("entity_killed", Dynamic_Wrap(RedAlert2, "OnEntityKilled"), self)
+    
 	CustomGameEventManager:RegisterListener( "building_queued", Dynamic_Wrap(RedAlert2, "OnBuildingQueued") )
     CustomGameEventManager:RegisterListener( "building_paused", Dynamic_Wrap(RedAlert2, "OnBuildingPaused") )
     CustomGameEventManager:RegisterListener( "building_resumed", Dynamic_Wrap(RedAlert2, "OnBuildingResumed") )
@@ -90,23 +93,46 @@ function RedAlert2:OnConnectFull( args )
 
 end
 
-function RedAlert2:OnNPCSpawned(keys)
+-- function RedAlert2:OnNPCSpawned( keys )
 
-    local npc = EntIndexToHScript(keys.entindex)
+--     local npc = EntIndexToHScript(keys.entindex)
 
-    if npc:IsRealHero() then
-        Timers:CreateTimer(function() 
-            local ability = npc:FindAbilityByName("spawn_soviet_mcv")
-            ability:UpgradeAbility(true)
-            -- npc:CastAbilityImmediately(ability, npc:GetPlayerOwnerID())
-            ability = npc:FindAbilityByName("hide_hero")
-            ability:UpgradeAbility(true)
-            npc:SetAbilityPoints(0)
-            npc:AddNoDraw()
-        end)
-    end
+--     if npc:IsRealHero() then
+--         Timers:CreateTimer(function() 
+--             local ability = npc:FindAbilityByName("spawn_soviet_mcv")
+--             ability:UpgradeAbility(true)
+--             ability = npc:FindAbilityByName("hide_hero")
+--             ability:UpgradeAbility(true)
+--             npc:SetAbilityPoints(0)
+--             npc:AddNoDraw()
+--         end)
+--     end
 
-end
+-- end
+
+-- function RedAlert2:OnEntityKilled( keys )
+
+--     local entityKilled = EntIndexToHScript(keys.entindex_killed)
+--     local teamID = entityKilled:GetTeam()
+    
+--     local ents = Entities:FindAllByClassname("npc_dota_creature")
+--     local unitLeft = false
+
+--     for k, ent in pairs(ents) do
+--         print(UnitFilter(ent, 0, 0, 0, teamID))
+--         if ent:GetEntityIndex() ~= keys.entindex_killed and UnitFilter(ent, 0, 0, 0, teamID) == 1 then
+--             unitLeft = true
+--             print(ent:GetEntityIndex())
+--         end
+--     end
+
+--     print(unitLeft)
+
+--     if not unitLeft then
+--         GameRules:MakeTeamLose(teamID)
+--     end
+
+-- end
 
 function RedAlert2:OnBuildingQueued( args )
 
