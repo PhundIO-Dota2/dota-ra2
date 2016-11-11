@@ -1,5 +1,8 @@
 require("libraries/keyvalues")
 
+local PRODUCTION_TIME_MULTIPLIER = 0.01
+local PRODUCTION_COST_MULTIPLIER = 0.01
+
 function CDOTAPlayer:Init()
 
     local pid = self:GetPlayerID()
@@ -180,8 +183,8 @@ end
 
 function CDOTAPlayer:StartProduction( unit )
 
-    local duration = GetUnitKV(unit, "MenuBuildTime", 1) * 1
-    local cost = GetUnitKV(unit, "BuildCost", 1)
+    local duration = GetUnitKV(unit, "MenuBuildTime", 1) * PRODUCTION_TIME_MULTIPLIER
+    local cost = GetUnitKV(unit, "BuildCost", 1) * PRODUCTION_COST_MULTIPLIER
     local start_time = GameRules:GetGameTime()
     local time = start_time
     local hold_duration = 0

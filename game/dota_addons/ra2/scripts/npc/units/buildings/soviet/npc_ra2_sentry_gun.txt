@@ -25,19 +25,19 @@
 
 	// Attack
 	//----------------------------------------------------------------
-	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-	"AttackDamageMin"			"0"		// Damage range min.
-	"AttackDamageMax"			"0"		// Damage range max.
-	"AttackRate"				"0"		// Speed of attack.
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"50"		// Damage range min.
+	"AttackDamageMax"			"50"		// Damage range max.
+	"AttackRate"				"0.8667"	// Speed of attack.
 	"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
-	"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
-	"AttackRange"				"0"		// Range within a target can be attacked.	     
+	"AttackAcquisitionRange"	"352"		// Range within a target can be acquired.
+	"AttackRange"				"352"		// Range within a target can be attacked.	     
 
 	// Bounds
 	//----------------------------------------------------------------
-	"RingRadius"				"128"
+	"RingRadius"				"64"
 	"HealthBarOffset"			"170"
-	"BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
+	"BoundsHullName"            "DOTA_HULL_SIZE_HUGE"
 
 	// Bounty
 	//----------------------------------------------------------------
@@ -52,15 +52,15 @@
 
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"				"500"		// Base health.
+	"StatusHealth"				"400"		// Base health.
 	"StatusHealthRegen"			"0"			// Health regeneration rate.
 	"StatusMana"				"0"			// Base mana.
 	"StatusManaRegen"			"0"		// Mana regeneration rate.		 
 	
 	// Vision
 	//----------------------------------------------------------------
-	"VisionDaytimeRange"		"384"		// Range of vision during day light.
-	"VisionNighttimeRange"		"384"		// Range of vision at night time.
+	"VisionDaytimeRange"		"448"		// Range of vision during day light.
+	"VisionNighttimeRange"		"448"		// Range of vision at night time.
 
 	// Team
 	//----------------------------------------------------------------
@@ -93,8 +93,8 @@
 	// Red Alert 2
 	//----------------------------------------------------------------
 	"Category"			"defense"
-	"MenuBuildTime"		"1"
-	"BuildCost"			"100"
+	"MenuBuildTime"		"20"
+	"BuildCost"			"500"
 	"Requirement1"		"npc_ra2_soviet_construction_yard"
 	"Requirement2"		"npc_ra2_soviet_barracks"
 
