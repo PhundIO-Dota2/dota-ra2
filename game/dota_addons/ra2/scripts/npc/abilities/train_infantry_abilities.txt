@@ -18,7 +18,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -52,7 +52,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -86,7 +86,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -120,7 +120,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -154,7 +154,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -188,7 +188,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -222,7 +222,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -256,7 +256,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -290,7 +290,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -324,7 +324,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -358,7 +358,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -392,7 +392,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -426,7 +426,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -460,7 +460,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -494,7 +494,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -528,7 +528,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -562,7 +562,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -596,7 +596,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -630,7 +630,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -664,7 +664,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -698,7 +698,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -732,7 +732,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -766,7 +766,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -800,7 +800,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -834,7 +834,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"
@@ -868,7 +868,7 @@
             "UnitLimit"   "0"
             "GrantsGold"  "0"
             "GrantsXP"    "0"
-            "SpawnRadius" "100"
+            "SpawnRadius" "0"
             "OnSpawn"
             {
                 "ApplyModifier"

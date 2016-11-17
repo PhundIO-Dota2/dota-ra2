@@ -2,12 +2,12 @@
 {
 	// General
 	//----------------------------------------------------------------
-	"Model"						"models/items/courier/tinkbot/tinkbot.vmdl"	// Model.
+	"Model"						"models/ra2_war_miner.vmdl"	// Model.
 	"BaseClass"					"npc_dota_creature"
 	"SoundSet"					"Hero_Sniper"
 	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
 	"Level"						"1"
-	"ModelScale" 				"0.5"
+	"ModelScale" 				"1"
 
 	// Abilities
 	//----------------------------------------------------------------
