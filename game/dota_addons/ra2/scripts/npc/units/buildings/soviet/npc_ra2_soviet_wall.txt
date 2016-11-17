@@ -35,9 +35,9 @@
 
 	// Bounds
 	//----------------------------------------------------------------
-	"RingRadius"				"128"
+	"RingRadius"				"64"
 	"HealthBarOffset"			"170"
-	"BoundsHullName"            "DOTA_HULL_SIZE_BARRACKS"
+	"BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"
 
 	// Bounty
 	//----------------------------------------------------------------
@@ -89,6 +89,14 @@
 	"BlockPathingSize"	"1"
 	"BuildTime"			"0"
 	"Requires"			"Buildable Allowed"
+	"Grid"
+	{
+	    "Allowed"
+	    {
+	        "Square"        "15"
+	        "RemoveOnDeath" "false"
+	    }
+	}
 
 	// Red Alert 2
 	//----------------------------------------------------------------

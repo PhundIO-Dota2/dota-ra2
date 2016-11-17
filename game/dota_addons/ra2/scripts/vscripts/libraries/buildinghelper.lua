@@ -1600,7 +1600,7 @@ function BuildingHelper:BlockPSO(size, location)
     BuildingHelper:SnapToGrid(size, pos)
 
     local gridNavBlockers = {}
-    if size % 2 == 1 then
+    if size % 2 == 1 then 
         for x = pos.x - (size-2) * 32, pos.x + (size-2) * 32, 64 do
             for y = pos.y - (size-2) * 32, pos.y + (size-2) * 32, 64 do
                 local blockerLocation = Vector(x, y, pos.z)

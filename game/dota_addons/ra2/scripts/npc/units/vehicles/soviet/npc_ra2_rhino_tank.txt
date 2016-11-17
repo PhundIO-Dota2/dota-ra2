@@ -22,18 +22,20 @@
 
 	// Attack
 	//----------------------------------------------------------------
-	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-	"AttackDamageMin"			"0"		// Damage range min.
-	"AttackDamageMax"			"0"		// Damage range max.
-	"AttackRate"				"0"		// Speed of attack.
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"1"		// Damage range min.
+	"AttackDamageMax"			"1"		// Damage range max.
+	"AttackRate"				"1"		// Speed of attack.
 	"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
-	"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
-	"AttackRange"				"0"		// Range within a target can be attacked.     
+	"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+	"AttackRange"				"500"		// Range within a target can be attacked.     
+	"ProjectileModel"			"particles/units/heroes/hero_gyrocopter/gyro_base_attack.vpcf"		// Particle system model for projectile.
+	"ProjectileSpeed"			"1250"		// Speed of projectile.
 
 	// Bounds
 	//----------------------------------------------------------------
 	"RingRadius"				"32"
-	"HealthBarOffset"			"170"
+	"HealthBarOffset"			"100"
 	"BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"
 
 	// Bounty

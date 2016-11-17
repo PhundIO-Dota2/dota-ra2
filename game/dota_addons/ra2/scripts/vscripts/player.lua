@@ -2,6 +2,7 @@ require("libraries/keyvalues")
 
 local PRODUCTION_TIME_MULTIPLIER = 0.01
 local PRODUCTION_COST_MULTIPLIER = 0.01
+local CHEAT_ON = true
 
 function CDOTAPlayer:Init()
 
@@ -355,6 +356,8 @@ function CDOTAPlayer:HasRequiredBuildings( unit )
     local i = 1
     local requiredUnit = GetUnitKV(unit, "Requirement" .. i, 1)
     local result = true
+
+    if CHEAT_ON then return true end
 
     while requiredUnit do
         local found = false
