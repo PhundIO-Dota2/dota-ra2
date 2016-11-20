@@ -2,12 +2,12 @@
 {
 	// General
 	//----------------------------------------------------------------
-	"Model"						"models/creeps/lane_creeps/creep_bad_siege/creep_bad_siege.vmdl"	// Model.
+	"Model"						"models/ra2_demolition_truck.vmdl"	// Model.
 	"BaseClass"					"npc_dota_creature"
 	"SoundSet"					"Hero_Sniper"
 	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
 	"Level"						"1"
-	"ModelScale" 				"0.5"
+	"ModelScale" 				"1"
 
 	// Abilities
 	//----------------------------------------------------------------

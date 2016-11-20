@@ -30,7 +30,7 @@
 	"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 	"AttackRange"				"500"		// Range within a target can be attacked.     
 	"ProjectileModel"			"particles/units/heroes/hero_gyrocopter/gyro_base_attack.vpcf"		// Particle system model for projectile.
-	"ProjectileSpeed"			"1250"		// Speed of projectile.
+	"ProjectileSpeed"			"2500"		// Speed of projectile.
 
 	// Bounds
 	//----------------------------------------------------------------

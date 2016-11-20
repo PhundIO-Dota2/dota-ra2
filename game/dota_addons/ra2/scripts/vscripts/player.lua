@@ -1,7 +1,7 @@
 require("libraries/keyvalues")
 
-local PRODUCTION_TIME_MULTIPLIER = 0.01
-local PRODUCTION_COST_MULTIPLIER = 0.01
+local PRODUCTION_TIME_MULTIPLIER = 0
+local PRODUCTION_COST_MULTIPLIER = 0
 local CHEAT_ON = true
 
 function CDOTAPlayer:Init()
