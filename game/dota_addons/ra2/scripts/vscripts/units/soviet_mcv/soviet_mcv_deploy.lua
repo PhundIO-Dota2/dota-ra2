@@ -4,7 +4,7 @@ function Deploy( event )
 
     local building = "npc_ra2_soviet_construction_yard"
 	local caster = event.caster
-	local conyard = BuildingHelper:PlaceBuilding(caster:GetOwner(), building, caster:GetAbsOrigin())
+    local conyard = BuildingHelper:PlaceBuilding(caster:GetOwner(), building, caster:GetAbsOrigin() + Vector(64, -64, 0))
     local location = conyard:GetAbsOrigin()
     local grid = conyard:GetKeyValue("Grid")
     if grid and grid["Allowed"] then

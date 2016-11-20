@@ -22,13 +22,13 @@
 
 	// Attack
 	//----------------------------------------------------------------
-	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-	"AttackDamageMin"			"0"		// Damage range min.
-	"AttackDamageMax"			"0"		// Damage range max.
-	"AttackRate"				"0"		// Speed of attack.
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"138"		// Damage range min.
+	"AttackDamageMax"			"138"		// Damage range max.
+	"AttackRate"				"2"		// Speed of attack.
 	"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
-	"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
-	"AttackRange"				"0"		// Range within a target can be attacked.     
+	"AttackAcquisitionRange"	"256"		// Range within a target can be acquired.
+	"AttackRange"				"256"		// Range within a target can be attacked.     
 
 	// Bounds
 	//----------------------------------------------------------------
@@ -45,19 +45,19 @@
 	// Movement
 	//----------------------------------------------------------------
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"256"		// Speed.			
+	"MovementSpeed"				"384"		// Speed.			
 
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"				"125"		// Base health.
+	"StatusHealth"				"300"		// Base health.
 	"StatusHealthRegen"			"0"			// Health regeneration rate.
 	"StatusMana"				"0"			// Base mana.
 	"StatusManaRegen"			"0"		// Mana regeneration rate.		 
 	
 	// Vision
 	//----------------------------------------------------------------
-	"VisionDaytimeRange"		"320"		// Range of vision during day light.
-	"VisionNighttimeRange"		"320"		// Range of vision at night time.
+	"VisionDaytimeRange"		"512"		// Range of vision during day light.
+	"VisionNighttimeRange"		"512"		// Range of vision at night time.
 
 	// Team
 	//----------------------------------------------------------------
@@ -83,8 +83,8 @@
 	// Red Alert 2
 	//----------------------------------------------------------------
 	"Category"			"vehicle"
-	"MenuBuildTime"		"2"
-	"BuildCost"			"100"
+	"MenuBuildTime"		"48"
+	"BuildCost"			"1200"
 	"Requirement1"		"npc_ra2_soviet_war_factory"
 	"Requirement2"		"npc_ra2_radar_tower"
 

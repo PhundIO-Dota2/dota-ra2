@@ -23,15 +23,15 @@
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackDamageMin"			"1"		// Damage range min.
-	"AttackDamageMax"			"1"		// Damage range max.
-	"AttackRate"				"1"		// Speed of attack.
+	"AttackDamageMin"			"25"		// Damage range min.
+	"AttackDamageMax"			"25"		// Damage range max.
+	"AttackRate"				"1.333"		// Speed of attack.
 	"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
-	"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
-	"AttackRange"				"500"		// Range within a target can be attacked.     
-	"ProjectileModel"			"particles/units/heroes/hero_gyrocopter/gyro_base_attack.vpcf"		// Particle system model for projectile.
+	"AttackAcquisitionRange"	"320"		// Range within a target can be acquired.
+	"AttackRange"				"320"		// Range within a target can be attacked.     
+	"ProjectileModel"			"particles/base_attacks/ranged_siege_bad.vpcf"		// Particle system model for projectile.
 	"ProjectileSpeed"			"2500"		// Speed of projectile.
-
+	
 	// Bounds
 	//----------------------------------------------------------------
 	"RingRadius"				"32"
@@ -47,19 +47,19 @@
 	// Movement
 	//----------------------------------------------------------------
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"256"		// Speed.			
+	"MovementSpeed"				"512"		// Speed.			
 
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"				"125"		// Base health.
+	"StatusHealth"				"180"		// Base health.
 	"StatusHealthRegen"			"0"			// Health regeneration rate.
 	"StatusMana"				"0"			// Base mana.
 	"StatusManaRegen"			"0"		// Mana regeneration rate.		 
 	
 	// Vision
 	//----------------------------------------------------------------
-	"VisionDaytimeRange"		"320"		// Range of vision during day light.
-	"VisionNighttimeRange"		"320"		// Range of vision at night time.
+	"VisionDaytimeRange"		"512"		// Range of vision during day light.
+	"VisionNighttimeRange"		"512"		// Range of vision at night time.
 
 	// Team
 	//----------------------------------------------------------------
@@ -85,8 +85,8 @@
 	// Red Alert 2
 	//----------------------------------------------------------------
 	"Category"			"vehicle"
-	"MenuBuildTime"		"2"
-	"BuildCost"			"100"
+	"MenuBuildTime"		"20"
+	"BuildCost"			"500"
 	"Requirement1"		"npc_ra2_soviet_war_factory"
 
 }
