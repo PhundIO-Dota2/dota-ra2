@@ -1,5 +1,5 @@
 //=================================================================================	
-// Creature: Soviet Barracks
+// Creature: Sentry Gun
 //=================================================================================
 "npc_ra2_sentry_gun"	
 {
@@ -7,7 +7,7 @@
 	//----------------------------------------------------------------
 	"Model"						"models/ra2_sentry_gun.vmdl"	// Model.
 	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
+	"SoundSet"					"Hero_VenomancerWard"
 	"GameSoundsFile"			""
 	"Level"						"1"
 	"ModelScale" 				"1"
@@ -25,13 +25,15 @@
 
 	// Attack
 	//----------------------------------------------------------------
-	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 	"AttackDamageMin"			"50"		// Damage range min.
 	"AttackDamageMax"			"50"		// Damage range max.
 	"AttackRate"				"0.8667"	// Speed of attack.
 	"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
 	"AttackAcquisitionRange"	"352"		// Range within a target can be acquired.
 	"AttackRange"				"352"		// Range within a target can be attacked.	     
+	"ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf"		// Particle system model for projectile.
+	"ProjectileSpeed"			"1250"		// Speed of projectile.
 
 	// Bounds
 	//----------------------------------------------------------------
@@ -48,7 +50,8 @@
 	// Movement
 	//----------------------------------------------------------------
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
-	"MovementSpeed"				"0"		// Speed.			
+	"MovementSpeed"				"0"		// Speed.
+	"MovementTurnRate"			"1.0"			// Turning rate.		
 
 	// Status
 	//----------------------------------------------------------------

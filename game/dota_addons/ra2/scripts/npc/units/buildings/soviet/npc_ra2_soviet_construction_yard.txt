@@ -11,7 +11,7 @@
 	"GameSoundsFile"			""
 	"Level"						"1"
 	"ModelScale" 				"1"
-	"ConsideredHero"        	"1"
+	"ConsideredHero"        	"0"
 
 	// Abilities
 	//----------------------------------------------------------------

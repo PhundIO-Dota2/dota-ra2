@@ -649,7 +649,7 @@
 		"Requirement2"		"npc_ra2_soviet_ore_refinery"
 	}
 	//=================================================================================	
-	// Creature: Soviet Barracks
+	// Creature: Sentry Gun
 	//=================================================================================
 	"npc_ra2_sentry_gun"	
 	{
@@ -657,7 +657,7 @@
 		//----------------------------------------------------------------
 		"Model"						"models/ra2_sentry_gun.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
-		"SoundSet"					""
+		"SoundSet"					"Hero_VenomancerWard"
 		"GameSoundsFile"			""
 		"Level"						"1"
 		"ModelScale" 				"1"
@@ -675,13 +675,15 @@
 	
 		// Attack
 		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"50"		// Damage range min.
 		"AttackDamageMax"			"50"		// Damage range max.
 		"AttackRate"				"0.8667"	// Speed of attack.
 		"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"352"		// Range within a target can be acquired.
 		"AttackRange"				"352"		// Range within a target can be attacked.	     
+		"ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf"		// Particle system model for projectile.
+		"ProjectileSpeed"			"1250"		// Speed of projectile.
 	
 		// Bounds
 		//----------------------------------------------------------------
@@ -698,7 +700,8 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
-		"MovementSpeed"				"0"		// Speed.			
+		"MovementSpeed"				"0"		// Speed.
+		"MovementTurnRate"			"1.0"			// Turning rate.		
 	
 		// Status
 		//----------------------------------------------------------------
@@ -981,7 +984,7 @@
 		"GameSoundsFile"			""
 		"Level"						"1"
 		"ModelScale" 				"1"
-		"ConsideredHero"        	"1"
+		"ConsideredHero"        	"0"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -3892,8 +3895,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"25"		// Damage range min.
-		"AttackDamageMax"			"25"		// Damage range max.
+		"AttackDamageMin"			"25.0"		// Damage range min.
+		"AttackDamageMax"			"25.0"		// Damage range max.
 		"AttackRate"				"1.333"		// Speed of attack.
 		"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"320"		// Range within a target can be acquired.
@@ -3917,6 +3920,7 @@
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"512"		// Speed.			
+		"MovementTurnRate"			"1.0"	
 	
 		// Status
 		//----------------------------------------------------------------
@@ -3957,6 +3961,33 @@
 		"MenuBuildTime"		"20"
 		"BuildCost"			"500"
 		"Requirement1"		"npc_ra2_soviet_war_factory"
+	
+	    "Armor" "RA2_ARMOR_HEAVY"
+		"GroundDamageType"
+		{
+			"RA2_ARMOR_NONE" 		"1.5"
+			"RA2_ARMOR_FLAK"		"1"
+			"RA2_ARMOR_PLATE"		"0.5"
+			"RA2_ARMOR_LIGHT"		"0.5"
+			"RA2_ARMOR_MEDIUM"		"0.1"
+			"RA2_ARMOR_HEAVY"		"0.1"
+			"RA2_ARMOR_WOOD"		"0.3"
+			"RA2_ARMOR_STEEL"		"0.2"
+			"RA2_ARMOR_CONCRETE"	"0.1"
+		}
+	
+		"AirDamageType"
+		{
+			"RA2_ARMOR_NONE" 		"1.5"
+			"RA2_ARMOR_FLAK"		"0.8"
+			"RA2_ARMOR_PLATE"		"0.5"
+			"RA2_ARMOR_LIGHT"		"1"
+			"RA2_ARMOR_MEDIUM"		"0.2"
+			"RA2_ARMOR_HEAVY"		"0.2"
+			"RA2_ARMOR_WOOD"		"0"
+			"RA2_ARMOR_STEEL"		"0"
+			"RA2_ARMOR_CONCRETE"	"0"
+		}
 	
 	}
 	"npc_ra2_kirov_airship"	
@@ -4099,7 +4130,8 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"384"		// Speed.			
+		"MovementSpeed"				"384"		// Speed.		
+		"MovementTurnRate"			"1.0"	
 	
 		// Status
 		//----------------------------------------------------------------
@@ -4427,7 +4459,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"v3_rocket"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -4438,13 +4470,13 @@
 	
 		// Attack
 		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"0"		// Damage range min.
 		"AttackDamageMax"			"0"		// Damage range max.
-		"AttackRate"				"0"		// Speed of attack.
+		"AttackRate"				"1"		// Speed of attack.
 		"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
-		"AttackRange"				"0"		// Range within a target can be attacked.     
+		"AttackAcquisitionRange"	"1500"		// Range within a target can be acquired.
+		"AttackRange"				"1500"		// Range within a target can be attacked.     
 	
 		// Bounds
 		//----------------------------------------------------------------
@@ -4465,7 +4497,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"125"		// Base health.
+		"StatusHealth"				"1250000"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
@@ -4503,6 +4535,8 @@
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_war_factory"
 		"Requirement2"		"npc_ra2_radar_tower"
+	
+		"Armor" "RA2_ARMOR_LIGHT"
 	
 	}
 	"npc_ra2_war_miner"	

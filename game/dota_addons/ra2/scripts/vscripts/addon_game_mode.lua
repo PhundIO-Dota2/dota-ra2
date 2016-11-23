@@ -3,6 +3,7 @@ require("libraries/buildinghelper")
 require("libraries/keyvalues")
 require("libraries/timers")
 require("player")
+require("base_npc")
 
 if RedAlert2 == nil then
 	RedAlert2 = class({})
@@ -33,7 +34,6 @@ function RedAlert2:InitGameMode()
 
 	print( "Red Alert 2 addon is loaded." )
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
-	self:InitListeners()
     GameRules:SetStartingGold(20000)
     GameRules:SetGoldPerTick(0)
     GameRules:SetPreGameTime(0)
@@ -51,12 +51,29 @@ function RedAlert2:InitGameMode()
     GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_CUSTOM_7, teamMaxPlayer)
     GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_CUSTOM_8, teamMaxPlayer)
 
-    local mode = GameRules:GetGameModeEntity()
-    mode:SetUnseenFogOfWarEnabled(true)
-    mode:SetCameraDistanceOverride(1400)
+    local gamemode = GameRules:GetGameModeEntity()
+    gamemode:SetUnseenFogOfWarEnabled(true)
+    gamemode:SetCameraDistanceOverride(1400)
     BuildingHelper:NewGridType("ALLOWED")
+    gamemode:SetDamageFilter(Dynamic_Wrap(RedAlert2, "DamageFilter"), self)
 
+	self:InitListeners()
     self.units = {}
+
+end
+
+function RedAlert2:DamageFilter( filterTable )
+
+    local victim_index = filterTable["entindex_victim_const"]
+    local attacker_index = filterTable["entindex_attacker_const"]
+    if not victim_index or not attacker_index then
+        return true
+    end
+    filterTable.damage = filterTable["damage"] * (2/3)
+    local victim = EntIndexToHScript( victim_index )
+    local attacker = EntIndexToHScript( attacker_index )
+    filterTable["damage"] = filterTable["damage"] * attacker:GetDamageMultiplier(victim:GetArmorType())
+    return true
 
 end
 
@@ -181,3 +198,4 @@ function RedAlert2:OnBuildingCancelled( args )
     end
 
 end
+

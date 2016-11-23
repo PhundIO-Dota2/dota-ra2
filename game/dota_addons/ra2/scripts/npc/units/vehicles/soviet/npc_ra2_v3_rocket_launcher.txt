@@ -11,7 +11,7 @@
 
 	// Abilities
 	//----------------------------------------------------------------
-	"Ability1"					""			// Ability 1
+	"Ability1"					"v3_rocket"			// Ability 1
 	"Ability2"					""			// Ability 2
 	"Ability3"					""			// Ability 3
 	"Ability4"					""			// Ability 4
@@ -22,13 +22,13 @@
 
 	// Attack
 	//----------------------------------------------------------------
-	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"			"0"		// Damage range min.
 	"AttackDamageMax"			"0"		// Damage range max.
-	"AttackRate"				"0"		// Speed of attack.
+	"AttackRate"				"1"		// Speed of attack.
 	"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
-	"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
-	"AttackRange"				"0"		// Range within a target can be attacked.     
+	"AttackAcquisitionRange"	"1500"		// Range within a target can be acquired.
+	"AttackRange"				"1500"		// Range within a target can be attacked.     
 
 	// Bounds
 	//----------------------------------------------------------------
@@ -49,7 +49,7 @@
 
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"				"125"		// Base health.
+	"StatusHealth"				"1250000"		// Base health.
 	"StatusHealthRegen"			"0"			// Health regeneration rate.
 	"StatusMana"				"0"			// Base mana.
 	"StatusManaRegen"			"0"		// Mana regeneration rate.		 
@@ -87,5 +87,7 @@
 	"BuildCost"			"100"
 	"Requirement1"		"npc_ra2_soviet_war_factory"
 	"Requirement2"		"npc_ra2_radar_tower"
+
+	"Armor" "RA2_ARMOR_LIGHT"
 
 }
