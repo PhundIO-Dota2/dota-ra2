@@ -90,4 +90,19 @@
 	"Requirement1"		"npc_ra2_soviet_war_factory"
 	"Requirement2"		"npc_ra2_soviet_battle_lab"
 
+	"Armor" 			"RA2_ARMOR_HEAVY"
+	"GroundDamageType"
+	{
+		"RA2_ARMOR_NONE" 		"0.25"
+		"RA2_ARMOR_FLAK"		"0.25"
+		"RA2_ARMOR_PLATE"		"0.25"
+		"RA2_ARMOR_LIGHT"		"0.75"
+		"RA2_ARMOR_MEDIUM"		"1"
+		"RA2_ARMOR_HEAVY"		"1"
+		"RA2_ARMOR_WOOD"		"1"
+		"RA2_ARMOR_STEEL"		"1"
+		"RA2_ARMOR_CONCRETE"	"0.7"
+	}
+
+
 }

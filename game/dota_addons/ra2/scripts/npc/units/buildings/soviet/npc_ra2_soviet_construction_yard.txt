@@ -100,7 +100,6 @@
 
 	// Red Alert 2
 	//----------------------------------------------------------------
-	"MenuBuildTime"		"1"
-	"BuildCost"			"100"
+	"Armor" 			"RA2_ARMOR_CONCRETE"
 
 }

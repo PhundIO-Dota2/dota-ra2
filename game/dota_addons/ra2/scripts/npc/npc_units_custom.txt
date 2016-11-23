@@ -107,6 +107,8 @@
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_battle_lab"
+	
+		"Armor" 			"RA2_ARMOR_WOOD"
 	}
 	//=================================================================================	
 	// Creature: Flak Cannon
@@ -215,6 +217,8 @@
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement1"		"npc_ra2_soviet_barracks"
+	
+		"Armor" 			"RA2_ARMOR_STEEL"
 	}
 	//=================================================================================	
 	// Creature: Iron Curtain
@@ -323,6 +327,8 @@
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_battle_lab"
+	
+		"Armor" 			"RA2_ARMOR_CONCRETE"
 	}
 	//=================================================================================	
 	// Creature: Nuclear Reactor
@@ -431,6 +437,8 @@
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_battle_lab"
+	
+		"Armor" 			"RA2_ARMOR_CONCRETE"
 	}
 	//=================================================================================	
 	// Creature: Nuke Silo
@@ -539,6 +547,8 @@
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_battle_lab"
+	
+		"Armor" 			"RA2_ARMOR_CONCRETE"
 	}
 	//=================================================================================	
 	// Creature: Radar Tower
@@ -647,6 +657,8 @@
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_ore_refinery"
+	
+		"Armor" 			"RA2_ARMOR_WOOD"
 	}
 	//=================================================================================	
 	// Creature: Sentry Gun
@@ -750,6 +762,8 @@
 		"BuildCost"			"500"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_barracks"
+		
+		"Armor" 			"RA2_ARMOR_STEEL"
 	
 	}
 	//=================================================================================	
@@ -861,6 +875,7 @@
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_tesla_reactor"
 	
+		"Armor" 			"RA2_ARMOR_STEEL"
 	}
 	//=================================================================================	
 	// Creature: Soviet Battle Lab
@@ -970,6 +985,8 @@
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_war_factory"
 		"Requirement3"		"npc_ra2_radar_tower"
+	
+		"Armor" 			"RA2_ARMOR_WOOD"
 	}
 	//=================================================================================	
 	// Creature: Soviet Construction Yard
@@ -1073,8 +1090,7 @@
 	
 		// Red Alert 2
 		//----------------------------------------------------------------
-		"MenuBuildTime"		"1"
-		"BuildCost"			"100"
+		"Armor" 			"RA2_ARMOR_CONCRETE"
 	
 	}
 	//=================================================================================	
@@ -1186,6 +1202,8 @@
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_ore_refinery"
 		"Requirement3"		"npc_ra2_tesla_reactor"
+	
+		"Armor" 			"RA2_ARMOR_CONCRETE"
 	}
 	//=================================================================================	
 	// Creature: Soviet Ore Refinery
@@ -1294,6 +1312,8 @@
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_tesla_reactor"
+	
+		"Armor" 			"RA2_ARMOR_WOOD"
 	}
 	//=================================================================================	
 	// Creature: Soviet Service Depot
@@ -1402,6 +1422,8 @@
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_war_factory"
+	
+		"Armor" 			"RA2_ARMOR_WOOD"
 	}
 	//=================================================================================	
 	// Creature: Soviet Walls
@@ -1510,6 +1532,8 @@
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_barracks"
+	
+		"Armor" 			"RA2_ARMOR_CONCRETE"
 	
 	}
 	//=================================================================================	
@@ -1621,6 +1645,8 @@
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_ore_refinery"
 		"Requirement3"		"npc_ra2_soviet_barracks"
+	
+		"Armor" 			"RA2_ARMOR_WOOD"
 	}
 	
 // Creature: Tesla Coil
@@ -1730,6 +1756,8 @@
 	"Requirement1"		"npc_ra2_soviet_construction_yard"
 	"Requirement2"		"npc_ra2_tesla_reactor"
 	"Requirement3"		"npc_ra2_radar_tower"
+
+	"Armor" 			"RA2_ARMOR_STEEL"
 }
 	//=================================================================================	
 	// Creature: Tesla reactor
@@ -1837,6 +1865,8 @@
 		"MenuBuildTime"		"1"
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
+	
+		"Armor" 			"RA2_ARMOR_WOOD"
 	}
 	//=================================================================================	
 	// Creature: GI
@@ -2192,7 +2222,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"125"		// Base health.
+		"StatusHealth"				"100"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
@@ -2232,10 +2262,12 @@
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"infantry"
-		"MenuBuildTime"		"2"
-		"BuildCost"			"100"
+		"MenuBuildTime"		"30"
+		"BuildCost"			"1000"
 		"Requirement1"		"npc_ra2_soviet_barracks"
 		"Requirement2"		"todo_unlock_this_with_spy"
+	
+		"Armor" 			"RA2_ARMOR_NONE"
 	
 	}
 	//=================================================================================	
@@ -2332,9 +2364,11 @@
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"infantry"
-		"MenuBuildTime"		"2"
+		"MenuBuildTime"		"4"
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_barracks"
+	
+		"Armor" 			"RA2_ARMOR_FLAK"
 	
 	}
 	//=================================================================================	
@@ -2427,10 +2461,12 @@
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"infantry"
-		"MenuBuildTime"		"2"
-		"BuildCost"			"100"
+		"MenuBuildTime"		"24"
+		"BuildCost"			"600"
 		"Requirement1"		"npc_ra2_soviet_barracks"
 		"Requirement2"		"npc_ra2_radar_tower"
+	
+		"Armor" 			"RA2_ARMOR_NONE"
 	}
 	//=================================================================================	
 	// Creature: Conscript
@@ -2486,7 +2522,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"125"		// Base health.
+		"StatusHealth"				"150"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
@@ -2526,11 +2562,13 @@
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"infantry"
-		"MenuBuildTime"		"2"
-		"BuildCost"			"100"
+		"MenuBuildTime"		"24"
+		"BuildCost"			"600"
 		"Requirement1"		"npc_ra2_soviet_barracks"
 		"Requirement2"		"npc_ra2_radar_tower"
 		"Requirement3"		"todo_unlock_this_with_country"
+	
+		"Armor" 			"RA2_ARMOR_PLATE"
 	
 	}
 	//=================================================================================	
@@ -2587,7 +2625,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"125"		// Base health.
+		"StatusHealth"				"100"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
@@ -2627,10 +2665,12 @@
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"infantry"
-		"MenuBuildTime"		"2"
-		"BuildCost"			"100"
+		"MenuBuildTime"		"12"
+		"BuildCost"			"300"
 		"Requirement1"		"npc_ra2_soviet_barracks"
 		"Requirement2"		"npc_ra2_radar_tower"
+	
+		"Armor" 			"RA2_ARMOR_NONE"
 	
 	}
 	//=================================================================================	
@@ -2723,9 +2763,11 @@
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"infantry"
-		"MenuBuildTime"		"2"
-		"BuildCost"			"100"
+		"MenuBuildTime"		"8"
+		"BuildCost"			"200"
 		"Requirement1"		"npc_ra2_soviet_barracks"
+	
+		"Armor" 			"RA2_ARMOR_NONE"
 	
 	}
 	//=================================================================================	
@@ -2755,13 +2797,13 @@
 	
 		// Attack
 		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"15"		// Damage range min.
-		"AttackDamageMax"			"15"		// Damage range max.
-		"AttackRate"				"0.83"		// Speed of attack.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"		// Damage range min.
+		"AttackDamageMax"			"0"		// Damage range max.
+		"AttackRate"				"0"		// Speed of attack.
 		"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"320"		// Range within a target can be acquired.
-		"AttackRange"				"256"		// Range within a target can be attacked.     
+		"AttackAcquisitionRange"	"0"		// Range within a target can be acquired.
+		"AttackRange"				"0"		// Range within a target can be attacked.     
 	
 		// Bounds
 		//----------------------------------------------------------------
@@ -2782,7 +2824,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"125"		// Base health.
+		"StatusHealth"				"75"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
@@ -2822,9 +2864,11 @@
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"infantry"
-		"MenuBuildTime"		"2"
-		"BuildCost"			"100"
+		"MenuBuildTime"		"20"
+		"BuildCost"			"500"
 		"Requirement1"		"npc_ra2_soviet_barracks"
+	
+		"Armor" 			"RA2_ARMOR_NONE"
 	
 	}
 	//=================================================================================	
@@ -2927,11 +2971,13 @@
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"infantry"
-		"MenuBuildTime"		"2"
-		"BuildCost"			"100"
+		"MenuBuildTime"		"8"
+		"BuildCost"			"200"
 		"Requirement1"		"npc_ra2_soviet_barracks"
 		"Requirement2"		"npc_ra2_radar_tower"
 		"Requirement3"		"todo_unlock_this_with_country"
+	
+		"Armor" 			"RA2_ARMOR_FLAK"
 	
 	}
 	//=================================================================================	
@@ -3029,9 +3075,11 @@
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"infantry"
-		"MenuBuildTime"		"2"
-		"BuildCost"			"100"
+		"MenuBuildTime"		"20"
+		"BuildCost"			"500"
 		"Requirement1"		"npc_ra2_soviet_barracks"
+	
+		"Armor" 			"RA2_ARMOR_PLATE"
 	}
 	//=================================================================================	
 	// Creature: Conscript
@@ -3087,7 +3135,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"125"		// Base health.
+		"StatusHealth"				"100"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
@@ -3127,10 +3175,12 @@
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"infantry"
-		"MenuBuildTime"		"2"
-		"BuildCost"			"100"
+		"MenuBuildTime"		"48"
+		"BuildCost"			"1200"
 		"Requirement1"		"npc_ra2_soviet_barracks"
 		"Requirement2"		"npc_ra2_soviet_battle_lab"
+	
+		"Armor" 			"RA2_ARMOR_NONE"
 	
 	}
 	//=================================================================================	
@@ -3187,7 +3237,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"125"		// Base health.
+		"StatusHealth"				"200"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
@@ -3227,8 +3277,8 @@
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"infantry"
-		"MenuBuildTime"		"2"
-		"BuildCost"			"100"
+		"MenuBuildTime"		"140"
+		"BuildCost"			"2000"
 		"Requirement1"		"npc_ra2_soviet_barracks"
 		"Requirement2"		"todo_unlock_this_with_spy"
 	
@@ -3777,6 +3827,21 @@
 		"Requirement1"		"npc_ra2_soviet_war_factory"
 		"Requirement2"		"npc_ra2_soviet_battle_lab"
 	
+		"Armor" 			"RA2_ARMOR_HEAVY"
+		"GroundDamageType"
+		{
+			"RA2_ARMOR_NONE" 		"0.25"
+			"RA2_ARMOR_FLAK"		"0.25"
+			"RA2_ARMOR_PLATE"		"0.25"
+			"RA2_ARMOR_LIGHT"		"0.75"
+			"RA2_ARMOR_MEDIUM"		"1"
+			"RA2_ARMOR_HEAVY"		"1"
+			"RA2_ARMOR_WOOD"		"1"
+			"RA2_ARMOR_STEEL"		"1"
+			"RA2_ARMOR_CONCRETE"	"0.7"
+		}
+	
+	
 	}
 	"npc_ra2_demolition_truck"	
 	{
@@ -3868,6 +3933,20 @@
 		"Requirement1"		"npc_ra2_soviet_war_factory"
 		"Requirement2"		"npc_ra2_radar_tower"
 		"Requirement3"		"todo_unlock_this_with_country"
+	
+		"Armor" 			"RA2_ARMOR_HEAVY"
+		"GroundDamageType"
+		{
+			"RA2_ARMOR_NONE" 		"1"
+			"RA2_ARMOR_FLAK"		"1"
+			"RA2_ARMOR_PLATE"		"1"
+			"RA2_ARMOR_LIGHT"		"1"
+			"RA2_ARMOR_MEDIUM"		"0.5"
+			"RA2_ARMOR_HEAVY"		"0.5"
+			"RA2_ARMOR_WOOD"		"0.8"
+			"RA2_ARMOR_STEEL"		"1.5"
+			"RA2_ARMOR_CONCRETE"	"0.1"
+		}
 	
 	}
 	"npc_ra2_flak_track"	
@@ -3962,7 +4041,7 @@
 		"BuildCost"			"500"
 		"Requirement1"		"npc_ra2_soviet_war_factory"
 	
-	    "Armor" "RA2_ARMOR_HEAVY"
+	    "Armor" 			"RA2_ARMOR_HEAVY"
 		"GroundDamageType"
 		{
 			"RA2_ARMOR_NONE" 		"1.5"
@@ -4037,19 +4116,19 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
-		"MovementSpeed"				"256"		// Speed.			
+		"MovementSpeed"				"320"		// Speed.			
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"125"		// Base health.
+		"StatusHealth"				"2000"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"320"		// Range of vision during day light.
-		"VisionNighttimeRange"		"320"		// Range of vision at night time.
+		"VisionDaytimeRange"		"512"		// Range of vision during day light.
+		"VisionNighttimeRange"		"512"		// Range of vision at night time.
 	
 		// Team
 		//----------------------------------------------------------------
@@ -4075,10 +4154,24 @@
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"vehicle"
-		"MenuBuildTime"		"2"
-		"BuildCost"			"100"
+		"MenuBuildTime"		"140"
+		"BuildCost"			"2000"
 		"Requirement1"		"npc_ra2_soviet_war_factory"
 		"Requirement2"		"npc_ra2_soviet_battle_lab"
+	
+		"Armor" 			"RA2_ARMOR_MEDIUM"
+		"GroundDamageType"
+		{
+			"RA2_ARMOR_NONE" 		"1.5"
+			"RA2_ARMOR_FLAK"		"1"
+			"RA2_ARMOR_PLATE"		"0.5"
+			"RA2_ARMOR_LIGHT"		"0.5"
+			"RA2_ARMOR_MEDIUM"		"0.1"
+			"RA2_ARMOR_HEAVY"		"0.1"
+			"RA2_ARMOR_WOOD"		"0.3"
+			"RA2_ARMOR_STEEL"		"0.2"
+			"RA2_ARMOR_CONCRETE"	"0.1"
+		}
 	
 	}
 	"npc_ra2_rhino_tank"	
@@ -4173,6 +4266,20 @@
 		"BuildCost"			"900"
 		"Requirement1"		"npc_ra2_soviet_war_factory"
 	
+		"Armor" 			"RA2_ARMOR_HEAVY"
+		"GroundDamageType"
+		{
+			"RA2_ARMOR_NONE" 		"0.25"
+			"RA2_ARMOR_FLAK"		"0.25"
+			"RA2_ARMOR_PLATE"		"0.25"
+			"RA2_ARMOR_LIGHT"		"0.75"
+			"RA2_ARMOR_MEDIUM"		"1"
+			"RA2_ARMOR_HEAVY"		"1"
+			"RA2_ARMOR_WOOD"		"0.65"
+			"RA2_ARMOR_STEEL"		"0.45"
+			"RA2_ARMOR_CONCRETE"	"0.6"
+		}
+	
 	}
 	"npc_ra2_soviet_mcv"	
 	{
@@ -4264,6 +4371,8 @@
 		"Requirement1"		"npc_ra2_soviet_war_factory"
 		"Requirement2"		"npc_ra2_soviet_service_depot"
 	
+		"Armor" 			"RA2_ARMOR_HEAVY"
+	
 	}
 	"npc_ra2_terror_drone"	
 	{
@@ -4312,19 +4421,19 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"256"		// Speed.			
+		"MovementSpeed"				"640"		// Speed.			
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"125"		// Base health.
+		"StatusHealth"				"100"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"320"		// Range of vision during day light.
-		"VisionNighttimeRange"		"320"		// Range of vision at night time.
+		"VisionDaytimeRange"		"256"		// Range of vision during day light.
+		"VisionNighttimeRange"		"256"		// Range of vision at night time.
 	
 		// Team
 		//----------------------------------------------------------------
@@ -4350,9 +4459,23 @@
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"vehicle"
-		"MenuBuildTime"		"2"
-		"BuildCost"			"100"
+		"MenuBuildTime"		"20"
+		"BuildCost"			"500"
 		"Requirement1"		"npc_ra2_soviet_war_factory"
+	
+		"Armor" 			"RA2_ARMOR_LIGHT"
+		"GroundDamageType"
+		{
+			"RA2_ARMOR_NONE" 		"1.5"
+			"RA2_ARMOR_FLAK"		"1"
+			"RA2_ARMOR_PLATE"		"0.5"
+			"RA2_ARMOR_LIGHT"		"0.5"
+			"RA2_ARMOR_MEDIUM"		"0.1"
+			"RA2_ARMOR_HEAVY"		"0.1"
+			"RA2_ARMOR_WOOD"		"0.3"
+			"RA2_ARMOR_STEEL"		"0.2"
+			"RA2_ARMOR_CONCRETE"	"0.1"
+		}
 	
 	}
 	"npc_ra2_tesla_tank"	
@@ -4445,6 +4568,20 @@
 		"Requirement1"		"npc_ra2_soviet_war_factory"
 		"Requirement2"		"npc_ra2_radar_tower"
 	
+		"Armor" 			"RA2_ARMOR_HEAVY"
+		"GroundDamageType"
+		{
+			"RA2_ARMOR_NONE" 		"1"
+			"RA2_ARMOR_FLAK"		"1"
+			"RA2_ARMOR_PLATE"		"1"
+			"RA2_ARMOR_LIGHT"		"0.85"
+			"RA2_ARMOR_MEDIUM"		"1"
+			"RA2_ARMOR_HEAVY"		"1"
+			"RA2_ARMOR_WOOD"		"0.5"
+			"RA2_ARMOR_STEEL"		"0.5"
+			"RA2_ARMOR_CONCRETE"	"0.5"
+		}
+	
 	}
 	"npc_ra2_v3_rocket_launcher"	
 	{
@@ -4473,7 +4610,7 @@
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"0"		// Damage range min.
 		"AttackDamageMax"			"0"		// Damage range max.
-		"AttackRate"				"1"		// Speed of attack.
+		"AttackRate"				"5"		// Speed of attack.
 		"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"1500"		// Range within a target can be acquired.
 		"AttackRange"				"1500"		// Range within a target can be attacked.     
@@ -4497,15 +4634,15 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1250000"		// Base health.
+		"StatusHealth"				"150"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"320"		// Range of vision during day light.
-		"VisionNighttimeRange"		"320"		// Range of vision at night time.
+		"VisionDaytimeRange"		"448"		// Range of vision during day light.
+		"VisionNighttimeRange"		"448"		// Range of vision at night time.
 	
 		// Team
 		//----------------------------------------------------------------
@@ -4531,12 +4668,24 @@
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"vehicle"
-		"MenuBuildTime"		"2"
-		"BuildCost"			"100"
+		"MenuBuildTime"		"32"
+		"BuildCost"			"800"
 		"Requirement1"		"npc_ra2_soviet_war_factory"
 		"Requirement2"		"npc_ra2_radar_tower"
 	
 		"Armor" "RA2_ARMOR_LIGHT"
+		"GroundDamageType"
+		{
+			"RA2_ARMOR_NONE" 		"1.5"
+			"RA2_ARMOR_FLAK"		"1"
+			"RA2_ARMOR_PLATE"		"0.5"
+			"RA2_ARMOR_LIGHT"		"0.5"
+			"RA2_ARMOR_MEDIUM"		"0.1"
+			"RA2_ARMOR_HEAVY"		"0.1"
+			"RA2_ARMOR_WOOD"		"0.3"
+			"RA2_ARMOR_STEEL"		"0.2"
+			"RA2_ARMOR_CONCRETE"	"0.1"
+		}
 	
 	}
 	"npc_ra2_war_miner"	
@@ -4590,7 +4739,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"125"		// Base health.
+		"StatusHealth"				"1000"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
@@ -4624,10 +4773,24 @@
 		// Red Alert 2
 		//----------------------------------------------------------------
 		"Category"			"vehicle"
-		"MenuBuildTime"		"2"
-		"BuildCost"			"100"
+		"MenuBuildTime"		"56"
+		"BuildCost"			"1400"
 		"Requirement1"		"npc_ra2_soviet_war_factory"
 		"Requirement2"		"npc_ra2_soviet_ore_refinery"
+	
+		"Armor" 			"RA2_ARMOR_MEDIUM"
+		"GroundDamageType"
+		{
+			"RA2_ARMOR_NONE" 		"1"
+			"RA2_ARMOR_FLAK"		"0.8"
+			"RA2_ARMOR_PLATE"		"0.7"
+			"RA2_ARMOR_LIGHT"		"0.5"
+			"RA2_ARMOR_MEDIUM"		"0.2"
+			"RA2_ARMOR_HEAVY"		"0.2"
+			"RA2_ARMOR_WOOD"		"0.2"
+			"RA2_ARMOR_STEEL"		"1.5"
+			"RA2_ARMOR_CONCRETE"	"0.1"
+		}
 	
 	}
 }

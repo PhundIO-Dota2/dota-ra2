@@ -89,4 +89,18 @@
 	"Requirement2"		"npc_ra2_radar_tower"
 	"Requirement3"		"todo_unlock_this_with_country"
 
+	"Armor" 			"RA2_ARMOR_HEAVY"
+	"GroundDamageType"
+	{
+		"RA2_ARMOR_NONE" 		"1"
+		"RA2_ARMOR_FLAK"		"1"
+		"RA2_ARMOR_PLATE"		"1"
+		"RA2_ARMOR_LIGHT"		"1"
+		"RA2_ARMOR_MEDIUM"		"0.5"
+		"RA2_ARMOR_HEAVY"		"0.5"
+		"RA2_ARMOR_WOOD"		"0.8"
+		"RA2_ARMOR_STEEL"		"1.5"
+		"RA2_ARMOR_CONCRETE"	"0.1"
+	}
+
 }

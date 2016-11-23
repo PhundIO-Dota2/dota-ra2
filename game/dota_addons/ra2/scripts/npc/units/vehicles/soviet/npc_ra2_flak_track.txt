@@ -90,7 +90,7 @@
 	"BuildCost"			"500"
 	"Requirement1"		"npc_ra2_soviet_war_factory"
 
-    "Armor" "RA2_ARMOR_HEAVY"
+    "Armor" 			"RA2_ARMOR_HEAVY"
 	"GroundDamageType"
 	{
 		"RA2_ARMOR_NONE" 		"1.5"

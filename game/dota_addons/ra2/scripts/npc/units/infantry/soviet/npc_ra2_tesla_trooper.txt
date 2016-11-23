@@ -93,7 +93,9 @@
 	// Red Alert 2
 	//----------------------------------------------------------------
 	"Category"			"infantry"
-	"MenuBuildTime"		"2"
-	"BuildCost"			"100"
+	"MenuBuildTime"		"20"
+	"BuildCost"			"500"
 	"Requirement1"		"npc_ra2_soviet_barracks"
+
+	"Armor" 			"RA2_ARMOR_PLATE"
 }

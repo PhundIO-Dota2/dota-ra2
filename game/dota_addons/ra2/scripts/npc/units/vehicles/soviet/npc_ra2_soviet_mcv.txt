@@ -88,4 +88,6 @@
 	"Requirement1"		"npc_ra2_soviet_war_factory"
 	"Requirement2"		"npc_ra2_soviet_service_depot"
 
+	"Armor" 			"RA2_ARMOR_HEAVY"
+
 }

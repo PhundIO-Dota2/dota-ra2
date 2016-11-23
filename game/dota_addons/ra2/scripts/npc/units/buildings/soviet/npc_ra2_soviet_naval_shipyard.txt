@@ -107,4 +107,6 @@
 	"Requirement1"		"npc_ra2_soviet_construction_yard"
 	"Requirement2"		"npc_ra2_soviet_ore_refinery"
 	"Requirement3"		"npc_ra2_tesla_reactor"
+
+	"Armor" 			"RA2_ARMOR_CONCRETE"
 }

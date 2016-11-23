@@ -106,4 +106,6 @@
 	"Requirement1"		"npc_ra2_soviet_construction_yard"
 	"Requirement2"		"npc_ra2_soviet_barracks"
 
+	"Armor" 			"RA2_ARMOR_CONCRETE"
+
 }

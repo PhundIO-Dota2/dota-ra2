@@ -52,7 +52,7 @@
 
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"				"125"		// Base health.
+	"StatusHealth"				"100"		// Base health.
 	"StatusHealthRegen"			"0"			// Health regeneration rate.
 	"StatusMana"				"0"			// Base mana.
 	"StatusManaRegen"			"0"		// Mana regeneration rate.		 
@@ -92,9 +92,11 @@
 	// Red Alert 2
 	//----------------------------------------------------------------
 	"Category"			"infantry"
-	"MenuBuildTime"		"2"
-	"BuildCost"			"100"
+	"MenuBuildTime"		"30"
+	"BuildCost"			"1000"
 	"Requirement1"		"npc_ra2_soviet_barracks"
 	"Requirement2"		"todo_unlock_this_with_spy"
+
+	"Armor" 			"RA2_ARMOR_NONE"
 
 }

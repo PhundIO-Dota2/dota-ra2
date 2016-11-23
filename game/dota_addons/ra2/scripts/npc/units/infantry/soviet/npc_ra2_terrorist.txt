@@ -98,10 +98,12 @@
 	// Red Alert 2
 	//----------------------------------------------------------------
 	"Category"			"infantry"
-	"MenuBuildTime"		"2"
-	"BuildCost"			"100"
+	"MenuBuildTime"		"8"
+	"BuildCost"			"200"
 	"Requirement1"		"npc_ra2_soviet_barracks"
 	"Requirement2"		"npc_ra2_radar_tower"
 	"Requirement3"		"todo_unlock_this_with_country"
+
+	"Armor" 			"RA2_ARMOR_FLAK"
 
 }
