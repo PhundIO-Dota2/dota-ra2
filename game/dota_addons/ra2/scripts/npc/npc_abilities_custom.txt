@@ -492,7 +492,7 @@
 	            "UnitLimit"   "0"
 	            "GrantsGold"  "0"
 	            "GrantsXP"    "0"
-	            "SpawnRadius" "100"
+	            "SpawnRadius" "0"
 	            "OnSpawn"
 	            {
 	                "ApplyModifier"
@@ -2040,7 +2040,7 @@
 			}
 		}
 	}
-	"v3_rocket"
+	"v3_rocket_launch"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -2064,11 +2064,21 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"radius"		"64"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"damage"		"50"
+			}
 		}
 	
 	    "precache"
 	    {
-	        "particle" "particles/dev/library/base_linear_projectile_model.vpcf"
+	        "model"		"models/heroes/rattletrap/rattletrap_rocket.vmdl"
 	    }
 	
 		"Modifiers"
@@ -2080,49 +2090,59 @@
 	            "IsHidden"         	"1"
 	            "OnAttack"
 	            {
-	                "LinearProjectile"
-					{
-					    "Target"      		"TARGET"
-					    "EffectName"  		"particles/dev/library/base_linear_projectile_model.vpcf"
-					    "MoveSpeed"   		"800"
-					    "StartRadius"   	"125"
-					    "StartPosition" 	"attach_attack1"
-					    "EndRadius"     	"125"
-					    "TargetTeams"   	"DOTA_UNIT_TARGET_TEAM_NONE"
-					    "TargetTypes"   	"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-					    "TargetFlags"   	"DOTA_UNIT_TARGET_FLAG_NONE"
-					    "HasFrontalCone"    "0"
-					    "ProvidesVision"	"1"
-					    "VisionRadius"		"300"
-					}
+	                "RunScript"
+	                {
+	                	"ScriptFile"	"units/v3_rocket_launcher/v3_rocket.lua"
+	                	"Function"		"LaunchRocket"
+	                }
 	            }
+	        }
 	
-			    "OnProjectileFinish"
-			    {
-				    "ActOnTargets"
+	        "modifier_v3_rocket"
+	        {
+				"States"
+				{
+					"MODIFIER_STATE_NO_HEALTH_BAR"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP"					"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+					//"MODIFIER_STATE_FLYING"							"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				"ThinkInterval"		"0.02"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"units/v3_rocket_launcher/v3_rocket.lua"
+						"Function"		"MoveRocket"
+					}
+				}
+				"OnDeath"
+				{
+	                "FireEffect"
+					{
+						"EffectName"	"particles/units/heroes/hero_gyrocopter/gyro_base_attack_explosion.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						
+						"ControlPointEntities"
+						{
+							"TARGET"	"follow_origin"
+							"TARGET"	"follow_origin"
+						}
+					}
+					"Damage"
 			        {
 			            "Target"
 			            {
-			                "Center" "POINT"
-			                "Radius" "400"
-			                "Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY" 
-			                "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+			                "Center" "UNIT"
+			                "Radius" "%radius"
+			                "Teams" "DOTA_UNIT_TARGET_TEAM_BOTH"
+			                "Types" "DOTA_UNIT_TARGET_ALL"
 			            }
-			            "Action"
-			            {
-			                "Stun"
-			                {
-			                    "Duration" "1"
-			                    "Target" "TARGET"
-			                }
-			                "Damage"
-			                {
-			                	"Damage" "500"
-			                	"Target" "TARGET"
-			                }
-			            }
+			            "Type"   "DAMAGE_TYPE_PHYSICAL"
+			            "Damage" "%damage"
 			        }
-			    }
+				}
 	        }
 		}
 	}

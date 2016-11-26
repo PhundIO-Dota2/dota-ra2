@@ -9,9 +9,14 @@
 	"Level"						"1"
 	"ModelScale" 				"1"
 
+	"precache"
+	{
+		"model"     			"models/heroes/rattletrap/rattletrap_rocket.vmdl"
+	}
+
 	// Abilities
 	//----------------------------------------------------------------
-	"Ability1"					"v3_rocket"			// Ability 1
+	"Ability1"					"v3_rocket_launch"			// Ability 1
 	"Ability2"					""			// Ability 2
 	"Ability3"					""			// Ability 3
 	"Ability4"					""			// Ability 4
@@ -25,10 +30,10 @@
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"			"0"		// Damage range min.
 	"AttackDamageMax"			"0"		// Damage range max.
-	"AttackRate"				"5"		// Speed of attack.
+	"AttackRate"				"2"		// Speed of attack.
 	"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
 	"AttackAcquisitionRange"	"1500"		// Range within a target can be acquired.
-	"AttackRange"				"1500"		// Range within a target can be attacked.     
+	"AttackRange"				"1500"		// Range within a target can be attacked.
 
 	// Bounds
 	//----------------------------------------------------------------
@@ -88,7 +93,7 @@
 	"Requirement1"		"npc_ra2_soviet_war_factory"
 	"Requirement2"		"npc_ra2_radar_tower"
 
-	"Armor" "RA2_ARMOR_LIGHT"
+	"Armor" 			"RA2_ARMOR_LIGHT"
 	"GroundDamageType"
 	{
 		"RA2_ARMOR_NONE" 		"1.5"

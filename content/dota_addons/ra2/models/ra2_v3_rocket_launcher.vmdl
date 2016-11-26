@@ -87,8 +87,8 @@
 						[
 							{
 								m_influenceName = "rootbone"
-								m_vTranslationOffset = [ -0.000016, 34.943916, -3.854151 ]
-								m_vRotationOffset = [ -18.212271, -0.0, -0.000003 ]
+								m_vTranslationOffset = [ -0.000043, 34.943966, -3.854188 ]
+								m_vRotationOffset = [ -88.989258, -77.016418, 88.962776 ]
 								m_flWeight = 1.0
 								m_bRoot = false
 							},

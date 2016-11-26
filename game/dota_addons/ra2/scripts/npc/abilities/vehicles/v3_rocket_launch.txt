@@ -1,0 +1,106 @@
+"v3_rocket_launch"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"              		"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"MaxLevel"                      "1"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"0"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"radius"		"64"
+		}
+		"02"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"damage"		"50"
+		}
+	}
+
+    "precache"
+    {
+        "model"		"models/heroes/rattletrap/rattletrap_rocket.vmdl"
+    }
+
+	"Modifiers"
+    {
+        "modifier_launch_v3_rocket"
+        {
+        	"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+            "Passive"			"1"
+            "IsHidden"         	"1"
+            "OnAttack"
+            {
+                "RunScript"
+                {
+                	"ScriptFile"	"units/v3_rocket_launcher/v3_rocket.lua"
+                	"Function"		"LaunchRocket"
+                }
+            }
+        }
+
+        "modifier_v3_rocket"
+        {
+			"States"
+			{
+				"MODIFIER_STATE_NO_HEALTH_BAR"					"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_UNIT_COLLISION"				"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NOT_ON_MINIMAP"					"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_UNSELECTABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+				//"MODIFIER_STATE_FLYING"							"MODIFIER_STATE_VALUE_ENABLED"
+			}
+			"ThinkInterval"		"0.02"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"units/v3_rocket_launcher/v3_rocket.lua"
+					"Function"		"MoveRocket"
+				}
+			}
+			"OnDeath"
+			{
+                "FireEffect"
+				{
+					"EffectName"	"particles/units/heroes/hero_gyrocopter/gyro_base_attack_explosion.vpcf"
+					"EffectAttachType"	"start_at_customorigin"
+					
+					"ControlPointEntities"
+					{
+						"TARGET"	"follow_origin"
+						"TARGET"	"follow_origin"
+					}
+				}
+				"Damage"
+		        {
+		            "Target"
+		            {
+		                "Center" "UNIT"
+		                "Radius" "%radius"
+		                "Teams" "DOTA_UNIT_TARGET_TEAM_BOTH"
+		                "Types" "DOTA_UNIT_TARGET_ALL"
+		            }
+		            "Type"   "DAMAGE_TYPE_PHYSICAL"
+		            "Damage" "%damage"
+		        }
+			}
+        }
+	}
+}

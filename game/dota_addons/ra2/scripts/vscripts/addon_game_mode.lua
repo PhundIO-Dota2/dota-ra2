@@ -19,6 +19,7 @@ function Precache( context )
 			PrecacheResource( "particle_folder", "particles/folder", context )
 	]]
 	PrecacheResource("particle_folder", "particles/buildinghelper", context)
+    PrecacheResource( "model", "models/heroes/rattletrap/rattletrap_rocket.vmdl", context)
 
 end
 

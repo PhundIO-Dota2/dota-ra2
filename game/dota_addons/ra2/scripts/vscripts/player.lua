@@ -76,9 +76,8 @@ function CDOTAPlayer:OnEntityKilled( keys )
     local teamID = entityKilled:GetTeam()
 
     if entityKilled:GetClassname() == "npc_dota_creature" and teamID == self:GetTeam() then
-        self.unitCount = self.unitCount - 1
+        -- self.unitCount = self.unitCount - 1
     end
-    print(self.unitCount)
     if self.unitCount <= 0 then
         GameRules:MakeTeamLose(self:GetTeam())
     end
