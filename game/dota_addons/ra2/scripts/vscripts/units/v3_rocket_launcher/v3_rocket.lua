@@ -11,7 +11,7 @@ function LaunchRocket( event )
 
 	if rocket then
 		ability:ApplyDataDrivenModifier(caster, rocket, "modifier_v3_rocket", {})
-		rocket:SetModel("models/heroes/rattletrap/rattletrap_rocket.vmdl")
+		rocket:SetModel("models/ra2_v3_rocket.vmdl")
 		rocket:SetOrigin(origin)
 		rocket:SetAngles(angle.x, angle.y, angle.z)
 		rocket.launchOrigin = rocket:GetAbsOrigin()

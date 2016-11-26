@@ -2075,12 +2075,7 @@
 				"damage"		"50"
 			}
 		}
-	
-	    "precache"
-	    {
-	        "model"		"models/heroes/rattletrap/rattletrap_rocket.vmdl"
-	    }
-	
+		
 		"Modifiers"
 	    {
 	        "modifier_launch_v3_rocket"

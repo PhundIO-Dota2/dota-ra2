@@ -11,7 +11,7 @@
 
 	"precache"
 	{
-		"model"     			"models/heroes/rattletrap/rattletrap_rocket.vmdl"
+		"model"     			"models/ra2_v3_rocket.vmdl"
 	}
 
 	// Abilities
