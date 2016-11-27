@@ -33,7 +33,7 @@
 			"damage"		"50"
 		}
 	}
-	
+
 	"Modifiers"
     {
         "modifier_launch_v3_rocket"
@@ -70,30 +70,38 @@
 					"Function"		"MoveRocket"
 				}
 			}
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"Target" 				"TARGET"
+					"EffectName"			"particles/units/heroes/hero_gyrocopter/gyro_guided_missile.vpcf"
+					"EffectAttachType"		"follow_origin"
+				}
+			}
 			"OnDeath"
 			{
                 "FireEffect"
 				{
-					"EffectName"	"particles/units/heroes/hero_gyrocopter/gyro_base_attack_explosion.vpcf"
+					"EffectName"		"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
 					"EffectAttachType"	"start_at_customorigin"
 					
 					"ControlPointEntities"
 					{
-						"TARGET"	"follow_origin"
-						"TARGET"	"follow_origin"
+						"UNIT"			"attach_thruster"
 					}
 				}
 				"Damage"
 		        {
 		            "Target"
 		            {
-		                "Center" "UNIT"
-		                "Radius" "%radius"
-		                "Teams" "DOTA_UNIT_TARGET_TEAM_BOTH"
-		                "Types" "DOTA_UNIT_TARGET_ALL"
+		                "Center" 		"UNIT"
+		                "Radius" 		"%radius"
+		                "Teams" 		"DOTA_UNIT_TARGET_TEAM_BOTH"
+		                "Types" 		"DOTA_UNIT_TARGET_ALL"
 		            }
-		            "Type"   "DAMAGE_TYPE_PHYSICAL"
-		            "Damage" "%damage"
+		            "Type"   			"DAMAGE_TYPE_PHYSICAL"
+		            "Damage" 			"%damage"
 		        }
 			}
         }

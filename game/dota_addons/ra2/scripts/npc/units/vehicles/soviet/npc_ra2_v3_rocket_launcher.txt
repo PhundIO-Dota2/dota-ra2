@@ -31,7 +31,7 @@
 	"AttackDamageMin"			"0"		// Damage range min.
 	"AttackDamageMax"			"0"		// Damage range max.
 	"AttackRate"				"2"		// Speed of attack.
-	"AttackAnimationPoint"		"0"		// Normalized time in animation cycle to attack.
+	"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 	"AttackAcquisitionRange"	"1500"		// Range within a target can be acquired.
 	"AttackRange"				"1500"		// Range within a target can be attacked.
 
