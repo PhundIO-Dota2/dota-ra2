@@ -30,3 +30,13 @@ function CDOTA_BaseNPC:GetDamageMultiplier( armorType )
 	return 1
 
 end
+
+function CDOTA_BaseNPC:IsAirborn()
+
+    local airborn = self:GetKeyValue("Airborn")
+    if airborn and airborn == 1 then
+        return true
+    end
+    return false
+
+end

@@ -35,6 +35,7 @@ function RedAlert2:InitGameMode()
 
 	print( "Red Alert 2 addon is loaded." )
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
+    GameRules:GetGameModeEntity():SetThink( "OverrideAggro", self, "AggroThink", 2 )
     GameRules:SetStartingGold(20000)
     GameRules:SetGoldPerTick(0)
     GameRules:SetPreGameTime(0)
@@ -57,9 +58,29 @@ function RedAlert2:InitGameMode()
     gamemode:SetCameraDistanceOverride(1400)
     BuildingHelper:NewGridType("ALLOWED")
     gamemode:SetDamageFilter(Dynamic_Wrap(RedAlert2, "DamageFilter"), self)
+    gamemode:SetExecuteOrderFilter(Dynamic_Wrap(RedAlert2, "ExecuteOrderFilter"), self)
 
 	self:InitListeners()
     self.units = {}
+
+end
+
+function RedAlert2:ExecuteOrderFilter( filterTable )
+
+    -- DeepPrintTable(filterTable)
+    -- print("..........")
+    if filterTable["order_type"] ~= DOTA_UNIT_ORDER_ATTACK_TARGET then
+        return true
+    end
+
+    local target = EntIndexToHScript(filterTable["entindex_target"])
+    if target then
+        if target:IsAirborn() then
+            return false
+        end
+    end
+
+    return true
 
 end
 
@@ -75,6 +96,24 @@ function RedAlert2:DamageFilter( filterTable )
     local attacker = EntIndexToHScript( attacker_index )
     filterTable["damage"] = filterTable["damage"] * attacker:GetDamageMultiplier(victim:GetArmorType())
     return true
+
+end
+
+function RedAlert2:OverrideAggro()
+
+    -- local entities = Entities:FindAllByClassname("npc_dota_creature");
+    -- if entities then
+    --     for index, entity in pairs(entities) do
+    --         local target = entity:GetAggroTarget()
+    --         if target then
+    --             if target:IsAirborn() then
+    --                 entity:SetAggroTarget(entity)
+    --             end
+    --         end
+    --     end
+    -- end
+
+    return 1
 
 end
 

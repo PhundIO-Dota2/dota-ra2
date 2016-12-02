@@ -11,7 +11,7 @@
 
 	// Abilities
 	//----------------------------------------------------------------
-	"Ability1"					""			// Ability 1
+	"Ability1"					"airborn"			// Ability 1
 	"Ability2"					""			// Ability 2
 	"Ability3"					""			// Ability 3
 	"Ability4"					""			// Ability 4
@@ -88,6 +88,7 @@
 	"Requirement1"		"npc_ra2_soviet_war_factory"
 	"Requirement2"		"npc_ra2_soviet_battle_lab"
 
+	"Airborn"			"1"
 	"Armor" 			"RA2_ARMOR_MEDIUM"
 	"GroundDamageType"
 	{

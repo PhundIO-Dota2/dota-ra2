@@ -41,7 +41,24 @@
         	"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
             "Passive"			"1"
             "IsHidden"         	"1"
-            "OnAttack"
+			"ThinkInterval"		"0.02"
+			"OnIntervalThink"
+			{
+				"RunScript"
+                {
+                	"ScriptFile"	"units/v3_rocket_launcher/v3_rocket.lua"
+                	"Function"		"SpawnRocket"
+                }
+			}
+            "OnAttackStart"
+            {
+                "RunScript"
+                {
+                	"ScriptFile"	"units/v3_rocket_launcher/v3_rocket.lua"
+                	"Function"		"RaiseRocket"
+                }
+            }
+            "OnAttackLanded"
             {
                 "RunScript"
                 {
@@ -53,31 +70,13 @@
 
         "modifier_v3_rocket"
         {
-			"States"
+	        "States"
 			{
 				"MODIFIER_STATE_NO_HEALTH_BAR"					"MODIFIER_STATE_VALUE_ENABLED"
 				"MODIFIER_STATE_NO_UNIT_COLLISION"				"MODIFIER_STATE_VALUE_ENABLED"
 				"MODIFIER_STATE_NOT_ON_MINIMAP"					"MODIFIER_STATE_VALUE_ENABLED"
 				"MODIFIER_STATE_UNSELECTABLE"					"MODIFIER_STATE_VALUE_ENABLED"
 				//"MODIFIER_STATE_FLYING"							"MODIFIER_STATE_VALUE_ENABLED"
-			}
-			"ThinkInterval"		"0.02"
-			"OnIntervalThink"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"units/v3_rocket_launcher/v3_rocket.lua"
-					"Function"		"MoveRocket"
-				}
-			}
-			"OnCreated"
-			{
-				"AttachEffect"
-				{
-					"Target" 				"TARGET"
-					"EffectName"			"particles/units/heroes/hero_gyrocopter/gyro_guided_missile.vpcf"
-					"EffectAttachType"		"follow_origin"
-				}
 			}
 			"OnDeath"
 			{
@@ -104,6 +103,29 @@
 		            "Damage" 			"%damage"
 		        }
 			}
+        }
+
+        "modifier_v3_rocket_launch"
+        {
+			"ThinkInterval"		"0.02"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"units/v3_rocket_launcher/v3_rocket.lua"
+					"Function"		"MoveRocket"
+				}
+			}
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"Target" 				"TARGET"
+					"EffectName"			"particles/units/heroes/hero_gyrocopter/gyro_guided_missile.vpcf"
+					"EffectAttachType"		"follow_origin"
+				}
+			}
+			
         }
 	}
 }
