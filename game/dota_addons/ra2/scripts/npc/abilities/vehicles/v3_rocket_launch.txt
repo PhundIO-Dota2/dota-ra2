@@ -107,7 +107,7 @@
 
         "modifier_v3_rocket_launch"
         {
-			"ThinkInterval"		"0.03"
+			"ThinkInterval"		"0.02"
 			"OnIntervalThink"
 			{
 				"RunScript"

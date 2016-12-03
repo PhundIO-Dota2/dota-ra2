@@ -81,11 +81,11 @@ function MoveRocket( event )
 	local direction = (vectorDistance):Normalized()
 	local curveRatio = 1 - (distance / (totalDistance * 0.5))
 	direction.z = -curveRatio
-	local interval = 0.03
+	local interval = 0.02
 	local accelerationDuration = 1.5
 	rocket.launchTime = rocket.launchTime + interval
 	local speedRatio = 0
-	local baseSpeed = 256
+	local baseSpeed = 512
 	speedRatio = math.min(1, math.pow(rocket.launchTime, 2) / accelerationDuration)
 
 	if distance < 10 then

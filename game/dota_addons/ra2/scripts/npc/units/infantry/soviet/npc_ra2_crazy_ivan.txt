@@ -16,7 +16,7 @@
 	// Abilities
 	//----------------------------------------------------------------
 	"Ability1"					"crazy_ivan_attack" // Ability 1
-	"Ability2"					""			 // Ability 2
+	"Ability2"					"team_color"			 // Ability 2
 	"Ability3"					""			 // Ability 3
 	"Ability4"					""			 // Ability 4
 

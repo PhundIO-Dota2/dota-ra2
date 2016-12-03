@@ -1,4 +1,5 @@
 require("libraries/keyvalues")
+require("team_colors")
 
 armor_types = {}
 armor_types["RA2_ARMOR_NONE"]		= 0
@@ -40,3 +41,4 @@ function CDOTA_BaseNPC:IsAirborn()
     return false
 
 end
+

@@ -8,7 +8,7 @@
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	    "Modifiers"
 	    {
-	        "modifier_hidden"
+	        "modifier_airborn"
 	        {
 	            "Passive"           "1"
 	            "IsHidden"          "1"
@@ -524,6 +524,38 @@
 	            }
 	        }
 	    }
+	}
+	"team_color"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "Modifiers"
+	    {
+	        "modifier_hidden"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "units/team_color.lua"
+	                    "Function"      "SetColor"
+	                }
+	            }
+	            "ThinkInterval"     "0.1"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "units/team_color.lua"
+	                    "Function"      "SetColor"
+	                }
+	            }
+	        }
+	    }       
 	}
 	"train_npc_ra2_chrono_ivan"
 	{
@@ -2169,7 +2201,7 @@
 	
 	        "modifier_v3_rocket_launch"
 	        {
-				"ThinkInterval"		"0.03"
+				"ThinkInterval"		"0.02"
 				"OnIntervalThink"
 				{
 					"RunScript"

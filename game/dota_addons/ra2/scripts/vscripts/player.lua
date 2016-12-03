@@ -1,4 +1,5 @@
 require("libraries/keyvalues")
+require("team_colors")
 
 local PRODUCTION_TIME_MULTIPLIER = 0
 local PRODUCTION_COST_MULTIPLIER = 0
@@ -8,17 +9,17 @@ function CDOTAPlayer:Init()
 
     local pid = self:GetPlayerID()
 
-    self.teamColors = {}
-    self.teamColors[DOTA_TEAM_GOODGUYS]  = { 61, 210, 150 } --        Teal
-    self.teamColors[DOTA_TEAM_BADGUYS]   = { 243, 201, 9 }     --     Yellow
-    self.teamColors[DOTA_TEAM_CUSTOM_1]  = { 197, 77, 168 } --        Pink
-    self.teamColors[DOTA_TEAM_CUSTOM_2]  = { 255, 108, 0 }     --     Orange
-    self.teamColors[DOTA_TEAM_CUSTOM_3]  = { 140, 42, 244 } --        Purple
-    self.teamColors[DOTA_TEAM_CUSTOM_4]  = { 52, 85, 255 }     --     Blue
-    self.teamColors[DOTA_TEAM_CUSTOM_5]  = { 199, 228, 13 } --        Olive
-    self.teamColors[DOTA_TEAM_CUSTOM_6]  = { 129, 83, 54 }     --     Brown
-    self.teamColors[DOTA_TEAM_CUSTOM_7]  = { 27, 192, 216 } --        Light Blue
-    self.teamColors[DOTA_TEAM_CUSTOM_8]  = { 101, 212, 19 } --        Dark Green
+    -- self.teamColors = {}
+    -- self.teamColors[DOTA_TEAM_GOODGUYS]  = { 61, 210, 150 } --        Teal
+    -- self.teamColors[DOTA_TEAM_BADGUYS]   = { 243, 201, 9 }     --     Yellow
+    -- self.teamColors[DOTA_TEAM_CUSTOM_1]  = { 197, 77, 168 } --        Pink
+    -- self.teamColors[DOTA_TEAM_CUSTOM_2]  = { 255, 108, 0 }     --     Orange
+    -- self.teamColors[DOTA_TEAM_CUSTOM_3]  = { 140, 42, 244 } --        Purple
+    -- self.teamColors[DOTA_TEAM_CUSTOM_4]  = { 52, 85, 255 }     --     Blue
+    -- self.teamColors[DOTA_TEAM_CUSTOM_5]  = { 199, 228, 13 } --        Olive
+    -- self.teamColors[DOTA_TEAM_CUSTOM_6]  = { 129, 83, 54 }     --     Brown
+    -- self.teamColors[DOTA_TEAM_CUSTOM_7]  = { 27, 192, 216 } --        Light Blue
+    -- self.teamColors[DOTA_TEAM_CUSTOM_8]  = { 101, 212, 19 } --        Dark Green
 
     self.unitCategories = {
         airforce = true,
@@ -435,6 +436,10 @@ end
 
 function CDOTAPlayer:GetTeamColor()
 
-    return unpack(self.teamColors[self:GetTeam()]);
+    if TeamColors then
+        return unpack(TeamColors[self:GetTeam()]);
+    end
+
+    return 255, 255, 255 -- Default to white
 
 end
