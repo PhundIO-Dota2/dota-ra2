@@ -41,7 +41,7 @@
         	"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
             "Passive"			"1"
             "IsHidden"         	"1"
-			"ThinkInterval"		"0.02"
+			"ThinkInterval"		"0.01"
 			"OnIntervalThink"
 			{
 				"RunScript"
@@ -107,7 +107,7 @@
 
         "modifier_v3_rocket_launch"
         {
-			"ThinkInterval"		"0.02"
+			"ThinkInterval"		"0.03"
 			"OnIntervalThink"
 			{
 				"RunScript"

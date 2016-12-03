@@ -34,10 +34,10 @@ function RaiseRocket( event )
 	local origin = caster:GetAttachmentOrigin(attachment)
 	local angle = caster:GetAttachmentAngles(attachment)
 
-	SpawnRocket(event) -- In case the attack is launched before the missile spawned
+	SpawnRocket(event) -- In case the attack is launched before the missile spawned 
 
 	if caster.rocket and caster.rocket:IsAlive() then
-		caster.rocket.launchOrigin = caster.rocket:GetAbsOrigin()
+		-- caster.rocket.launchOrigin = caster.rocket:GetAbsOrigin()
 		caster.rocket.targetOrigin = target:GetAbsOrigin()
 	end
 
@@ -53,12 +53,15 @@ function LaunchRocket( event )
 	local origin = caster:GetAttachmentOrigin(attachment)
 	local angle = caster:GetAttachmentAngles(attachment)
 
-
 	if caster.rocket and caster.rocket:IsAlive() then
 		ability:ApplyDataDrivenModifier(caster, caster.rocket, "modifier_v3_rocket_launch", {})
-		caster.rocket:SetModel("models/ra2_v3_rocket.vmdl") -- Needs to re-apply the model because the modifier removes it somehow
+		caster.rocket:SetModel("models/ra2_v3_rocket.vmdl")
 		caster.rocket:SetParent(nil, nil)
 		caster.rocket.launchTime = 0
+		caster.rocket.launchOrigin = caster.rocket:GetAbsOrigin()
+		if not caster.rocket.targetOrigin then
+			caster.rocket.targetOrigin = target:GetAbsOrigin()
+		end
 		caster.rocket = nil
 	end
 
@@ -78,18 +81,19 @@ function MoveRocket( event )
 	local direction = (vectorDistance):Normalized()
 	local curveRatio = 1 - (distance / (totalDistance * 0.5))
 	direction.z = -curveRatio
-	local interval = 0.02
+	local interval = 0.03
 	local accelerationDuration = 1.5
 	rocket.launchTime = rocket.launchTime + interval
 	local speedRatio = 0
-
+	local baseSpeed = 256
 	speedRatio = math.min(1, math.pow(rocket.launchTime, 2) / accelerationDuration)
 
 	if distance < 10 then
 		rocket:ForceKill(false)
 	else
 		rocket:SetForwardVector(Vector(direction.x/2, direction.y/2, direction.z/2))
-		rocket:SetAbsOrigin(rocket:GetAbsOrigin() + direction * 10 * speedRatio)
+		rocket:SetAbsOrigin(rocket:GetAbsOrigin() + direction * baseSpeed * interval * speedRatio)
+
 		-- DebugDrawLine(rocket:GetAbsOrigin(),rocket:GetAbsOrigin() + direction * 10 * speedRatio,255,255,255,false,1)
 		-- rocket:SetAngles(angle.x, angle.y, angle.z)
 	end
