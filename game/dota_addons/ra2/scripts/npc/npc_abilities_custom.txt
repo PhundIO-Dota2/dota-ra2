@@ -1440,6 +1440,37 @@
 	        }
 	    }
 	}
+	"team_color"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "Modifiers"
+	    {
+	        "modifier_hidden"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "units/power.lua"
+	                    "Function"      "UpdatePower"
+	                }
+	            }
+	            "OnDestroy"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "units/power.lua"
+	                    "Function"      "UpdatePower"
+	                }
+	            }
+	        }
+	    }       
+	}
 	"spawn_war_miner"
 	{
 	    "BaseClass"             "ability_datadriven"

@@ -1,0 +1,11 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/menu.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/powerbar.js" /> 
+	</scripts>
+	<Panel class="powerbar">
+		<Label id="power" class="" text="0"/>
+	</Panel>
+</root>

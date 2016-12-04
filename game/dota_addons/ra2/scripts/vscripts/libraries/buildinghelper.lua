@@ -2006,7 +2006,7 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
             entity = BuildingHelper:GetOrCreateDummy(unitName)
         else
             -- Create the building entity that will be used to start construction and project the queue particles
-            entity = CreateUnitByName(unitName, model_location, false, nil, nil, builder:GetTeam())
+            entity = CreateUnitByName(unitName, model_location, false, builder, player, builder:GetTeam())
             entity:SetNeverMoveToClearSpace(true)
             function entity:IsUnderConstruction() return true end
         end

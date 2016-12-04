@@ -1,4 +1,5 @@
 TeamColors = {}
+
 TeamColors[DOTA_TEAM_GOODGUYS]  = { 61, 210, 150 } --        Teal
 TeamColors[DOTA_TEAM_BADGUYS]   = { 243, 201, 9 }     --     Yellow
 TeamColors[DOTA_TEAM_CUSTOM_1]  = { 197, 77, 168 } --        Pink

@@ -108,5 +108,8 @@
 	"Requirement2"		"npc_ra2_soviet_ore_refinery"
 	"Requirement3"		"npc_ra2_tesla_reactor"
 
+	// This unit  is locked until its code is done
+	"Requirement4"		"locked" // Inexistant unit
+
 	"Armor" 			"RA2_ARMOR_CONCRETE"
 }

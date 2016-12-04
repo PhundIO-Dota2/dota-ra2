@@ -64,6 +64,11 @@
 	flow-children: right-wrap;
 }
 
+.powerbar {
+	horizontal-align: center; 
+	width: 168px;
+}
+
 .menu-tab-body {
 	horizontal-align: center;
 	width: 100%;
@@ -92,7 +97,7 @@
 	width: 60px;
 	height: 48px;
 	font-size: 10px;
-	margin: 1px;
+	margin: 1px 3px 1px 1px;
 }
 
 .cameo {

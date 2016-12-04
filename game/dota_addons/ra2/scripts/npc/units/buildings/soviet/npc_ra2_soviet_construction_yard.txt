@@ -17,7 +17,7 @@
 	//----------------------------------------------------------------
 	"Ability1"					"ability_building"			// Ability 1
 	"Ability2"					"team_color"			// Ability 2
-	"Ability3"					""			// Ability 3
+	"Ability3"					"power"			// Ability 3
 	"Ability4"					""			// Ability 4
 
 	// Armor
@@ -89,6 +89,7 @@
 	"ConstructionSize"	"4"
 	"BlockPathingSize"	"4"
 	"BuildTime"			"0"
+	"Power"				"0"
 	"Grid"
 	{
 	    "Allowed"

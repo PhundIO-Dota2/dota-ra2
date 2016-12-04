@@ -15,7 +15,7 @@
 	// Abilities
 	//----------------------------------------------------------------
 	"Ability1"					"team_color"			// Ability 1
-	"Ability2"					""			// Ability 2
+	"Ability2"					"power"			// Ability 2
 	"Ability3"					""			// Ability 3
 	"Ability4"					""			// Ability 4
 
@@ -103,6 +103,7 @@
 	"Category"			"structure"
 	"MenuBuildTime"		"1"
 	"BuildCost"			"500"
+	"Power"				"10"
 	"Produces"			"infantry"
 	"Requirement1"		"npc_ra2_soviet_construction_yard"
 	"Requirement2"		"npc_ra2_tesla_reactor"

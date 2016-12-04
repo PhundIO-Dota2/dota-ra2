@@ -3,23 +3,13 @@ require("team_colors")
 
 local PRODUCTION_TIME_MULTIPLIER = 0
 local PRODUCTION_COST_MULTIPLIER = 0
-local CHEAT_ON = true
+local CHEAT_UNLOCK_ALL = true
 
 function CDOTAPlayer:Init()
 
     local pid = self:GetPlayerID()
 
-    -- self.teamColors = {}
-    -- self.teamColors[DOTA_TEAM_GOODGUYS]  = { 61, 210, 150 } --        Teal
-    -- self.teamColors[DOTA_TEAM_BADGUYS]   = { 243, 201, 9 }     --     Yellow
-    -- self.teamColors[DOTA_TEAM_CUSTOM_1]  = { 197, 77, 168 } --        Pink
-    -- self.teamColors[DOTA_TEAM_CUSTOM_2]  = { 255, 108, 0 }     --     Orange
-    -- self.teamColors[DOTA_TEAM_CUSTOM_3]  = { 140, 42, 244 } --        Purple
-    -- self.teamColors[DOTA_TEAM_CUSTOM_4]  = { 52, 85, 255 }     --     Blue
-    -- self.teamColors[DOTA_TEAM_CUSTOM_5]  = { 199, 228, 13 } --        Olive
-    -- self.teamColors[DOTA_TEAM_CUSTOM_6]  = { 129, 83, 54 }     --     Brown
-    -- self.teamColors[DOTA_TEAM_CUSTOM_7]  = { 27, 192, 216 } --        Light Blue
-    -- self.teamColors[DOTA_TEAM_CUSTOM_8]  = { 101, 212, 19 } --        Dark Green
+    self.power = 0
 
     self.unitCategories = {
         airforce = true,
@@ -47,10 +37,21 @@ function CDOTAPlayer:Init()
     }
     CustomNetTables:SetTableValue("player_tables", "queue_" .. pid, self.queue)
 
+    CustomNetTables:SetTableValue("player_tables", "power_" .. pid, { value = self.power })
+
     ListenToGameEvent("npc_spawned", Dynamic_Wrap(CDOTAPlayer, "OnNPCSpawned"), self)
     ListenToGameEvent("entity_killed", Dynamic_Wrap(CDOTAPlayer, "OnEntityKilled"), self)
 
     self.unitCount = 0
+
+end
+
+function CDOTAPlayer:ConsumePower( power )
+
+    if not power then return end
+
+    self.power = self.power - power
+    CustomNetTables:SetTableValue("player_tables", "power_" .. self:GetPlayerID(), { value = self.power })    
 
 end
 
@@ -357,7 +358,7 @@ function CDOTAPlayer:HasRequiredBuildings( unit )
     local requiredUnit = GetUnitKV(unit, "Requirement" .. i, 1)
     local result = true
 
-    if CHEAT_ON then return true end
+    if CHEAT_UNLOCK_ALL then return true end
 
     while requiredUnit do
         local found = false

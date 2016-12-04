@@ -33,7 +33,7 @@
 	// Bounds
 	//----------------------------------------------------------------
 	"RingRadius"				"32"
-	"HealthBarOffset"			"170"
+	"HealthBarOffset"			"100"
 	"BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"
 
 	// Bounty
@@ -87,6 +87,9 @@
 	"BuildCost"			"1400"
 	"Requirement1"		"npc_ra2_soviet_war_factory"
 	"Requirement2"		"npc_ra2_soviet_ore_refinery"
+
+	// This unit  is locked until its code is done
+	"Requirement3"		"locked" // Inexistant unit
 
 	"Armor" 			"RA2_ARMOR_MEDIUM"
 	"GroundDamageType"

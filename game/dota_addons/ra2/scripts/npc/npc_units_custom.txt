@@ -108,6 +108,9 @@
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_battle_lab"
 	
+		// This unit  is locked until its code is done
+		"Requirement3"		"locked" // Inexistant unit
+	
 		"Armor" 			"RA2_ARMOR_WOOD"
 	}
 	//=================================================================================	
@@ -216,7 +219,10 @@
 		"MenuBuildTime"		"1"
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
-		"Requirement1"		"npc_ra2_soviet_barracks"
+		"Requirement2"		"npc_ra2_soviet_barracks"
+	
+		// This unit  is locked until its code is done
+		"Requirement3"		"locked" // Inexistant unit
 	
 		"Armor" 			"RA2_ARMOR_STEEL"
 	}
@@ -327,6 +333,9 @@
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_battle_lab"
+	
+		// This unit  is locked until its code is done
+		"Requirement3"		"locked" // Inexistant unit
 	
 		"Armor" 			"RA2_ARMOR_CONCRETE"
 	}
@@ -547,6 +556,9 @@
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_battle_lab"
+	
+		// This unit  is locked until its code is done
+		"Requirement3"		"locked" // Inexistant unit
 	
 		"Armor" 			"RA2_ARMOR_CONCRETE"
 	}
@@ -783,7 +795,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"team_color"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"power"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -871,6 +883,7 @@
 		"Category"			"structure"
 		"MenuBuildTime"		"1"
 		"BuildCost"			"500"
+		"Power"				"10"
 		"Produces"			"infantry"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_tesla_reactor"
@@ -1007,7 +1020,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"ability_building"			// Ability 1
 		"Ability2"					"team_color"			// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability3"					"power"			// Ability 3
 		"Ability4"					""			// Ability 4
 	
 		// Armor
@@ -1079,6 +1092,7 @@
 		"ConstructionSize"	"4"
 		"BlockPathingSize"	"4"
 		"BuildTime"			"0"
+		"Power"				"0"
 		"Grid"
 		{
 		    "Allowed"
@@ -1202,6 +1216,9 @@
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_ore_refinery"
 		"Requirement3"		"npc_ra2_tesla_reactor"
+	
+		// This unit  is locked until its code is done
+		"Requirement4"		"locked" // Inexistant unit
 	
 		"Armor" 			"RA2_ARMOR_CONCRETE"
 	}
@@ -1423,6 +1440,9 @@
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_war_factory"
 	
+		// This unit  is locked until its code is done
+		"Requirement3"		"locked" // Inexistant unit
+	
 		"Armor" 			"RA2_ARMOR_WOOD"
 	}
 	//=================================================================================	
@@ -1532,6 +1552,9 @@
 		"BuildCost"			"100"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_barracks"
+	
+		// This unit  is locked until its code is done
+		"Requirement3"		"locked" // Inexistant unit
 	
 		"Armor" 			"RA2_ARMOR_CONCRETE"
 	
@@ -1776,7 +1799,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"team_color"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"power"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -1864,6 +1887,7 @@
 		"Category"			"structure"
 		"MenuBuildTime"		"1"
 		"BuildCost"			"100"
+		"Power"				"-150"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 	
 		"Armor" 			"RA2_ARMOR_WOOD"
@@ -2670,6 +2694,9 @@
 		"Requirement1"		"npc_ra2_soviet_barracks"
 		"Requirement2"		"npc_ra2_radar_tower"
 	
+		// This unit  is locked until its code is done
+		"Requirement3"		"locked" // Inexistant unit
+	
 		"Armor" 			"RA2_ARMOR_NONE"
 	
 	}
@@ -2867,6 +2894,9 @@
 		"MenuBuildTime"		"20"
 		"BuildCost"			"500"
 		"Requirement1"		"npc_ra2_soviet_barracks"
+	
+		// This unit  is locked until its code is done
+		"Requirement2"		"locked" // Inexistant unit
 	
 		"Armor" 			"RA2_ARMOR_NONE"
 	
@@ -3179,6 +3209,9 @@
 		"BuildCost"			"1200"
 		"Requirement1"		"npc_ra2_soviet_barracks"
 		"Requirement2"		"npc_ra2_soviet_battle_lab"
+	
+		// This unit  is locked until its code is done
+		"Requirement3"		"locked" // Inexistant unit
 	
 		"Armor" 			"RA2_ARMOR_NONE"
 	
@@ -3772,7 +3805,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"RingRadius"				"32"
-		"HealthBarOffset"			"170"
+		"HealthBarOffset"			"100"
 		"BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"
 	
 		// Bounty
@@ -3878,7 +3911,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"RingRadius"				"32"
-		"HealthBarOffset"			"170"
+		"HealthBarOffset"			"100"
 		"BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"
 	
 		// Bounty
@@ -3986,7 +4019,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"RingRadius"				"32"
-		"HealthBarOffset"			"170"
+		"HealthBarOffset"			"100"
 		"BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"
 	
 		// Bounty
@@ -4040,6 +4073,9 @@
 		"MenuBuildTime"		"20"
 		"BuildCost"			"500"
 		"Requirement1"		"npc_ra2_soviet_war_factory"
+	
+		// This unit  is locked until its code is done
+		"Requirement2"		"locked" // Inexistant unit
 	
 	    "Armor" 			"RA2_ARMOR_HEAVY"
 		"GroundDamageType"
@@ -4104,7 +4140,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"RingRadius"				"32"
-		"HealthBarOffset"			"170"
+		"HealthBarOffset"			"100"
 		"BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"
 	
 		// Bounty
@@ -4158,6 +4194,9 @@
 		"BuildCost"			"2000"
 		"Requirement1"		"npc_ra2_soviet_war_factory"
 		"Requirement2"		"npc_ra2_soviet_battle_lab"
+	
+		// This unit  is locked until its code is done
+		"Requirement3"		"locked" // Inexistant unit
 	
 		"Airborn"			"1"
 		"Armor" 			"RA2_ARMOR_MEDIUM"
@@ -4317,7 +4356,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"RingRadius"				"32"
-		"HealthBarOffset"			"170"
+		"HealthBarOffset"			"100"
 		"BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"
 	
 		// Bounty
@@ -4372,6 +4411,9 @@
 		"Requirement1"		"npc_ra2_soviet_war_factory"
 		"Requirement2"		"npc_ra2_soviet_service_depot"
 	
+		// This unit  is locked until its code is done
+		"Requirement3"		"locked" // Inexistant unit
+	
 		"Armor" 			"RA2_ARMOR_HEAVY"
 	
 	}
@@ -4410,7 +4452,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"RingRadius"				"32"
-		"HealthBarOffset"			"170"
+		"HealthBarOffset"			"100"
 		"BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"
 	
 		// Bounty
@@ -4464,6 +4506,9 @@
 		"BuildCost"			"500"
 		"Requirement1"		"npc_ra2_soviet_war_factory"
 	
+		// This unit  is locked until its code is done
+		"Requirement2"		"locked" // Inexistant unit
+	
 		"Armor" 			"RA2_ARMOR_LIGHT"
 		"GroundDamageType"
 		{
@@ -4514,7 +4559,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"RingRadius"				"32"
-		"HealthBarOffset"			"170"
+		"HealthBarOffset"			"100"
 		"BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"
 	
 		// Bounty
@@ -4568,6 +4613,9 @@
 		"BuildCost"			"1200"
 		"Requirement1"		"npc_ra2_soviet_war_factory"
 		"Requirement2"		"npc_ra2_radar_tower"
+	
+		// This unit  is locked until its code is done
+		"Requirement3"		"locked" // Inexistant unit
 	
 		"Armor" 			"RA2_ARMOR_HEAVY"
 		"GroundDamageType"
@@ -4624,7 +4672,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"RingRadius"				"32"
-		"HealthBarOffset"			"170"
+		"HealthBarOffset"			"100"
 		"BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"
 	
 		// Bounty
@@ -4729,7 +4777,7 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"RingRadius"				"32"
-		"HealthBarOffset"			"170"
+		"HealthBarOffset"			"100"
 		"BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"
 	
 		// Bounty
@@ -4783,6 +4831,9 @@
 		"BuildCost"			"1400"
 		"Requirement1"		"npc_ra2_soviet_war_factory"
 		"Requirement2"		"npc_ra2_soviet_ore_refinery"
+	
+		// This unit  is locked until its code is done
+		"Requirement3"		"locked" // Inexistant unit
 	
 		"Armor" 			"RA2_ARMOR_MEDIUM"
 		"GroundDamageType"

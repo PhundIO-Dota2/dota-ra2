@@ -106,5 +106,8 @@
 	"Requirement1"		"npc_ra2_soviet_construction_yard"
 	"Requirement2"		"npc_ra2_soviet_battle_lab"
 
+	// This unit  is locked until its code is done
+	"Requirement3"		"locked" // Inexistant unit
+
 	"Armor" 			"RA2_ARMOR_WOOD"
 }

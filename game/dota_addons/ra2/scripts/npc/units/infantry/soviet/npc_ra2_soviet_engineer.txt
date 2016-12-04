@@ -96,6 +96,9 @@
 	"BuildCost"			"500"
 	"Requirement1"		"npc_ra2_soviet_barracks"
 
+	// This unit  is locked until its code is done
+	"Requirement2"		"locked" // Inexistant unit
+
 	"Armor" 			"RA2_ARMOR_NONE"
 
 }

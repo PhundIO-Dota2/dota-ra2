@@ -19,7 +19,7 @@
 		<Panel class="menu-radar">
 		</Panel>
 
-		<Panel class="menu-tab-container">
+		<Panel class="menu-tab-container">	
 
 			<Panel class="menu-tools">
 				<Button class="bt-sell"></Button>
