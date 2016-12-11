@@ -103,7 +103,7 @@
 	"Category"			"structure"
 	"MenuBuildTime"		"1"
 	"BuildCost"			"100"
-	"Power"				"-150"
+	"Power"				"150"
 	"Requirement1"		"npc_ra2_soviet_construction_yard"
 
 	"Armor" 			"RA2_ARMOR_WOOD"

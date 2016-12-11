@@ -545,7 +545,7 @@
 	                    "Function"      "SetColor"
 	                }
 	            }
-	            "ThinkInterval"     "0.1"
+	            "ThinkInterval"     "0.05"
 	            "OnIntervalThink"
 	            {
 	                "RunScript"
@@ -1440,15 +1440,24 @@
 	        }
 	    }
 	}
-	"team_color"
+	"power"
 	{
 	    "BaseClass"                     "ability_datadriven"
 	    "MaxLevel"                      "1"
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "OnUpgrade"
+	    {
+	        "ApplyModifier"
+	        {
+	            "Target"       "CASTER"
+	            "ModifierName" "modifier_power"
+	        }
+	    }
+	
 	    "Modifiers"
 	    {
-	        "modifier_hidden"
+	        "modifier_power"
 	        {
 	            "Passive"           "1"
 	            "IsHidden"          "1"

@@ -18,7 +18,7 @@
                     "Function"      "SetColor"
                 }
             }
-            "ThinkInterval"     "0.1"
+            "ThinkInterval"     "0.05"
             "OnIntervalThink"
             {
                 "RunScript"

@@ -17,7 +17,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"team_color"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"power"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -105,6 +105,7 @@
 		"Category"			"defense"
 		"MenuBuildTime"		"1"
 		"BuildCost"			"100"
+		"Power"				"-200"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_battle_lab"
 	
@@ -130,7 +131,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"team_color"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"power"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -218,6 +219,7 @@
 		"Category"			"defense"
 		"MenuBuildTime"		"1"
 		"BuildCost"			"100"
+		"Power"				"-50"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_barracks"
 	
@@ -243,7 +245,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"team_color"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"power"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -331,6 +333,7 @@
 		"Category"			"defense"
 		"MenuBuildTime"		"1"
 		"BuildCost"			"100"
+		"Power"				"-200"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_battle_lab"
 	
@@ -356,7 +359,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"team_color"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"power"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -444,6 +447,7 @@
 		"Category"			"structure"
 		"MenuBuildTime"		"1"
 		"BuildCost"			"100"
+		"Power"				"2000"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_battle_lab"
 	
@@ -466,7 +470,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"team_color"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"power"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -554,6 +558,7 @@
 		"Category"			"defense"
 		"MenuBuildTime"		"1"
 		"BuildCost"			"100"
+		"Power"				"-200"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_battle_lab"
 	
@@ -579,7 +584,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"team_color"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"power"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -667,6 +672,7 @@
 		"Category"			"structure"
 		"MenuBuildTime"		"1"
 		"BuildCost"			"100"
+		"Power"				"-50"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_ore_refinery"
 	
@@ -883,7 +889,7 @@
 		"Category"			"structure"
 		"MenuBuildTime"		"1"
 		"BuildCost"			"500"
-		"Power"				"10"
+		"Power"				"-10"
 		"Produces"			"infantry"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_tesla_reactor"
@@ -907,7 +913,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"team_color"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"power"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -995,6 +1001,7 @@
 		"Category"			"structure"
 		"MenuBuildTime"		"1"
 		"BuildCost"			"100"
+		"Power"				"-100"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_war_factory"
 		"Requirement3"		"npc_ra2_radar_tower"
@@ -1124,7 +1131,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"team_color"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"power"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -1213,6 +1220,7 @@
 		"MenuBuildTime"		"1"
 		"BuildCost"			"100"
 		"Produces"			"naval"
+		"Power"				"-20"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_ore_refinery"
 		"Requirement3"		"npc_ra2_tesla_reactor"
@@ -1240,7 +1248,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"spawn_war_miner"			// Ability 1
 		"Ability2"					"team_color"			// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability3"					"power"			// Ability 3
 		"Ability4"					""			// Ability 4
 	
 		// Armor
@@ -1349,7 +1357,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"team_color"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"power"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -1437,6 +1445,7 @@
 		"Category"			"structure"
 		"MenuBuildTime"		"1"
 		"BuildCost"			"100"
+		"Power"				"-20"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_war_factory"
 	
@@ -1576,7 +1585,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"team_color"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"power"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -1665,6 +1674,7 @@
 		"MenuBuildTime"		"1"
 		"BuildCost"			"100"
 		"Produces"			"vehicle"
+		"Power"				"-25"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 		"Requirement2"		"npc_ra2_soviet_ore_refinery"
 		"Requirement3"		"npc_ra2_soviet_barracks"
@@ -1688,7 +1698,7 @@
 	// Abilities
 	//----------------------------------------------------------------
 	"Ability1"					"team_color"			// Ability 1
-	"Ability2"					""			// Ability 2
+	"Ability2"					"power"			// Ability 2
 	"Ability3"					""			// Ability 3
 	"Ability4"					""			// Ability 4
 
@@ -1776,6 +1786,7 @@
 	"Category"			"defense"
 	"MenuBuildTime"		"1"
 	"BuildCost"			"1500"
+	"Power"				"-75"
 	"Requirement1"		"npc_ra2_soviet_construction_yard"
 	"Requirement2"		"npc_ra2_tesla_reactor"
 	"Requirement3"		"npc_ra2_radar_tower"
@@ -1887,7 +1898,7 @@
 		"Category"			"structure"
 		"MenuBuildTime"		"1"
 		"BuildCost"			"100"
-		"Power"				"-150"
+		"Power"				"150"
 		"Requirement1"		"npc_ra2_soviet_construction_yard"
 	
 		"Armor" 			"RA2_ARMOR_WOOD"

@@ -50,7 +50,7 @@ function CDOTAPlayer:ConsumePower( power )
 
     if not power then return end
 
-    self.power = self.power - power
+    self.power = self.power + power
     CustomNetTables:SetTableValue("player_tables", "power_" .. self:GetPlayerID(), { value = self.power })    
 
 end
