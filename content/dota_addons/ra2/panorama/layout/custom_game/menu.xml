@@ -17,6 +17,9 @@
 		</Panel>
 
 		<Panel class="menu-radar">
+			<Panel id="minimap-container" hittest="false">
+				<DOTAMinimap id="minimap" require-composition-layer="true"/>
+			</Panel>
 		</Panel>
 
 		<Panel class="menu-tab-container">	

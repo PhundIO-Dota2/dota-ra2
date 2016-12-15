@@ -207,3 +207,21 @@ Label.menu-item-status {
 .tab-vehicle.disabled {
 	background-image: url('file://{images}/custom_game/tab03 0002.png');
 }
+
+#minimap-container {
+	height: 110px;
+	width: 142px;
+	horizontal-align: center;
+	overflow: clip;
+	z-index: -1;
+}
+
+#minimap {
+	height: 178px;
+	width: 178px;
+	vertical-align: middle;
+	horizontal-align: center;
+	
+	transform: rotateZ(45deg);
+	/*pre-transform-rotate2d: 45deg;*/
+}

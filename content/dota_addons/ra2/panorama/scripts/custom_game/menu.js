@@ -42,8 +42,6 @@ function showTab( idButton, idTab ) {
 		GameUI.SetCameraYaw(45);
 		GameUI.SetCameraPitchMin(0);
 		GameUI.SetCameraPitchMax(0);
-		GameUI.SetRenderTopInsetOverride(0);
-		GameUI.SetRenderBottomInsetOverride(0);
 
 		// Fill in the menu when reloading
 		categories.forEach(function(category) {
