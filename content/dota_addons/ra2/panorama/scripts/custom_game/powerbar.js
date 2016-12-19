@@ -26,5 +26,5 @@ function OnPlayerTableChanged( table_name, key, data ) {
 
 function roundToMultipleOfThree( value ) {
 	if (value <= 0) { return 0; }
-	return (value - 3 - value % 3);
+	return (value + 3 - value % 3);
 }
