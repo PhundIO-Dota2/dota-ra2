@@ -9,7 +9,11 @@ function CDOTAPlayer:Init()
 
     local pid = self:GetPlayerID()
 
-    self.power = 0
+    self.power = {
+        value = 0,
+        production = 0,
+        consumption = 0
+    }
 
     self.unitCategories = {
         airforce = true,
@@ -37,7 +41,7 @@ function CDOTAPlayer:Init()
     }
     CustomNetTables:SetTableValue("player_tables", "queue_" .. pid, self.queue)
 
-    CustomNetTables:SetTableValue("player_tables", "power_" .. pid, { value = self.power })
+    CustomNetTables:SetTableValue("player_tables", "power_" .. pid, self.power)
 
     ListenToGameEvent("npc_spawned", Dynamic_Wrap(CDOTAPlayer, "OnNPCSpawned"), self)
     ListenToGameEvent("entity_killed", Dynamic_Wrap(CDOTAPlayer, "OnEntityKilled"), self)
@@ -50,8 +54,29 @@ function CDOTAPlayer:ConsumePower( power )
 
     if not power then return end
 
-    self.power = self.power + power
-    CustomNetTables:SetTableValue("player_tables", "power_" .. self:GetPlayerID(), { value = self.power })    
+    if power > 0 then
+        self.power.production = self.power.production + power
+    elseif power < 0 then
+        self.power.consumption = self.power.consumption - power
+    end
+
+    self.power.value = self.power.value + power
+    CustomNetTables:SetTableValue("player_tables", "power_" .. self:GetPlayerID(), self.power)    
+
+end
+
+function CDOTAPlayer:RestorePower( power )
+
+    if not power then return end
+
+    if power > 0 then
+        self.power.production = self.power.production - power
+    elseif power < 0 then
+        self.power.consumption = self.power.consumption + power
+    end
+
+    self.power.value = self.power.value - power
+    CustomNetTables:SetTableValue("player_tables", "power_" .. self:GetPlayerID(), self.power)    
 
 end
 

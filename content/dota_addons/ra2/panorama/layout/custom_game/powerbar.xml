@@ -5,7 +5,9 @@
 	<scripts>
 		<include src="file://{resources}/scripts/custom_game/powerbar.js" /> 
 	</scripts>
-	<Panel class="powerbar">
-		<Label id="power" class="" text="0"/>
+	<Panel class="powerbar-container">
+		<Panel class="powerbar" id="consumptionBar"></Panel>
+		<Panel class="powerbar" id="warningBar"></Panel>
+		<Panel class="powerbar" id="productionBar"></Panel>
 	</Panel>
 </root>

@@ -64,9 +64,37 @@
 	flow-children: right-wrap;
 }
 
-.powerbar {
+.powerbar-container {
 	horizontal-align: right; 
-	width: 148px;
+	vertical-align: top;
+	width: 16px;
+	margin-right: 152px;
+	margin-top: 226px;
+	margin-bottom: 89px;
+	height: 100%;
+
+	flow-children: up;
+}
+
+.powerbar {
+	horizontal-align: right;
+	width: 100%;
+	transition-property: height;
+	transition-duration: 1s;
+	background-position: bottom;
+}
+
+#productionBar {
+	background-image: url('file://{images}/custom_game/powerbar_green.png') url('file://{images}/custom_game/powerp 0000.png');
+}
+
+#warningBar {
+	background-image: url('file://{images}/custom_game/powerbar_yellow.png') url('file://{images}/custom_game/powerp 0000.png');
+}
+
+#consumptionBar {
+	min-height: 2px;
+	background-image: url('file://{images}/custom_game/powerbar_red.png') url('file://{images}/custom_game/powerp 0000.png');
 }
 
 .menu-tab-body {

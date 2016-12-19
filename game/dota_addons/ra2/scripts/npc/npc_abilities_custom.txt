@@ -1466,7 +1466,7 @@
 	                "RunScript"
 	                {
 	                    "ScriptFile"    "units/power.lua"
-	                    "Function"      "UpdatePower"
+	                    "Function"      "ConsumePower"
 	                }
 	            }
 	            "OnDestroy"
@@ -1474,7 +1474,7 @@
 	                "RunScript"
 	                {
 	                    "ScriptFile"    "units/power.lua"
-	                    "Function"      "UpdatePower"
+	                    "Function"      "RestorePower"
 	                }
 	            }
 	        }
