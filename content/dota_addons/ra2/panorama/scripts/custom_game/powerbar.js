@@ -10,12 +10,13 @@ function OnPlayerTableChanged( table_name, key, data ) {
 		$.Msg(data);
 		var maxHeight = Root.actuallayoutheight,
 			highest = Math.max(maxHeight, data['production'], data['consumption']),
-			ratio = maxHeight / highest;
+			ratio = maxHeight / highest,
+			positivePower = Math.max(data['value'], 0);
 		var yellowBarHeight = roundToMultipleOfThree(100 * ratio);
-		if (data['value'] < 100) {
-			yellowBarHeight = roundToMultipleOfThree(data['value'] * ratio);
+		if (positivePower < 100) {
+			yellowBarHeight = roundToMultipleOfThree(positivePower * ratio);
 		}
-		var greenBarHeight = roundToMultipleOfThree(data['value'] - yellowBarHeight  * ratio);
+		var greenBarHeight = roundToMultipleOfThree(positivePower - yellowBarHeight  * ratio);
 		var redBarHeight = roundToMultipleOfThree(data['consumption'] * ratio);
 		productionBar.style.height = greenBarHeight + 'px';
 		warningBar.style.height = yellowBarHeight + 'px';
