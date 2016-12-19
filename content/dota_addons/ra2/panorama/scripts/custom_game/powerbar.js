@@ -11,7 +11,7 @@ function OnPlayerTableChanged( table_name, key, data ) {
 		var maxHeight = Root.actuallayoutheight,
 			highest = Math.max(maxHeight, data['production'], data['consumption']),
 			ratio = maxHeight / highest;
-		var yellowBarHeight = 100 * ratio;
+		var yellowBarHeight = roundToMultipleOfThree(100 * ratio);
 		if (data['value'] < 100) {
 			yellowBarHeight = roundToMultipleOfThree(data['value'] * ratio);
 		}

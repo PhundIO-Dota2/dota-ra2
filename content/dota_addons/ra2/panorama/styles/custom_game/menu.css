@@ -79,6 +79,7 @@
 .powerbar {
 	horizontal-align: right;
 	width: 100%;
+	transition-timing-function: linear;
 	transition-property: height;
 	transition-duration: 1s;
 	background-position: bottom;
