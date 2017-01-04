@@ -1718,7 +1718,7 @@
 	            	}
 	            	"FireEffect"
 					{
-						"EffectName"		"particles/econ/courier/courier_cluckles/courier_cluckles_ambient_rocket_explosion.vpcf"
+						"EffectName"		"particles/ivan_explosion.vpcf"
 						"EffectAttachType"	"start_at_customorigin"
 						"ControlPointEntities"
 						{
