@@ -1,3 +1,55 @@
+#precache {
+	background-image: url('file://{images}/custom_game/units/npc_ra2_apocalypse_tank.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_chrono_ivan.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_clone_vat.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_conscript.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_crazy_ivan.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_demolition_truck.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_desolator.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_dreadnought.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_flak_cannon.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_flak_track.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_flak_trooper.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_gi.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_giant_squid.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_iron_curtain.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_kirov_airship.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_naval_shipyard.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_nuclear_reactor.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_nuke_silo.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_psychic_sensor.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_radar_tower.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_rhino_tank.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_rocketeer.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_sea_scorpion.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_sentry_gun.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_sniper.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_soviet_amphibious_transport.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_soviet_attack_dog.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_soviet_barracks.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_soviet_battle_lab.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_soviet_construction_yard.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_soviet_engineer.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_soviet_mcv.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_soviet_naval_shipyard.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_soviet_ore_refinery.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_soviet_service_depot.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_soviet_wall.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_soviet_war_factory.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_terror_drone.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_terrorist.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_tesla_coil.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_tesla_reactor.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_tesla_tank.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_tesla_trooper.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_typhoon_attack_submarine.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_v3_rocket_launcher.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_war_miner.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_yuri.png');
+	background-image: url('file://{images}/custom_game/units/npc_ra2_yuri_prime.png');
+	background-image: none;
+}
+
 .menu-container {
 	horizontal-align: right; 
 	width: 168px;
@@ -86,16 +138,16 @@
 }
 
 #productionBar {
-	background-image: url('file://{images}/custom_game/powerbar_green.png') url('file://{images}/custom_game/powerp 0000.png');
+	background-image: url('file://{images}/custom_game/powerbar_green.png');
 }
 
 #warningBar {
-	background-image: url('file://{images}/custom_game/powerbar_yellow.png') url('file://{images}/custom_game/powerp 0000.png');
+	background-image: url('file://{images}/custom_game/powerbar_yellow.png');
 }
 
 #consumptionBar {
 	min-height: 2px;
-	background-image: url('file://{images}/custom_game/powerbar_red.png') url('file://{images}/custom_game/powerp 0000.png');
+	background-image: url('file://{images}/custom_game/powerbar_red.png');
 }
 
 .menu-tab-body {
