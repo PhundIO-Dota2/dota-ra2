@@ -6,7 +6,7 @@ SET folder=%~fs1
 SET output=%2
 SET color=%3
 
-convert.exe -transparent %color% "%folder%\%output% *.tga" "%folder%\\%output%.tga"
+convert.exe -fill "#010101" -opaque %color% -transparent "#010101" "%folder%\%output% *.tga" "%folder%\\%output%.tga"
 
 ECHO sequence 0 > %folder%\\%output%.mks
 setlocal enableextensions enabledelayedexpansion

@@ -2255,7 +2255,7 @@
 					"AttachEffect"
 					{
 						"Target" 				"TARGET"
-						"EffectName"			"particles/units/heroes/hero_gyrocopter/gyro_guided_missile.vpcf"
+						"EffectName"			"particles/v3trail.vpcf"
 						"EffectAttachType"		"follow_origin"
 					}
 				}

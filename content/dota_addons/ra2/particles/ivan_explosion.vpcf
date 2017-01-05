@@ -8,11 +8,6 @@
 			_class = "C_OP_Decay"
 			m_nOpEndCapState = 0
 		},
-		{
-			_class = "C_OP_InterpolateRadius"
-			m_flStartScale = 20.0
-			m_flEndScale = 20.0
-		},
 	]
 	m_Renderers = 
 	[
@@ -33,11 +28,6 @@
 			_class = "C_INIT_CreateWithinSphere"
 		},
 	]
-	m_Emitters = 
-	[
-		{
-			_class = "C_OP_InstantaneousEmitter"
-			m_nParticlesToEmit = 1
-		},
-	]
+	m_nInitialParticles = 1
+	m_flConstantRadius = 128.0
 }
