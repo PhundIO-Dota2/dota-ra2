@@ -82,7 +82,7 @@
 			{
                 "FireEffect"
 				{
-					"EffectName"		"particles/units/heroes/hero_gyrocopter/gyro_guided_missile_explosion.vpcf"
+					"EffectName"		"particles/twlt070.vpcf"
 					"EffectAttachType"	"start_at_customorigin"
 					
 					"ControlPointEntities"

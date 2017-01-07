@@ -28,7 +28,7 @@
 		m_bRemoveUnusedBonesEnabled = false
 		m_bDriveMeshesWithBacksolvedJointsOnly = true
 		m_flMatchProxiesToMeshes = 1.0
-		m_flReservedFloat = 0.0
+		m_flFallbackEnvelope = 1.0
 		m_nReservedInt = 0
 		m_bReservedBool1 = false
 		m_bReservedBool2 = false
@@ -60,8 +60,8 @@
 						[
 							{
 								m_influenceName = "rootbone"
-								m_vTranslationOffset = [ 0.000008, -0.0, -45.063698 ]
-								m_vRotationOffset = [ -0.000024, -0.0, -0.000003 ]
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
 								m_flWeight = 1.0
 								m_bRoot = false
 							},
@@ -115,7 +115,6 @@
 	m_flFbxScale = 1.0
 	m_flQCScale = 1.0
 	m_vOrigin = [ 0.0, 0.0, 0.0 ]
-	m_nLoadDmxAnimVersion = 0
 	m_pPsfList = null
 	m_keyValueText = ""
 	m_bStaticProp = false

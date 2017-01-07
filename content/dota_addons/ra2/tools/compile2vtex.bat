@@ -6,16 +6,16 @@ SET folder=%~fs1
 SET output=%2
 SET color=%3
 
-convert.exe -fill "#010101" -opaque %color% -transparent "#010101" "%folder%\%output% *.tga" "%folder%\\%output%.tga"
+rem convert.exe -transparent "#010101" "%folder%\%output% *.tga" "%folder%\\%output%.tga"
+convert.exe -fill "#010101" -opaque %color% -transparent "#010101" "%folder%\%output% *.png" "%folder%\\%output%.tga"
 
 ECHO sequence 0 > %folder%\\%output%.mks
 setlocal enableextensions enabledelayedexpansion
 SET /A COUNT=0
-FOR %%f IN ("%folder%\%output% *.tga") DO (
+FOR %%f IN ("%folder%\%output% *.png") DO (
     ECHO frame %output%-!COUNT!.tga 1 >> %folder%\\%output%.mks
 	SET /A COUNT+=1
 )
-
 
 (
 	ECHO ^<^^!-- dmx encoding keyvalues2_noids 1 format vtex 1 --^>
