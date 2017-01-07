@@ -1,0 +1,50 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nMaxParticles = 400
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity = [ 0.0, 0.0, -100.0 ]
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_LockToBone"
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderBlobs"
+			m_cubeWidth = 4.0
+			m_cutoffRadius = 4.0
+			m_renderRadius = 2.0
+			m_hMaterial = resource:"materials/particle/blob_green_surface.vmat"
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateOnModel"
+			m_bLocalCoords = true
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+		},
+	]
+	m_Constraints = 
+	[
+		{
+			_class = "C_OP_PlanarConstraint"
+			m_bDisableOperator = true
+		},
+	]
+	m_flConstantLifespan = 2.0
+}
