@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var Root = $.GetContextPanel(),
 	unit = Root.unit,
@@ -68,7 +68,7 @@ function pauseProduction() {
 				++counts[data[category][key]];
 			}
 			var queueLabel = $('#queue');
-			queueLabel.text = counts[unit] || "";
+			queueLabel.text = counts[unit] || '';
 			queueLabel.style.visibility = queueLabel.text ? 'visible' : 'collapse';
 		}
 

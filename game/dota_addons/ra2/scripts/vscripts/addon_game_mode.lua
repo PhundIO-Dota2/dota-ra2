@@ -11,13 +11,6 @@ end
 
 function Precache( context )
 
-	--[[
-		Precache things we know we"ll use.  Possible file types include (but not limited to):
-			PrecacheResource( "model", "*.vmdl", context )
-			PrecacheResource( "soundfile", "*.vsndevts", context )
-			PrecacheResource( "particle", "*.vpcf", context )
-			PrecacheResource( "particle_folder", "particles/folder", context )
-	]]
 	PrecacheResource("particle_folder", "particles/buildinghelper", context)
     PrecacheResource( "model", "models/ra2_v3_rocket.vmdl", context)
 
@@ -35,7 +28,6 @@ function RedAlert2:InitGameMode()
 
 	print( "Red Alert 2 addon is loaded." )
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
-    GameRules:GetGameModeEntity():SetThink( "OverrideAggro", self, "AggroThink", 2 )
     GameRules:SetStartingGold(20000)
     GameRules:SetGoldPerTick(0)
     GameRules:SetPreGameTime(0)
@@ -68,8 +60,6 @@ end
 
 function RedAlert2:ExecuteOrderFilter( filterTable )
 
-    -- DeepPrintTable(filterTable)
-    -- print("..........")
     if filterTable["order_type"] ~= DOTA_UNIT_ORDER_ATTACK_TARGET then
         return true
     end
@@ -100,24 +90,6 @@ function RedAlert2:DamageFilter( filterTable )
 
 end
 
-function RedAlert2:OverrideAggro()
-
-    -- local entities = Entities:FindAllByClassname("npc_dota_creature");
-    -- if entities then
-    --     for index, entity in pairs(entities) do
-    --         local target = entity:GetAggroTarget()
-    --         if target then
-    --             if target:IsAirborn() then
-    --                 entity:SetAggroTarget(entity)
-    --             end
-    --         end
-    --     end
-    -- end
-
-    return 1
-
-end
-
 -- Evaluate the state of the game
 function RedAlert2:OnThink()
 
@@ -136,10 +108,29 @@ function RedAlert2:InitListeners()
     -- ListenToGameEvent("npc_spawned", Dynamic_Wrap(RedAlert2, "OnNPCSpawned"), self)
     -- ListenToGameEvent("entity_killed", Dynamic_Wrap(RedAlert2, "OnEntityKilled"), self)
     
+    -- Menu events
 	CustomGameEventManager:RegisterListener( "building_queued", Dynamic_Wrap(RedAlert2, "OnBuildingQueued") )
     CustomGameEventManager:RegisterListener( "building_paused", Dynamic_Wrap(RedAlert2, "OnBuildingPaused") )
     CustomGameEventManager:RegisterListener( "building_resumed", Dynamic_Wrap(RedAlert2, "OnBuildingResumed") )
     CustomGameEventManager:RegisterListener( "building_cancelled", Dynamic_Wrap(RedAlert2, "OnBuildingCancelled") )
+
+    -- Building placement event
+    CustomGameEventManager:RegisterListener( "place_building_at_position", Dynamic_Wrap(RedAlert2, "OnBuildingPlacementRequest") )
+
+end
+ 
+function RedAlert2:OnBuildingPlacementRequest( args )
+
+    local unit = args.unit
+    local player = PlayerResource:GetPlayer(args.PlayerID)
+    -- local x = GridNav:WorldToGridPosX(args.x)
+    -- local y = GridNav:WorldToGridPosY(args.y)
+
+    -- x = GridNav:GridPosToWorldCenterX(args.x)
+    -- y = GridNav:GridPosToWorldCenterY(args.y)
+
+    -- TODO convert the coordinates from grid position
+    CreateUnitByName(unit, Vector(args.x, args.y, 0), false, player, player, player:GetTeamNumber())
 
 end
 

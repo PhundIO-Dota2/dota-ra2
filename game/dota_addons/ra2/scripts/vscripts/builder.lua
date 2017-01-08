@@ -8,6 +8,8 @@ function Build( event )
     local hero = caster:IsRealHero() and caster or caster:GetOwner()
     local playerID = hero:GetPlayerID()
 
+    print(ability.unit)
+
     -- If the ability has an AbilityGoldCost, it's impossible to not have enough gold the first time it's cast
     -- Always refund the gold here, as the building hasn't been placed yet
     hero:ModifyGold(gold_cost, false, 0)

@@ -127,10 +127,10 @@ function CDOTAPlayer:OnProductionRequest( unit )
     end
 
     -- If the unit is not in production and is not already queued
-    if menu_table[unit]['progress'] == 0 and not self:HasUnitQueued(category, unit) then
+    if menu_table[unit]["progress"] == 0 and not self:HasUnitQueued(category, unit) then
         self:StartProduction(unit)
-    -- If the production is finished and it's a building, then start building placement
-    elseif menu_table[unit]['progress'] == 1 and (category == "structure" or category == "defense") then
+    -- If the production is finished and it"s a building, then start building placement
+    elseif menu_table[unit]["progress"] == 1 and (category == "structure" or category == "defense") then
         self:StartBuildingPlacement(unit)
     end
 
@@ -147,8 +147,8 @@ function CDOTAPlayer:OnProductionPaused( unit )
     if not menu_table[unit] then return end
 
     -- Checks if the production is actually in progress (0 means not started, 1 means finished)
-    if menu_table[unit]['progress'] > 0 and menu_table[unit]['progress'] < 1 then
-        menu_table[unit]['paused'] = true
+    if menu_table[unit]["progress"] > 0 and menu_table[unit]["progress"] < 1 then
+        menu_table[unit]["paused"] = true
         self.menu[category] = menu_table
         CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
     end
@@ -164,7 +164,7 @@ function CDOTAPlayer:OnProductionResumed( unit )
 
     if not menu_table[unit] then return end
 
-    menu_table[unit]['paused'] = false
+    menu_table[unit]["paused"] = false
     self.menu[category] = menu_table
     CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
 
@@ -184,12 +184,12 @@ function CDOTAPlayer:OnProductionCancelled( unit )
         return
     end
 
-    if menu_table[unit]['progress'] >= 1 then
+    if menu_table[unit]["progress"] >= 1 then
         self:CancelProduction(unit, cost)
-    elseif menu_table[unit]['progress'] > 0 then
+    elseif menu_table[unit]["progress"] > 0 then
         local menu_table_name = "menu_" .. category .. "_" .. pid
 
-        menu_table[unit]['cancelled'] = 1
+        menu_table[unit]["cancelled"] = 1
         self.menu[category] = menu_table
         CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
     end
@@ -198,13 +198,16 @@ end
 
 function CDOTAPlayer:StartBuildingPlacement( unit )
 
-    local hero = self:GetAssignedHero()
-    local buildAbility = hero:FindAbilityByName('build_' .. unit)
+    CustomGameEventManager:Send_ServerToPlayer(self, "start_building_placement", { unit = unit, width = 2, length = 2 })
 
-    if not buildAbility then 
-        buildAbility = hero:AddAbility('build_' .. unit)
-    end
-    hero:CastAbilityImmediately(buildAbility, self:GetPlayerID())
+    -- local hero = self:GetAssignedHero()
+    -- local buildAbility = hero:FindAbilityByName("build_" .. unit)
+
+    -- if not buildAbility then 
+    --     buildAbility = hero:AddAbility("build_" .. unit)
+    -- end
+    -- buildAbility.unit = "TESTTEST"
+    -- hero:CastAbilityImmediately(buildAbility, self:GetPlayerID())
 
 end
 
@@ -337,7 +340,7 @@ function CDOTAPlayer:ResetProductionState( unit )
     local menu_table = self.menu[category]
 
     if menu_table[unit] then
-        menu_table[unit]['progress'] = 0
+        menu_table[unit]["progress"] = 0
         self.menu[category] = menu_table
         CustomNetTables:SetTableValue("player_tables", menu_table_name, menu_table)
     end
